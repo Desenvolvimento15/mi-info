@@ -13,7 +13,7 @@ const DATA = {
   themes: [
     {
       id: 'atendimento-consumo',
-      title: 'Atendimento e Consumo',
+      title: 'Atendimento e Informações Financeiras',
       color: '#002D72',
       icon: 'bag',
       description: 'Informações sobre atendimento ao cliente, trocas, devoluções e seus direitos nas compras.',
@@ -75,70 +75,7 @@ const DATA = {
         }
       ]
     },
-    {
-      id: 'direitos-consumidor',
-      title: 'Direitos do Consumidor',
-      color: '#F59E0B',
-      icon: 'scale',
-      description: 'Conheça seus direitos garantidos pelo Código de Defesa do Consumidor e legislações complementares.',
-      modules: [
-        {
-          id: 'cdc',
-          icon: 'file',
-          title: 'Código de Defesa do Consumidor',
-          description: 'Principais direitos garantidos pela Lei 8.078/1990.',
-          general: {
-            title: 'CDC – Lei 8.078/1990',
-            text: 'O CDC é a principal lei que protege os consumidores no Brasil, garantindo direitos fundamentais nas relações de consumo.',
-            items: ['Direito à informação clara e adequada', 'Proteção contra publicidade enganosa', 'Direito de arrependimento em 7 dias', 'Garantia de qualidade e segurança dos produtos']
-          }
-        },
-        {
-          id: 'arrependimento',
-          icon: 'refresh',
-          title: 'Direito de Arrependimento',
-          description: 'Como exercer o direito de cancelamento em compras.',
-          general: {
-            title: 'Direito de Arrependimento',
-            text: 'Nas compras realizadas fora do estabelecimento comercial (online, telefone, domicílio), o consumidor tem 7 dias corridos para desistir.',
-            items: ['Prazo: 7 dias a partir da compra ou entrega', 'Devolução gratuita do produto', 'Reembolso integral incluindo frete', 'Produto deve estar sem sinais de uso']
-          }
-        },
-        {
-          id: 'publicidade',
-          icon: 'eye',
-          title: 'Publicidade e Oferta',
-          description: 'Seus direitos frente à publicidade e ofertas enganosas.',
-          general: {
-            title: 'Publicidade Enganosa e Abusiva',
-            text: 'É proibida qualquer publicidade que contenha informação falsa ou que omita dados essenciais ao produto.',
-            items: ['Oferta vincula o fornecedor (art. 30 CDC)', 'Preço anunciado deve ser cumprido', 'Proibido propaganda enganosa ou abusiva', 'Direito de exigir cumprimento da oferta']
-          }
-        },
-        {
-          id: 'orgaos-defesa',
-          icon: 'shield',
-          title: 'Órgãos de Defesa',
-          description: 'Conheça os órgãos que protegem o consumidor.',
-          general: {
-            title: 'Órgãos de Defesa do Consumidor',
-            text: 'Existem diversos órgãos públicos e privados dedicados à defesa dos direitos do consumidor.',
-            items: ['Procon: atendimento gratuito em todos os estados', 'Senacon: órgão federal de defesa do consumidor', 'Procons municipais: atendimento local', 'Juizados Especiais: causas até 40 salários mínimos']
-          }
-        },
-        {
-          id: 'sancoes',
-          icon: 'alert',
-          title: 'Proibições e Sanções',
-          description: 'Práticas proibidas e sanções previstas em lei.',
-          general: {
-            title: 'Práticas Abusivas',
-            text: 'São consideradas práticas abusivas e podem gerar sanções ao fornecedor.',
-            items: ['Condicionar venda de produto à aquisição de outro', 'Exigir vantagem manifestamente excessiva', 'Enviar produto sem solicitação prévia', 'Cobrança de dívida com exposição ao ridículo']
-          }
-        }
-      ]
-    },
+    
     {
       id: 'privacidade-lgpd',
       title: 'Privacidade e LGPD',
@@ -267,70 +204,7 @@ const DATA = {
         }
       ]
     },
-    {
-      id: 'seguranca-operacao',
-      title: 'Segurança e Operação',
-      color: '#FF6B4A',
-      icon: 'shield',
-      description: 'Informações sobre segurança, prevenção e operação das nossas lojas.',
-      modules: [
-        {
-          id: 'transacoes-financeiras',
-          icon: 'credit-card',
-          title: 'Transações Financeiras',
-          description: 'Orientações para pagamentos e prevenção de fraudes.',
-          general: {
-            title: 'Informações gerais (nível nacional)',
-            text: 'Conheça as boas práticas e recomendações para transações financeiras seguras em todas as nossas lojas.',
-            items: ['Boas práticas de segurança', 'Cuidados ao realizar pagamentos', 'Canais oficiais e comunicação segura', 'Como identificar e evitar fraudes']
-          }
-        },
-        {
-          id: 'monitoramento-cameras',
-          icon: 'camera',
-          title: 'Monitoramento por Câmeras',
-          description: 'Informações sobre uso de câmeras na loja.',
-          general: {
-            title: 'Videomonitoramento',
-            text: 'Nossas lojas utilizam sistemas de videomonitoramento integrados para garantir a segurança de todos.',
-            items: ['Câmeras de alta resolução em todos os ambientes', 'Central de monitoramento 24h', 'Integração com segurança pública', 'Armazenamento seguro das imagens']
-          }
-        },
-        {
-          id: 'seguranca-loja',
-          icon: 'shield',
-          title: 'Segurança na Loja',
-          description: 'Medidas de segurança para clientes e colaboradores.',
-          general: {
-            title: 'Segurança no Ambiente da Loja',
-            text: 'Trabalhamos com múltiplas camadas de segurança para garantir um ambiente seguro para clientes e equipe.',
-            items: ['Equipe de segurança treinada e uniformizada', 'Controle de acesso nas áreas restritas', 'Protocolos de emergência documentados', 'Parcerias com forças de segurança pública']
-          }
-        },
-        {
-          id: 'prevencao-perdas',
-          icon: 'eye',
-          title: 'Prevenção de Perdas',
-          description: 'Boas práticas e prevenção de perdas.',
-          general: {
-            title: 'Prevenção de Perdas',
-            text: 'Adotamos práticas rigorosas de prevenção de perdas para manter preços competitivos e ambiente seguro.',
-            items: ['Sistemas antifurto em todos os produtos', 'Treinamento contínuo da equipe', 'Auditoria interna periódica', 'Programa de incentivo à integridade']
-          }
-        },
-        {
-          id: 'emergencias',
-          icon: 'bell',
-          title: 'Emergências e Contatos',
-          description: 'Telefones úteis e canais de atendimento de emergência.',
-          general: {
-            title: 'Contatos de Emergência',
-            text: 'Em situações de emergência, utilize os canais abaixo para acionar o suporte necessário com rapidez.',
-            items: ['Bombeiros: 193', 'SAMU: 192', 'Polícia Militar: 190', 'Segurança da Loja: acionamento interno via totem']
-          }
-        }
-      ]
-    },
+    
     {
       id: 'outras-informacoes',
       title: 'Outras Informações',
