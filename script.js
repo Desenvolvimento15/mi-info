@@ -9,393 +9,607 @@
    DATA
 ───────────────────────────────────────── */
 const DATA = {
-
   themes: [
     {
-      id: 'atendimento-consumo',
-      title: 'Atendimento e Informações Financeiras',
-      color: '#002D72',
-      icon: 'bag',
-      description: 'Informações sobre atendimento ao cliente, trocas, devoluções e seus direitos nas compras.',
+      id: "atendimento-consumo",
+      title: "Atendimento e Informações Financeiras",
+      color: "#002D72",
+      icon: "bag",
+      description:
+        "Informações sobre atendimento ao cliente, trocas, devoluções e seus direitos nas compras.",
       modules: [
         {
-          id: 'trocas-devolucoes',
-          icon: 'refresh',
-          title: 'Trocas e Devoluções',
-          description: 'Políticas e procedimentos para trocas e devoluções de produtos.',
+          id: "trocas-devolucoes",
+          icon: "refresh",
+          title: "•	AVISO DE REGRAS DE SEGURANÇA SOBRE TRANSAÇÕES FINANCEIRAS",
+          description:
+            "Políticas e procedimentos para trocas e devoluções de produtos.",
           general: {
-            title: 'Trocas e Devoluções – Informações Nacionais',
-            text: 'Conheça as regras nacionais para trocas e devoluções de produtos em todas as nossas unidades, conforme o Código de Defesa do Consumidor.',
-            items: ['Prazo de 7 dias para desistência (compras online)', 'Vício aparente: 30 dias (produtos não duráveis)', 'Vício aparente: 90 dias (produtos duráveis)', 'Nota fiscal necessária para qualquer troca']
-          }
+            title: "Trocas e Devoluções – Informações Nacionais",
+            text: "Conheça as regras nacionais para trocas e devoluções de produtos em todas as nossas unidades, conforme o Código de Defesa do Consumidor.",
+            items: [
+              "Prazo de 7 dias para desistência (compras online)",
+              "Vício aparente: 30 dias (produtos não duráveis)",
+              "Vício aparente: 90 dias (produtos duráveis)",
+              "Nota fiscal necessária para qualquer troca",
+            ],
+          },
         },
         {
-          id: 'atendimento-cliente',
-          icon: 'user',
-          title: 'Atendimento ao Cliente',
-          description: 'Canais e padrões de atendimento ao consumidor.',
+          id: "atendimento-cliente",
+          icon: "user",
+          title: "Atendimento ao Cliente",
+          description: "Canais e padrões de atendimento ao consumidor.",
           general: {
-            title: 'Padrão de Atendimento Nacional',
-            text: 'Nosso compromisso é oferecer atendimento ágil, respeitoso e eficiente em todas as unidades do Brasil.',
-            items: ['Atendimento presencial em todas as unidades', 'SAC 0800 disponível 24h', 'Resposta a e-mails em até 48h úteis', 'Chat online de segunda a sábado, 8h às 20h']
-          }
+            title: "Padrão de Atendimento Nacional",
+            text: "Nosso compromisso é oferecer atendimento ágil, respeitoso e eficiente em todas as unidades do Brasil.",
+            items: [
+              "Atendimento presencial em todas as unidades",
+              "SAC 0800 disponível 24h",
+              "Resposta a e-mails em até 48h úteis",
+              "Chat online de segunda a sábado, 8h às 20h",
+            ],
+          },
         },
         {
-          id: 'prazo-entrega',
-          icon: 'clock',
-          title: 'Prazo de Entrega',
-          description: 'Informações sobre prazos e rastreamento de pedidos.',
+          id: "prazo-entrega",
+          icon: "clock",
+          title: "Prazo de Entrega",
+          description: "Informações sobre prazos e rastreamento de pedidos.",
           general: {
-            title: 'Prazos de Entrega',
-            text: 'Os prazos de entrega variam conforme a modalidade escolhida e a região de destino.',
-            items: ['Entrega expressa: até 2 dias úteis (capitais)', 'Entrega padrão: 3 a 7 dias úteis', 'Retirada na loja: disponível no mesmo dia', 'Rastreamento disponível em tempo real pelo app']
-          }
+            title: "Prazos de Entrega",
+            text: "Os prazos de entrega variam conforme a modalidade escolhida e a região de destino.",
+            items: [
+              "Entrega expressa: até 2 dias úteis (capitais)",
+              "Entrega padrão: 3 a 7 dias úteis",
+              "Retirada na loja: disponível no mesmo dia",
+              "Rastreamento disponível em tempo real pelo app",
+            ],
+          },
         },
         {
-          id: 'reclamacoes',
-          icon: 'alert',
-          title: 'Reclamações',
-          description: 'Como registrar e acompanhar reclamações.',
+          id: "reclamacoes",
+          icon: "alert",
+          title: "Reclamações",
+          description: "Como registrar e acompanhar reclamações.",
           general: {
-            title: 'Canal de Reclamações',
-            text: 'Registre sua reclamação pelos canais oficiais. Nosso time entra em contato em até 5 dias úteis.',
-            items: ['SAC: 0800 707 0000', 'Ouvidoria: disponível para casos não resolvidos', 'Procon: em caso de não resolução em 30 dias', 'Reclame Aqui: @mibrasiloficial']
-          }
+            title: "Canal de Reclamações",
+            text: "Registre sua reclamação pelos canais oficiais. Nosso time entra em contato em até 5 dias úteis.",
+            items: [
+              "SAC: 0800 707 0000",
+              "Ouvidoria: disponível para casos não resolvidos",
+              "Procon: em caso de não resolução em 30 dias",
+              "Reclame Aqui: @mibrasiloficial",
+            ],
+          },
         },
         {
-          id: 'garantia',
-          icon: 'shield',
-          title: 'Garantia do Produto',
-          description: 'Informações sobre garantia legal e contratual.',
+          id: "garantia",
+          icon: "shield",
+          title: "Garantia do Produto",
+          description: "Informações sobre garantia legal e contratual.",
           general: {
-            title: 'Garantias',
-            text: 'Todo produto possui garantia legal prevista pelo CDC, além de garantia contratual oferecida pelo fabricante.',
-            items: ['Garantia legal: 90 dias (produtos duráveis)', 'Garantia contratual: conforme certificado do fabricante', 'Extensão de garantia disponível para compra', 'Assistência técnica autorizada em todas as capitais']
-          }
-        }
-      ]
+            title: "Garantias",
+            text: "Todo produto possui garantia legal prevista pelo CDC, além de garantia contratual oferecida pelo fabricante.",
+            items: [
+              "Garantia legal: 90 dias (produtos duráveis)",
+              "Garantia contratual: conforme certificado do fabricante",
+              "Extensão de garantia disponível para compra",
+              "Assistência técnica autorizada em todas as capitais",
+            ],
+          },
+        },
+      ],
     },
-    
+
     {
-      id: 'privacidade-lgpd',
-      title: 'Privacidade e LGPD',
-      color: '#2ECC71',
-      icon: 'lock',
-      description: 'Informações sobre proteção de dados, privacidade e seus direitos sob a Lei Geral de Proteção de Dados.',
+      id: "privacidade-lgpd",
+      title: "Privacidade e LGPD",
+      color: "#2ECC71",
+      icon: "lock",
+      description:
+        "Informações sobre proteção de dados, privacidade e seus direitos sob a Lei Geral de Proteção de Dados.",
       modules: [
         {
-          id: 'coleta-dados',
-          icon: 'file',
-          title: 'Coleta de Dados',
-          description: 'Quais dados coletamos e como utilizamos.',
+          id: "coleta-dados",
+          icon: "file",
+          title: "Coleta de Dados",
+          description: "Quais dados coletamos e como utilizamos.",
           general: {
-            title: 'Coleta e Uso de Dados',
-            text: 'Coletamos apenas os dados necessários para oferecer nossos serviços com qualidade, segurança e personalização.',
-            items: ['Dados de identificação (nome, CPF, e-mail)', 'Histórico de compras e preferências', 'Dados de navegação em plataformas digitais', 'Consentimento explícito para marketing']
-          }
+            title: "Coleta e Uso de Dados",
+            text: "Coletamos apenas os dados necessários para oferecer nossos serviços com qualidade, segurança e personalização.",
+            items: [
+              "Dados de identificação (nome, CPF, e-mail)",
+              "Histórico de compras e preferências",
+              "Dados de navegação em plataformas digitais",
+              "Consentimento explícito para marketing",
+            ],
+          },
         },
         {
-          id: 'cameras',
-          icon: 'camera',
-          title: 'Monitoramento por Câmeras',
-          description: 'Uso de câmeras de segurança nas dependências da loja.',
+          id: "cameras",
+          icon: "camera",
+          title: "Monitoramento por Câmeras",
+          description: "Uso de câmeras de segurança nas dependências da loja.",
           general: {
-            title: 'Câmeras de Segurança',
-            text: 'Nossas lojas utilizam câmeras de videomonitoramento para garantir a segurança de clientes, colaboradores e patrimônio.',
-            items: ['Câmeras em operação 24 horas', 'Gravações armazenadas por 30 dias', 'Acesso restrito a equipe de segurança autorizada', 'Uso exclusivo para fins de segurança']
-          }
+            title: "Câmeras de Segurança",
+            text: "Nossas lojas utilizam câmeras de videomonitoramento para garantir a segurança de clientes, colaboradores e patrimônio.",
+            items: [
+              "Câmeras em operação 24 horas",
+              "Gravações armazenadas por 30 dias",
+              "Acesso restrito a equipe de segurança autorizada",
+              "Uso exclusivo para fins de segurança",
+            ],
+          },
         },
         {
-          id: 'direitos-lgpd',
-          icon: 'user',
-          title: 'Seus Direitos (LGPD)',
-          description: 'Conheça seus direitos garantidos pela Lei 13.709/2018.',
+          id: "direitos-lgpd",
+          icon: "user",
+          title: "Seus Direitos (LGPD)",
+          description: "Conheça seus direitos garantidos pela Lei 13.709/2018.",
           general: {
-            title: 'Direitos do Titular de Dados',
-            text: 'A LGPD garante ao titular dos dados uma série de direitos em relação ao tratamento de suas informações.',
-            items: ['Acesso aos dados pessoais armazenados', 'Correção de dados incompletos ou desatualizados', 'Eliminação de dados desnecessários', 'Portabilidade dos dados a outro fornecedor']
-          }
+            title: "Direitos do Titular de Dados",
+            text: "A LGPD garante ao titular dos dados uma série de direitos em relação ao tratamento de suas informações.",
+            items: [
+              "Acesso aos dados pessoais armazenados",
+              "Correção de dados incompletos ou desatualizados",
+              "Eliminação de dados desnecessários",
+              "Portabilidade dos dados a outro fornecedor",
+            ],
+          },
         },
         {
-          id: 'cookies',
-          icon: 'wifi',
-          title: 'Cookies e Rastreamento',
-          description: 'Como utilizamos cookies em nossas plataformas digitais.',
+          id: "cookies",
+          icon: "wifi",
+          title: "Cookies e Rastreamento",
+          description:
+            "Como utilizamos cookies em nossas plataformas digitais.",
           general: {
-            title: 'Política de Cookies',
-            text: 'Utilizamos cookies para melhorar sua experiência de navegação e personalizar conteúdos e ofertas.',
-            items: ['Cookies essenciais: necessários para o funcionamento', 'Cookies analíticos: para melhorar a experiência', 'Cookies de marketing: para personalização de ofertas', 'Você pode gerenciar suas preferências a qualquer momento']
-          }
+            title: "Política de Cookies",
+            text: "Utilizamos cookies para melhorar sua experiência de navegação e personalizar conteúdos e ofertas.",
+            items: [
+              "Cookies essenciais: necessários para o funcionamento",
+              "Cookies analíticos: para melhorar a experiência",
+              "Cookies de marketing: para personalização de ofertas",
+              "Você pode gerenciar suas preferências a qualquer momento",
+            ],
+          },
         },
         {
-          id: 'dpo',
-          icon: 'phone',
-          title: 'Contato do DPO',
-          description: 'Canal para questões relacionadas à proteção de dados.',
+          id: "dpo",
+          icon: "phone",
+          title: "Contato do DPO",
+          description: "Canal para questões relacionadas à proteção de dados.",
           general: {
-            title: 'Encarregado de Dados (DPO)',
-            text: 'Nosso Encarregado de Proteção de Dados (DPO) está disponível para esclarecer dúvidas e receber solicitações.',
-            items: ['E-mail: dpo@mibrasil.com.br', 'Prazo de resposta: até 15 dias úteis', 'Solicitações de exclusão: até 30 dias', 'Relatório de impacto disponível mediante solicitação']
-          }
-        }
-      ]
+            title: "Encarregado de Dados (DPO)",
+            text: "Nosso Encarregado de Proteção de Dados (DPO) está disponível para esclarecer dúvidas e receber solicitações.",
+            items: [
+              "E-mail: dpo@mibrasil.com.br",
+              "Prazo de resposta: até 15 dias úteis",
+              "Solicitações de exclusão: até 30 dias",
+              "Relatório de impacto disponível mediante solicitação",
+            ],
+          },
+        },
+      ],
     },
     {
-      id: 'atendimento-prioritario',
-      title: 'Atendimento Prioritário',
-      color: '#9B59B6',
-      icon: 'user',
-      description: 'Regras e legislações que garantem atendimento preferencial a pessoas com necessidades especiais.',
+      id: "atendimento-prioritario",
+      title: "Atendimento Prioritário",
+      color: "#9B59B6",
+      icon: "user",
+      description:
+        "Regras e legislações que garantem atendimento preferencial a pessoas com necessidades especiais.",
       modules: [
         {
-          id: 'quem-tem-direito',
-          icon: 'user',
-          title: 'Quem Tem Direito',
-          description: 'Pessoas que têm prioridade no atendimento.',
+          id: "quem-tem-direito",
+          icon: "user",
+          title: "Quem Tem Direito",
+          description: "Pessoas que têm prioridade no atendimento.",
           general: {
-            title: 'Direito ao Atendimento Prioritário',
-            text: 'A Lei Federal 10.048/2000 garante atendimento prioritário a pessoas com necessidades especiais em estabelecimentos comerciais.',
-            items: ['Pessoas com deficiência física, mental, auditiva ou visual', 'Idosos com 60 anos ou mais (Estatuto do Idoso)', 'Gestantes, lactantes e mulheres com bebê de colo', 'Pessoas com crianças de colo']
-          }
+            title: "Direito ao Atendimento Prioritário",
+            text: "A Lei Federal 10.048/2000 garante atendimento prioritário a pessoas com necessidades especiais em estabelecimentos comerciais.",
+            items: [
+              "Pessoas com deficiência física, mental, auditiva ou visual",
+              "Idosos com 60 anos ou mais (Estatuto do Idoso)",
+              "Gestantes, lactantes e mulheres com bebê de colo",
+              "Pessoas com crianças de colo",
+            ],
+          },
         },
         {
-          id: 'filas',
-          icon: 'list',
-          title: 'Filas Preferenciais',
-          description: 'Como funciona o sistema de filas e senhas.',
+          id: "filas",
+          icon: "list",
+          title: "Filas Preferenciais",
+          description: "Como funciona o sistema de filas e senhas.",
           general: {
-            title: 'Funcionamento das Filas',
-            text: 'Todas as nossas unidades possuem sistema de senhas e filas preferenciais devidamente sinalizadas.',
-            items: ['Caixas e guichês preferenciais identificados', 'Sistema de senha prioritária em todas as unidades', 'Atendimento imediato sem necessidade de senha em casos de urgência', 'Colaboradores treinados para identificar necessidades especiais']
-          }
+            title: "Funcionamento das Filas",
+            text: "Todas as nossas unidades possuem sistema de senhas e filas preferenciais devidamente sinalizadas.",
+            items: [
+              "Caixas e guichês preferenciais identificados",
+              "Sistema de senha prioritária em todas as unidades",
+              "Atendimento imediato sem necessidade de senha em casos de urgência",
+              "Colaboradores treinados para identificar necessidades especiais",
+            ],
+          },
         },
         {
-          id: 'legislacao-federal',
-          icon: 'file',
-          title: 'Legislação Federal',
-          description: 'Leis federais sobre atendimento prioritário.',
+          id: "legislacao-federal",
+          icon: "file",
+          title: "Legislação Federal",
+          description: "Leis federais sobre atendimento prioritário.",
           general: {
-            title: 'Base Legal Federal',
-            text: 'O atendimento prioritário no Brasil é regulado por um conjunto de leis federais que estabelecem direitos e obrigações.',
-            items: ['Lei 10.048/2000: atendimento prioritário', 'Lei 10.741/2003: Estatuto do Idoso', 'Lei 13.146/2015: Lei Brasileira de Inclusão', 'Decreto 3.298/1999: Política Nacional para Deficiência']
-          }
+            title: "Base Legal Federal",
+            text: "O atendimento prioritário no Brasil é regulado por um conjunto de leis federais que estabelecem direitos e obrigações.",
+            items: [
+              "Lei 10.048/2000: atendimento prioritário",
+              "Lei 10.741/2003: Estatuto do Idoso",
+              "Lei 13.146/2015: Lei Brasileira de Inclusão",
+              "Decreto 3.298/1999: Política Nacional para Deficiência",
+            ],
+          },
         },
         {
-          id: 'acessibilidade',
-          icon: 'map-pin',
-          title: 'Acessibilidade',
-          description: 'Estrutura e recursos de acessibilidade nas lojas.',
+          id: "acessibilidade",
+          icon: "map-pin",
+          title: "Acessibilidade",
+          description: "Estrutura e recursos de acessibilidade nas lojas.",
           general: {
-            title: 'Acessibilidade nas Unidades',
-            text: 'Nossas lojas são projetadas para garantir acessibilidade plena a todos os clientes.',
-            items: ['Rampas de acesso e piso tátil', 'Vagas de estacionamento reservadas', 'Sanitários adaptados', 'Sinalização em Braille e em Libras']
-          }
+            title: "Acessibilidade nas Unidades",
+            text: "Nossas lojas são projetadas para garantir acessibilidade plena a todos os clientes.",
+            items: [
+              "Rampas de acesso e piso tátil",
+              "Vagas de estacionamento reservadas",
+              "Sanitários adaptados",
+              "Sinalização em Braille e em Libras",
+            ],
+          },
         },
         {
-          id: 'regras-unidade',
-          icon: 'info',
-          title: 'Regras da Unidade',
-          description: 'Procedimentos específicos de cada loja.',
+          id: "regras-unidade",
+          icon: "info",
+          title: "Regras da Unidade",
+          description: "Procedimentos específicos de cada loja.",
           general: {
-            title: 'Regras Locais de Atendimento',
-            text: 'Cada unidade pode possuir procedimentos específicos complementares à legislação federal e estadual.',
-            items: ['Consulte a sinalização interna da loja', 'Solicite assistência a qualquer colaborador', 'Canais de ouvidoria disponíveis na loja', 'Feedback contribui para melhoria contínua']
-          }
-        }
-      ]
+            title: "Regras Locais de Atendimento",
+            text: "Cada unidade pode possuir procedimentos específicos complementares à legislação federal e estadual.",
+            items: [
+              "Consulte a sinalização interna da loja",
+              "Solicite assistência a qualquer colaborador",
+              "Canais de ouvidoria disponíveis na loja",
+              "Feedback contribui para melhoria contínua",
+            ],
+          },
+        },
+      ],
     },
-    
+
     {
-      id: 'outras-informacoes',
-      title: 'Outras Informações',
-      color: '#78909C',
-      icon: 'plus-circle',
-      description: 'Informações gerais sobre serviços, comodidades e canais da loja.',
+      id: "outras-informacoes",
+      title: "Outras Informações",
+      color: "#78909C",
+      icon: "plus-circle",
+      description:
+        "Informações gerais sobre serviços, comodidades e canais da loja.",
       modules: [
         {
-          id: 'nota-fiscal',
-          icon: 'file',
-          title: 'Nota Fiscal',
-          description: 'Como solicitar e utilizar sua nota fiscal.',
+          id: "nota-fiscal",
+          icon: "file",
+          title: "Nota Fiscal",
+          description: "Como solicitar e utilizar sua nota fiscal.",
           general: {
-            title: 'Nota Fiscal',
-            text: 'A nota fiscal é um documento obrigatório em toda compra e é essencial para garantir seus direitos como consumidor.',
-            items: ['Emitida automaticamente em todas as compras', 'Disponível em formato físico e eletrônico (NF-e)', 'Necessária para trocas, devoluções e garantia', 'Consulte sua NF-e em nfe.fazenda.gov.br']
-          }
+            title: "Nota Fiscal",
+            text: "A nota fiscal é um documento obrigatório em toda compra e é essencial para garantir seus direitos como consumidor.",
+            items: [
+              "Emitida automaticamente em todas as compras",
+              "Disponível em formato físico e eletrônico (NF-e)",
+              "Necessária para trocas, devoluções e garantia",
+              "Consulte sua NF-e em nfe.fazenda.gov.br",
+            ],
+          },
         },
         {
-          id: 'meios-pagamento',
-          icon: 'credit-card',
-          title: 'Meios de Pagamento',
-          description: 'Formas de pagamento aceitas em nossas lojas.',
+          id: "meios-pagamento",
+          icon: "credit-card",
+          title: "Meios de Pagamento",
+          description: "Formas de pagamento aceitas em nossas lojas.",
           general: {
-            title: 'Pagamentos Aceitos',
-            text: 'Aceitamos diversas formas de pagamento para oferecer comodidade e flexibilidade aos nossos clientes.',
-            items: ['Cartão de crédito: até 12x sem juros', 'Cartão de débito e débito automático', 'Pix: desconto especial de 5%', 'Dinheiro e vale-presente']
-          }
+            title: "Pagamentos Aceitos",
+            text: "Aceitamos diversas formas de pagamento para oferecer comodidade e flexibilidade aos nossos clientes.",
+            items: [
+              "Cartão de crédito: até 12x sem juros",
+              "Cartão de débito e débito automático",
+              "Pix: desconto especial de 5%",
+              "Dinheiro e vale-presente",
+            ],
+          },
         },
         {
-          id: 'estacionamento',
-          icon: 'map-pin',
-          title: 'Estacionamento',
-          description: 'Informações sobre estacionamento das unidades.',
+          id: "estacionamento",
+          icon: "map-pin",
+          title: "Estacionamento",
+          description: "Informações sobre estacionamento das unidades.",
           general: {
-            title: 'Estacionamento',
-            text: 'Diversas unidades possuem estacionamento próprio ou conveniado para facilitar sua visita.',
-            items: ['Vagas para clientes: gratuitas por 2h com compra', 'Vagas para PcD: reservadas próximas à entrada', 'Vagas para idosos: sinalizadas e reservadas', 'Consulte disponibilidade em sua unidade local']
-          }
+            title: "Estacionamento",
+            text: "Diversas unidades possuem estacionamento próprio ou conveniado para facilitar sua visita.",
+            items: [
+              "Vagas para clientes: gratuitas por 2h com compra",
+              "Vagas para PcD: reservadas próximas à entrada",
+              "Vagas para idosos: sinalizadas e reservadas",
+              "Consulte disponibilidade em sua unidade local",
+            ],
+          },
         },
         {
-          id: 'wifi',
-          icon: 'wifi',
-          title: 'Wi-Fi da Loja',
-          description: 'Acesso à internet gratuita em nossas lojas.',
+          id: "wifi",
+          icon: "wifi",
+          title: "Wi-Fi da Loja",
+          description: "Acesso à internet gratuita em nossas lojas.",
           general: {
-            title: 'Wi-Fi Gratuito',
-            text: 'Oferecemos Wi-Fi gratuito em nossas lojas para proporcionar uma experiência de compra mais conectada.',
-            items: ['Rede: MI_BRASIL_GUEST', 'Sem senha: abertura por cadastro simples', 'Velocidade: até 50 Mbps', 'Uso exclusivo para navegação pessoal']
-          }
+            title: "Wi-Fi Gratuito",
+            text: "Oferecemos Wi-Fi gratuito em nossas lojas para proporcionar uma experiência de compra mais conectada.",
+            items: [
+              "Rede: MI_BRASIL_GUEST",
+              "Sem senha: abertura por cadastro simples",
+              "Velocidade: até 50 Mbps",
+              "Uso exclusivo para navegação pessoal",
+            ],
+          },
         },
         {
-          id: 'canais-oficiais',
-          icon: 'chat',
-          title: 'Canais Oficiais',
-          description: 'Canais digitais e físicos de atendimento.',
+          id: "canais-oficiais",
+          icon: "chat",
+          title: "Canais Oficiais",
+          description: "Canais digitais e físicos de atendimento.",
           general: {
-            title: 'Canais Oficiais MI Brasil',
-            text: 'Utilize apenas os canais oficiais para garantir segurança e qualidade no atendimento.',
-            items: ['Site: www.mibrasil.com.br', 'App: MI Brasil (iOS e Android)', 'SAC: 0800 707 0000 (gratuito)', 'Instagram: @mibrasiloficial']
-          }
-        }
-      ]
-    }
+            title: "Canais Oficiais MI Brasil",
+            text: "Utilize apenas os canais oficiais para garantir segurança e qualidade no atendimento.",
+            items: [
+              "Site: www.mibrasil.com.br",
+              "App: MI Brasil (iOS e Android)",
+              "SAC: 0800 707 0000 (gratuito)",
+              "Instagram: @mibrasiloficial",
+            ],
+          },
+        },
+      ],
+    },
   ],
 
   states: [
-    { code: 'AC', name: 'Acre' }, { code: 'AL', name: 'Alagoas' }, { code: 'AP', name: 'Amapá' },
-    { code: 'AM', name: 'Amazonas' }, { code: 'BA', name: 'Bahia' }, { code: 'CE', name: 'Ceará' },
-    { code: 'DF', name: 'Distrito Federal' }, { code: 'ES', name: 'Espírito Santo' },
-    { code: 'GO', name: 'Goiás' }, { code: 'MA', name: 'Maranhão' }, { code: 'MT', name: 'Mato Grosso' },
-    { code: 'MS', name: 'Mato Grosso do Sul' }, { code: 'MG', name: 'Minas Gerais' },
-    { code: 'PA', name: 'Pará' }, { code: 'PB', name: 'Paraíba' }, { code: 'PR', name: 'Paraná' },
-    { code: 'PE', name: 'Pernambuco' }, { code: 'PI', name: 'Piauí' }, { code: 'RJ', name: 'Rio de Janeiro' },
-    { code: 'RN', name: 'Rio Grande do Norte' }, { code: 'RS', name: 'Rio Grande do Sul' },
-    { code: 'RO', name: 'Rondônia' }, { code: 'RR', name: 'Roraima' }, { code: 'SC', name: 'Santa Catarina' },
-    { code: 'SP', name: 'São Paulo' }, { code: 'SE', name: 'Sergipe' }, { code: 'TO', name: 'Tocantins' }
+    { code: "AC", name: "Acre" },
+    { code: "AL", name: "Alagoas" },
+    { code: "AP", name: "Amapá" },
+    { code: "AM", name: "Amazonas" },
+    { code: "BA", name: "Bahia" },
+    { code: "CE", name: "Ceará" },
+    { code: "DF", name: "Distrito Federal" },
+    { code: "ES", name: "Espírito Santo" },
+    { code: "GO", name: "Goiás" },
+    { code: "MA", name: "Maranhão" },
+    { code: "MT", name: "Mato Grosso" },
+    { code: "MS", name: "Mato Grosso do Sul" },
+    { code: "MG", name: "Minas Gerais" },
+    { code: "PA", name: "Pará" },
+    { code: "PB", name: "Paraíba" },
+    { code: "PR", name: "Paraná" },
+    { code: "PE", name: "Pernambuco" },
+    { code: "PI", name: "Piauí" },
+    { code: "RJ", name: "Rio de Janeiro" },
+    { code: "RN", name: "Rio Grande do Norte" },
+    { code: "RS", name: "Rio Grande do Sul" },
+    { code: "RO", name: "Rondônia" },
+    { code: "RR", name: "Roraima" },
+    { code: "SC", name: "Santa Catarina" },
+    { code: "SP", name: "São Paulo" },
+    { code: "SE", name: "Sergipe" },
+    { code: "TO", name: "Tocantins" },
   ],
 
   stateContent: {
     SP: {
-      name: 'Estado de São Paulo',
+      name: "Estado de São Paulo",
       laws: [
-        { title: 'Lei Estadual nº 15.175/2013', desc: 'Dispõe sobre a obrigatoriedade de atendimento prioritário e dá outras providências para o Estado de SP.' },
-        { title: 'Lei Estadual nº 10.177/1998', desc: 'Lei de Proteção ao Consumidor do Estado de São Paulo.' },
-        { title: 'Decreto nº 66.373/2021', desc: 'Regulamenta a LGPD no âmbito estadual.' }
+        {
+          title: "Lei Estadual nº 15.175/2013",
+          desc: "Dispõe sobre a obrigatoriedade de atendimento prioritário e dá outras providências para o Estado de SP.",
+        },
+        {
+          title: "Lei Estadual nº 10.177/1998",
+          desc: "Lei de Proteção ao Consumidor do Estado de São Paulo.",
+        },
+        {
+          title: "Decreto nº 66.373/2021",
+          desc: "Regulamenta a LGPD no âmbito estadual.",
+        },
       ],
-      procon: 'PROCON-SP: 151 | www.procon.sp.gov.br',
-      extra: 'Município de São Paulo: Lei Municipal nº 14.485/2007 – Dispõe sobre o atendimento preferencial às pessoas que especifica.'
+      procon: "PROCON-SP: 151 | www.procon.sp.gov.br",
+      extra:
+        "Município de São Paulo: Lei Municipal nº 14.485/2007 – Dispõe sobre o atendimento preferencial às pessoas que especifica.",
     },
     MG: {
-      name: 'Estado de Minas Gerais',
+      name: "Estado de Minas Gerais",
       laws: [
-        { title: 'Lei Estadual nº 13.466/2000', desc: 'Dispõe sobre a proteção ao consumidor no Estado de Minas Gerais.' },
-        { title: 'Lei Estadual nº 15.175/2004', desc: 'Regula o atendimento prioritário em estabelecimentos estaduais.' }
+        {
+          title: "Lei Estadual nº 13.466/2000",
+          desc: "Dispõe sobre a proteção ao consumidor no Estado de Minas Gerais.",
+        },
+        {
+          title: "Lei Estadual nº 15.175/2004",
+          desc: "Regula o atendimento prioritário em estabelecimentos estaduais.",
+        },
       ],
-      procon: 'PROCON-MG: 3916-9220 | www.procon.mg.gov.br',
-      extra: ''
+      procon: "PROCON-MG: 3916-9220 | www.procon.mg.gov.br",
+      extra: "",
     },
     RJ: {
-      name: 'Estado do Rio de Janeiro',
+      name: "Estado do Rio de Janeiro",
       laws: [
-        { title: 'Lei Estadual nº 5.687/2010', desc: 'Estabelece normas de proteção e defesa do consumidor no Estado do RJ.' },
-        { title: 'Lei Estadual nº 4.611/2005', desc: 'Dispõe sobre o atendimento prioritário a pessoas com necessidades especiais.' }
+        {
+          title: "Lei Estadual nº 5.687/2010",
+          desc: "Estabelece normas de proteção e defesa do consumidor no Estado do RJ.",
+        },
+        {
+          title: "Lei Estadual nº 4.611/2005",
+          desc: "Dispõe sobre o atendimento prioritário a pessoas com necessidades especiais.",
+        },
       ],
-      procon: 'PROCON-RJ: 151 | www.procon.rj.gov.br',
-      extra: ''
+      procon: "PROCON-RJ: 151 | www.procon.rj.gov.br",
+      extra: "",
     },
     PR: {
-      name: 'Estado do Paraná',
+      name: "Estado do Paraná",
       laws: [
-        { title: 'Lei Estadual nº 14.861/2005', desc: 'Institui o Código Estadual do Consumidor.' },
-        { title: 'Lei Estadual nº 15.229/2006', desc: 'Dispõe sobre atendimento prioritário no Paraná.' }
+        {
+          title: "Lei Estadual nº 14.861/2005",
+          desc: "Institui o Código Estadual do Consumidor.",
+        },
+        {
+          title: "Lei Estadual nº 15.229/2006",
+          desc: "Dispõe sobre atendimento prioritário no Paraná.",
+        },
       ],
-      procon: 'PROCON-PR: (41) 3313-6565 | www.procon.pr.gov.br',
-      extra: ''
+      procon: "PROCON-PR: (41) 3313-6565 | www.procon.pr.gov.br",
+      extra: "",
     },
     SC: {
-      name: 'Estado de Santa Catarina',
+      name: "Estado de Santa Catarina",
       laws: [
-        { title: 'Lei Estadual nº 13.339/2005', desc: 'Código Estadual do Consumidor de Santa Catarina.' }
+        {
+          title: "Lei Estadual nº 13.339/2005",
+          desc: "Código Estadual do Consumidor de Santa Catarina.",
+        },
       ],
-      procon: 'PROCON-SC: (48) 3665-3027 | www.procon.sc.gov.br',
-      extra: ''
+      procon: "PROCON-SC: (48) 3665-3027 | www.procon.sc.gov.br",
+      extra: "",
     },
     RS: {
-      name: 'Estado do Rio Grande do Sul',
+      name: "Estado do Rio Grande do Sul",
       laws: [
-        { title: 'Lei Estadual nº 11.800/2002', desc: 'Institui o Código Estadual de Proteção e Defesa do Consumidor do RS.' }
+        {
+          title: "Lei Estadual nº 11.800/2002",
+          desc: "Institui o Código Estadual de Proteção e Defesa do Consumidor do RS.",
+        },
       ],
-      procon: 'PROCON-RS: 151 | www.procon.rs.gov.br',
-      extra: ''
-    }
+      procon: "PROCON-RS: 151 | www.procon.rs.gov.br",
+      extra: "",
+    },
   },
 
   cities: {
-    SP: ['São Paulo', 'Campinas', 'Guarulhos', 'Santo André', 'Sorocaba', 'São Bernardo do Campo'],
-    MG: ['Belo Horizonte', 'Uberlândia', 'Contagem', 'Juiz de Fora'],
-    RJ: ['Rio de Janeiro', 'Niterói', 'Duque de Caxias', 'Nova Iguaçu'],
-    PR: ['Curitiba', 'Londrina', 'Maringá', 'Ponta Grossa'],
-    SC: ['Florianópolis', 'Joinville', 'Blumenau', 'Chapecó'],
-    RS: ['Porto Alegre', 'Caxias do Sul', 'Pelotas', 'Santa Maria']
+    SP: [
+      "São Paulo",
+      "Campinas",
+      "Guarulhos",
+      "Santo André",
+      "Sorocaba",
+      "São Bernardo do Campo",
+    ],
+    MG: ["Belo Horizonte", "Uberlândia", "Contagem", "Juiz de Fora"],
+    RJ: ["Rio de Janeiro", "Niterói", "Duque de Caxias", "Nova Iguaçu"],
+    PR: ["Curitiba", "Londrina", "Maringá", "Ponta Grossa"],
+    SC: ["Florianópolis", "Joinville", "Blumenau", "Chapecó"],
+    RS: ["Porto Alegre", "Caxias do Sul", "Pelotas", "Santa Maria"],
   },
 
   units: {
-    'São Paulo':          ['MI Brasil Centro', 'MI Brasil Paulista', 'MI Brasil Moema', 'MI Brasil Pinheiros'],
-    'Campinas':           ['MI Brasil Campinas Shopping', 'MI Brasil Campinas Norte'],
-    'Guarulhos':          ['MI Brasil Guarulhos Centro', 'MI Brasil Cumbica'],
-    'Santo André':        ['MI Brasil Santo André Plaza'],
-    'Sorocaba':           ['MI Brasil Sorocaba Shopping'],
-    'São Bernardo do Campo': ['MI Brasil SBC'],
-    'Belo Horizonte':     ['MI Brasil BH Centro', 'MI Brasil Savassi', 'MI Brasil Buritis'],
-    'Uberlândia':         ['MI Brasil Uberlândia Centro'],
-    'Contagem':           ['MI Brasil Contagem'],
-    'Juiz de Fora':       ['MI Brasil JF Shopping'],
-    'Rio de Janeiro':     ['MI Brasil Centro RJ', 'MI Brasil Barra da Tijuca', 'MI Brasil Tijuca'],
-    'Niterói':            ['MI Brasil Niterói Centro'],
-    'Duque de Caxias':    ['MI Brasil Duque de Caxias'],
-    'Nova Iguaçu':        ['MI Brasil Nova Iguaçu Shopping'],
-    'Curitiba':           ['MI Brasil Curitiba Centro', 'MI Brasil Água Verde', 'MI Brasil Batel'],
-    'Londrina':           ['MI Brasil Londrina Norte', 'MI Brasil Londrina Sul'],
-    'Maringá':            ['MI Brasil Maringá Shopping'],
-    'Ponta Grossa':       ['MI Brasil Ponta Grossa'],
-    'Florianópolis':      ['MI Brasil Floripa Centro', 'MI Brasil Beiramar'],
-    'Joinville':          ['MI Brasil Joinville Norte', 'MI Brasil Joinville Sul'],
-    'Blumenau':           ['MI Brasil Blumenau Centro'],
-    'Chapecó':            ['MI Brasil Chapecó'],
-    'Porto Alegre':       ['MI Brasil POA Centro', 'MI Brasil POA Moinhos', 'MI Brasil POA Sul'],
-    'Caxias do Sul':      ['MI Brasil Caxias Shopping'],
-    'Pelotas':            ['MI Brasil Pelotas'],
-    'Santa Maria':        ['MI Brasil Santa Maria Centro']
+    "São Paulo": [
+      "MI Brasil Centro",
+      "MI Brasil Paulista",
+      "MI Brasil Moema",
+      "MI Brasil Pinheiros",
+    ],
+    Campinas: ["MI Brasil Campinas Shopping", "MI Brasil Campinas Norte"],
+    Guarulhos: ["MI Brasil Guarulhos Centro", "MI Brasil Cumbica"],
+    "Santo André": ["MI Brasil Santo André Plaza"],
+    Sorocaba: ["MI Brasil Sorocaba Shopping"],
+    "São Bernardo do Campo": ["MI Brasil SBC"],
+    "Belo Horizonte": [
+      "MI Brasil BH Centro",
+      "MI Brasil Savassi",
+      "MI Brasil Buritis",
+    ],
+    Uberlândia: ["MI Brasil Uberlândia Centro"],
+    Contagem: ["MI Brasil Contagem"],
+    "Juiz de Fora": ["MI Brasil JF Shopping"],
+    "Rio de Janeiro": [
+      "MI Brasil Centro RJ",
+      "MI Brasil Barra da Tijuca",
+      "MI Brasil Tijuca",
+    ],
+    Niterói: ["MI Brasil Niterói Centro"],
+    "Duque de Caxias": ["MI Brasil Duque de Caxias"],
+    "Nova Iguaçu": ["MI Brasil Nova Iguaçu Shopping"],
+    Curitiba: [
+      "MI Brasil Curitiba Centro",
+      "MI Brasil Água Verde",
+      "MI Brasil Batel",
+    ],
+    Londrina: ["MI Brasil Londrina Norte", "MI Brasil Londrina Sul"],
+    Maringá: ["MI Brasil Maringá Shopping"],
+    "Ponta Grossa": ["MI Brasil Ponta Grossa"],
+    Florianópolis: ["MI Brasil Floripa Centro", "MI Brasil Beiramar"],
+    Joinville: ["MI Brasil Joinville Norte", "MI Brasil Joinville Sul"],
+    Blumenau: ["MI Brasil Blumenau Centro"],
+    Chapecó: ["MI Brasil Chapecó"],
+    "Porto Alegre": [
+      "MI Brasil POA Centro",
+      "MI Brasil POA Moinhos",
+      "MI Brasil POA Sul",
+    ],
+    "Caxias do Sul": ["MI Brasil Caxias Shopping"],
+    Pelotas: ["MI Brasil Pelotas"],
+    "Santa Maria": ["MI Brasil Santa Maria Centro"],
   },
 
   unitInfo: {
     default: {
-      hours:   'Segunda a Sábado: 9h às 21h | Domingo: 11h às 19h',
-      phone:   '0800 707 0000',
-      address: 'Consulte endereço completo no app ou site oficial.',
-      manager: 'Gerência disponível de segunda a sexta, das 9h às 18h.',
-      parking: 'Estacionamento gratuito por 2h com compra acima de R$ 50.'
-    }
+      hours: "Segunda a Sábado: 9h às 21h | Domingo: 11h às 19h",
+      phone: "0800 707 0000",
+      address: "Consulte endereço completo no app ou site oficial.",
+      manager: "Gerência disponível de segunda a sexta, das 9h às 18h.",
+      parking: "Estacionamento gratuito por 2h com compra acima de R$ 50.",
+    },
   },
 
   contacts: [
-    { icon: 'phone',   label: 'SAC',           value: '0800 707 0000',          desc: 'Gratuito · 24 horas por dia' },
-    { icon: 'chat',    label: 'Chat Online',    value: 'mibrasil.com.br/chat',   desc: 'Seg a Sáb, 8h às 20h' },
-    { icon: 'file',    label: 'E-mail',         value: 'sac@mibrasil.com.br',    desc: 'Resposta em até 48h úteis' },
-    { icon: 'shield',  label: 'Ouvidoria',      value: '0800 707 0001',          desc: 'Para casos não resolvidos pelo SAC' },
-    { icon: 'lock',    label: 'DPO / LGPD',     value: 'dpo@mibrasil.com.br',    desc: 'Proteção de dados pessoais' },
-    { icon: 'bell',    label: 'Emergências',    value: '190 · 192 · 193',        desc: 'Polícia · SAMU · Bombeiros' }
-  ]
+    {
+      icon: "phone",
+      label: "SAC",
+      value: "0800 707 0000",
+      desc: "Gratuito · 24 horas por dia",
+    },
+    {
+      icon: "chat",
+      label: "Chat Online",
+      value: "mibrasil.com.br/chat",
+      desc: "Seg a Sáb, 8h às 20h",
+    },
+    {
+      icon: "file",
+      label: "E-mail",
+      value: "sac@mibrasil.com.br",
+      desc: "Resposta em até 48h úteis",
+    },
+    {
+      icon: "shield",
+      label: "Ouvidoria",
+      value: "0800 707 0001",
+      desc: "Para casos não resolvidos pelo SAC",
+    },
+    {
+      icon: "lock",
+      label: "DPO / LGPD",
+      value: "dpo@mibrasil.com.br",
+      desc: "Proteção de dados pessoais",
+    },
+    {
+      icon: "bell",
+      label: "Emergências",
+      value: "190 · 192 · 193",
+      desc: "Polícia · SAMU · Bombeiros",
+    },
+  ],
 };
 
 /* ─────────────────────────────────────────
