@@ -15,17 +15,15 @@ const DATA = {
       title: "Atendimento e Informações Financeiras",
       color: "#002D72",
       icon: "bag",
-      description:
-        "Informações sobre atendimento ao cliente, trocas, devoluções e seus direitos nas compras.",
+      description: "Informações sobre atendimento ao cliente, trocas, devoluções e seus direitos nas compras.",
       modules: [
         {
           id: "trocas-devolucoes",
           icon: "refresh",
-          title: "•	AVISO DE REGRAS DE SEGURANÇA SOBRE TRANSAÇÕES FINANCEIRAS",
-          description:
-            "Políticas e procedimentos para trocas e devoluções de produtos.",
+          title: "Aviso de regras de segurança sobre transações financeiras",
+          description: "Aviso de Regras de Segurança",
           general: {
-            title: "Trocas e Devoluções – Informações Nacionais",
+            title: "Aviso de regras de segurança sobre transações financeiras",
             text: "Conheça as regras nacionais para trocas e devoluções de produtos em todas as nossas unidades, conforme o Código de Defesa do Consumidor.",
             items: [
               "Prazo de 7 dias para desistência (compras online)",
@@ -162,8 +160,7 @@ const DATA = {
           id: "cookies",
           icon: "wifi",
           title: "Cookies e Rastreamento",
-          description:
-            "Como utilizamos cookies em nossas plataformas digitais.",
+          description: "Como utilizamos cookies em nossas plataformas digitais.",
           general: {
             title: "Política de Cookies",
             text: "Utilizamos cookies para melhorar sua experiência de navegação e personalizar conteúdos e ofertas.",
@@ -198,8 +195,7 @@ const DATA = {
       title: "Atendimento Prioritário",
       color: "#9B59B6",
       icon: "user",
-      description:
-        "Regras e legislações que garantem atendimento preferencial a pessoas com necessidades especiais.",
+      description: "Regras e legislações que garantem atendimento preferencial a pessoas com necessidades especiais.",
       modules: [
         {
           id: "quem-tem-direito",
@@ -289,8 +285,7 @@ const DATA = {
       title: "Outras Informações",
       color: "#78909C",
       icon: "plus-circle",
-      description:
-        "Informações gerais sobre serviços, comodidades e canais da loja.",
+      description: "Informações gerais sobre serviços, comodidades e canais da loja.",
       modules: [
         {
           id: "nota-fiscal",
@@ -424,8 +419,7 @@ const DATA = {
         },
       ],
       procon: "PROCON-SP: 151 | www.procon.sp.gov.br",
-      extra:
-        "Município de São Paulo: Lei Municipal nº 14.485/2007 – Dispõe sobre o atendimento preferencial às pessoas que especifica.",
+      extra: "Município de São Paulo: Lei Municipal nº 14.485/2007 – Dispõe sobre o atendimento preferencial às pessoas que especifica.",
     },
     MG: {
       name: "Estado de Minas Gerais",
