@@ -767,6 +767,11 @@ function openTheme(themeId) {
   if (!theme) return;
   State.currentThemeId = themeId;
 
+  if (themeId === 'atendimento-prioritario') {
+    navigateTo('atendimento-prioritario');
+    return;
+  }
+
   // Header color
   $('theme-header').style.background = theme.color;
 
@@ -1153,6 +1158,7 @@ function bindEvents() {
   $('content-back-btn').addEventListener('click', goBack);
   $('contact-back-btn').addEventListener('click', goBack);
   $('about-back-btn').addEventListener('click', goBack);
+  $('atendimento-back-btn').addEventListener('click', goBack);
 
   // Tabs
   document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -1202,6 +1208,78 @@ function bindEvents() {
 
   // Filter select
   $('filter-select').addEventListener('change', performSearch);
+
+  // Atendimento Prioritario Logic
+  function toggleElemento(el) {
+      const content = el.nextElementSibling;
+      const seta = el.querySelector('.seta');
+      const expanded = el.getAttribute('aria-expanded') === 'true';
+      content.style.display = expanded ? 'none' : 'block';
+      el.setAttribute('aria-expanded', !expanded);
+      seta.classList.toggle('ativa', !expanded);
+  }
+
+  function aplicarListenersAtendimento() {
+      document.querySelectorAll('#estadosContainerAtendimento .estados-question, #estadosContainerAtendimento .cidade-question').forEach(el => {
+          el.onclick = () => toggleElemento(el);
+          el.onkeydown = (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  toggleElemento(el);
+              }
+          };
+      });
+  }
+
+  aplicarListenersAtendimento();
+
+  const searchAtendimento = $('searchInputAtendimento');
+  if (searchAtendimento) {
+      searchAtendimento.addEventListener('input', () => {
+          const termo = searchAtendimento.value.toLowerCase().trim();
+          const estados = document.querySelectorAll('#estadosContainerAtendimento .estados-item');
+
+          if (termo === '') {
+              estados.forEach(estado => {
+                  estado.style.display = 'block';
+                  const estadoQuestion = estado.querySelector('.estados-question');
+                  const estadoAnswer = estado.querySelector('.estados-answer');
+                  const seta = estadoQuestion.querySelector('.seta');
+
+                  estadoAnswer.style.display = 'none';
+                  estadoQuestion.setAttribute('aria-expanded', false);
+                  if(seta) seta.classList.remove('ativa');
+
+                  estado.querySelectorAll('.cidade').forEach(cidade => {
+                      cidade.style.display = 'block';
+                  });
+              });
+          } else {
+              estados.forEach(estado => {
+                  const nomeEstado = estado.dataset.estado.toLowerCase();
+                  const cidades = estado.querySelectorAll('.cidade');
+                  let estadoVisivel = false;
+
+                  cidades.forEach(cidade => {
+                      const nomeCidade = cidade.dataset.cidade.toLowerCase();
+                      const corresponde = nomeCidade.includes(termo) || nomeEstado.includes(termo);
+                      cidade.style.display = corresponde ? 'block' : 'none';
+                      if (corresponde) estadoVisivel = true;
+                  });
+
+                  estado.style.display = estadoVisivel ? 'block' : 'none';
+                  const estadoQuestion = estado.querySelector('.estados-question');
+                  const estadoAnswer = estado.querySelector('.estados-answer');
+                  const seta = estadoQuestion.querySelector('.seta');
+
+                  estadoAnswer.style.display = estadoVisivel ? 'block' : 'none';
+                  estadoQuestion.setAttribute('aria-expanded', estadoVisivel);
+                  if(seta) seta.classList.toggle('ativa', estadoVisivel);
+              });
+          }
+          aplicarListenersAtendimento();
+      });
+  }
 
   // Keyboard: Escape closes drawer
   document.addEventListener('keydown', e => {

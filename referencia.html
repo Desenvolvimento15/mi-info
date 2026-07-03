@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atendimento Preferencial</title>
+    <style>
+        :root {
+            --cor-estado: #ff6900;
+            --cor-cidade: #d6d6d6;
+            --cor-texto-claro: #fff;
+            --cor-fundo: #f9f9f9;
+            --cor-texto: #333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--cor-fundo);
+            color: var(--cor-texto);
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        h1 {
+            color: var(--cor-estado);
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 10px auto 30px auto;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .intro img {
+            width: 100%;
+            max-width: 25rem;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            text-align: center;
+        }
+
+
+        .search-wrapper {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            position: relative;
+        }
+
+        .search-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 10px;
+            pointer-events: none;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 10px 10px 10px 40px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #fff;
+            height: 1.7rem;
+        }
+
+        #searchInput:focus {
+            border-color: #ff6900;
+            outline: none;
+        }
+
+        /* Acessibilidade extra */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        ul.pref-list {
+            margin: 0 0 16px 1.1rem;
+            padding: 0;
+            list-style-position: inside
+        }
+
+        ul.pref-list li {
+            margin: 10px 0;
+            line-height: 1.45;
+            text-align: center;
+        }
+
+        ul.pref-list li .small {
+            color: var(--muted);
+            font-size: 0.95rem
+        }
+
+
+        .estados-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+
+        .estados-item {
+            display: block;
+            /* oculta todos os estados inicialmente */
+        }
+
+        .estados-item {
+            background: #fff;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .estados-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--cor-texto-claro);
+        }
+
+        .cidade-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--cor-texto);
+        }
+
+
+
+
+        .estados-question {
+            background-color: var(--cor-estado);
+        }
+
+        .cidade-question {
+            background-color: var(--cor-cidade);
+        }
+
+        .estados-answer,
+        .cidade-answer {
+            display: none;
+            padding: 10px 15px;
+        }
+
+        .cidade {
+            border: 1px solid #eee;
+            border-radius: 6px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .cidade img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .galeria-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .galeria-imagens {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .galeria-imagem {
+            width: 100%;
+            flex-shrink: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .galeria-imagem.ativa {
+            opacity: 1;
+            position: relative;
+        }
+
+        .galeria-navegacao {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .galeria-botao {
+            background-color: var(--cor-estado);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .galeria-botao:hover {
+            background-color: #e05c00;
+        }
+
+        .galeria-contador {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .seta {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .seta.ativa {
+            transform: rotate(90deg);
+        }
+
+        .estados-question,
+        .cidade-question {
+            outline: none;
+        }
+
+        .estados-question[role="button"],
+        .cidade-question[role="button"] {
+            user-select: none;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .intro {
+                font-size: 0.95rem;
+            }
+
+            .estados-question,
+            .cidade-question {
+                padding: 12px;
+                font-size: 1rem;
+            }
+
+            .search-container input {
+                font-size: 0.95rem;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Atendimento Preferencial</h1>
+    <div class="intro">
+        Nesta página, os Clientes das lojas XIAOMI STORE encontrarão informações sobre <strong>Atendimento Preferencial
+            e Prioritário.</strong>
+        <br>
+        <strong>Atendimento Preferencial</strong> e Prioritário de acordo com a Lei Federal nº 10.048/2000:
+        <ul class="pref-list" aria-describedby="desc-list">
+            <li>Pessoas com deficiência;</li>
+            <li>Pessoas com transtorno do espectro autista;</li>
+            <li>Pessoas idosas com idade igual ou superior a 60 (sessenta) anos;</li>
+            <li>As gestantes e as lactantes;</li>
+            <li>Pessoas com criança de colo;</li>
+            <li>Pessoas obesas;</li>
+            <li>Pessoas com mobilidade reduzida;</li>
+            <li>Doadores de sangue, mediante apresentação de comprovante de doação, com validade de 120 (cento e vinte)
+                dias.
+            </li>
+        </ul>
+
+        Seguem abaixo outras condições de <Strong>Atendimento Preferencial e Prioritário</Strong> de acordo leis
+        específicas de Estados e
+        Municípios. Verifique as informações referentes à localidade (estado/cidade) da loja em que está sendo atendido
+        e, caso
+        faça parte de algum grupo preferencial / prioritário, informe sua condição ao vendedor.
+    </div>
+
+    <div class="search-wrapper" role="search">
+        <label for="searchInput" class="visually-hidden">Buscar cidade ou estado</label>
+        <div class="search-container">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill="#888"
+                    d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.17 5.59 12.53 3 9.25 3S3.33 5.59 3.09 8.89a6.51 6.51 0 0011.28 4.49l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.25 14C6.9 14 5 12.1 5 9.75S6.9 5.5 9.25 5.5 13.5 7.4 13.5 9.75 11.6 14 9.25 14z" />
+            </svg>
+            <input type="text" id="searchInput" placeholder="Buscar cidade ou estado..."
+                aria-label="Buscar cidade ou estado">
+        </div>
+    </div>
+
+
+
+    <div class="estados-container" id="estadosContainer">
+
+        <div class="estados-item" data-estado="alagoas">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Alagoas (AL)<span
+                    class="seta">▶</span></div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Maceio al">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Maceió<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/al/atendimento_preferencial_AL.png"
+                            alt="Placa de Atendimento Preferencial em Alagoas - Indica prioridade para idosos, gestantes, pessoas com deficiência, pessoas com crianças de colo e pessoas com mobilidade reduzida">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="estados-item" data-estado="Bahia BA">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Bahia (BA)<span
+                    class="seta">▶</span></div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Bahia">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Bahia<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/ba/atendimento_preferencial_BA.png"
+                            alt="Placa de Atendimento Preferencial em Bahia - Contém símbolos visuais representando idosos, gestantes, pessoas com deficiência e pessoas com crianças de colo">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="estados-item" data-estado="Ceará CE">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Ceará (CE)<span
+                    class="seta">▶</span>
+            </div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Ceará">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Ceará<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/ce/atendimento_preferencial_CE.png"
+                            alt="Placa de Atendimento Preferencial em Ceará - Sinalização com texto e ícones indicando atendimento prioritário conforme Lei Federal nº 10.048">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="estados-item" data-estado="Distrito Federal DF">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Distrito Federal (DF)<span
+                    class="seta">▶</span>
+            </div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Distrito Federal">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Distrito Federal<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/df/ambiente_filmado_DF.png"
+                            alt="Aviso de ambiente sendo filmado no Distrito Federal - Sinalização informando que o local está sob monitoramento por câmeras de segurança">
+                        <img src="./img/estados/df/sonegar_crime_DF.png"
+                            alt="Aviso de que sonegar é crime no Distrito Federal - Placa informativa sobre a obrigatoriedade de emissão de nota fiscal conforme legislação">
+                        <img src="./img/estados/df/proibido_fumar_DF.gif"
+                            alt="Sinalização de proibido fumar no Distrito Federal - Símbolo internacional com cigarro riscado indicando ambiente livre de tabaco conforme Lei Antifumo">
+                        <img src="./img/estados/df/proibido_capacete_DF.png"
+                            alt="Aviso de proibido uso de capacete dentro do estabelecimento no Distrito Federal - Medida de segurança para identificação visual dos clientes">
+                        <img src="./img/estados/df/proibido_discriminacao_DF.png"
+                            alt="Aviso contra discriminação no Distrito Federal - Placa informando que discriminação é crime conforme Lei Distrital, com penalidades previstas">
+                        <img src="./img/estados/df/proibido_sacolas_DF.png"
+                            alt="Aviso sobre proibição de sacolas plásticas no Distrito Federal - Informação sobre a Lei Distrital que proíbe o fornecimento de sacolas plásticas convencionais em estabelecimentos comerciais">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="estados-item" data-estado="Espirito Santo ES">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Espirito Santo (ES)<span
+                    class="seta">▶</span>
+            </div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Espirito">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Espirito Santo<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/es/ambiente_filmado_ES.png"
+                            alt="Aviso de ambiente sendo filmado no Espírito Santo - Sinalização informando que o local está sob monitoramento por câmeras de segurança conforme legislação estadual">
+                        <img src="./img/estados/es/procon_ES.png"
+                            alt="Informações de contato do Procon do Espírito Santo - Placa com telefone, endereço e canais de atendimento para defesa do consumidor">
+                        <img src="./img/estados/es/proibido_fumar_ES.gif"
+                            alt="Sinalização de proibido fumar no Espírito Santo - Símbolo internacional com cigarro riscado indicando ambiente livre de tabaco conforme Lei Estadual">
+                        <img src="./img/estados/es/proibido_capacete_ES.webp"
+                            alt="Aviso de proibido uso de capacete dentro do estabelecimento no Espírito Santo - Medida de segurança para identificação visual dos clientes em estabelecimentos comerciais">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="estados-item" data-estado="Maranhao MA">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Maranhão (MA)<span
+                    class="seta">▶</span></div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Sao Luiz">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">São Luís<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/ma/atendimento_preferencial_MA.png"
+                            alt="Placa de Atendimento Preferencial no Maranhão - Sinalização oficial com símbolos e texto indicando prioridade para idosos, gestantes, pessoas com deficiência e pessoas com crianças de colo">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="estados-item" data-estado="Mato Grosso do Sul MT">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Mato Grosso do Sul (MT)<span
+                    class="seta">▶</span></div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Campo Grande">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Campo Grande<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/mt/atendimento_prioritario_MT.png"
+                            alt="Placa de Atendimento Prioritário em Mato Grosso - Sinalização com símbolos e texto indicando atendimento preferencial para idosos, gestantes, pessoas com deficiência e pessoas com crianças de colo conforme legislação">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="estados-item" data-estado="Minas Gerais MG">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Minas Gerais (MG)<span
+                    class="seta">▶</span></div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Belo Horizonte">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Belo Horizonte<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/mg/atendimento_prioritario_MG.png"
+                            alt="Placa de Atendimento Prioritário em Belo Horizonte, Minas Gerais - Sinalização oficial com símbolos e texto indicando atendimento preferencial para idosos, gestantes, pessoas com deficiência e pessoas com mobilidade reduzida">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="estados-item" data-estado="Para PA">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Pará (PA)<span
+                    class="seta">▶</span></div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Para">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Pará<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/pa/atendimento_preferencial_PA.png"
+                            alt="Placa de Atendimento Preferencial no Pará - Sinalização com símbolos e texto indicando prioridade no atendimento para idosos, gestantes, pessoas com deficiência e pessoas com crianças de colo">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="estados-item" data-estado="Paraiba PB">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Paraíba (PB)<span
+                    class="seta">▶</span>
+            </div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Paraiba">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Paríba<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/pb/1. Atendimento Prioritário.jpg"
+                            alt="Placa de Atendimento Preferencial na Paraíba - Sinalização oficial com símbolos e texto indicando atendimento prioritário para idosos, gestantes, pessoas com deficiência, pessoas com crianças de colo e pessoas com mobilidade reduzida">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="estados-item" data-estado="Paraiba PE">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Pernambuco (PE)<span
+                    class="seta">▶</span>
+            </div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Pernambuco">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Pernambuco<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/pe/atendimento_preferencial_PE.png"
+                            alt="Placa de Atendimento Preferencial em Pernambuco - Sinalização oficial com símbolos e texto indicando prioridade para idosos, gestantes, pessoas com deficiência e pessoas com crianças de colo">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="estados-item" data-estado="Piauí PI">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Piauí (PI)<span
+                    class="seta">▶</span>
+            </div>
+            <div class="estados-answer">
+
+                <div class="cidade" data-cidade="Piuai">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Piauí<span
+                            class="seta">▶</span>
+                    </div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/pi/atendimento_preferencial_PI.png"
+                            alt="Placa de Atendimento Preferencial no Piauí - Sinalização com símbolos e texto indicando atendimento prioritário para idosos, gestantes, pessoas com deficiência e pessoas com mobilidade reduzida">
+                    </div>
+                </div>
+
+
+                <div class="cidade" data-cidade="Teresina">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Teresina<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/pi/atendimento_preferencial_PI.png"
+                            alt="Placa de Atendimento Preferencial em Teresina, Piauí - Sinalização oficial com símbolos e texto indicando prioridade no atendimento conforme legislação">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="estados-item" data-estado="Rio de Janeiro RJ">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Rio de Janeiro (RJ) <span
+                    class="seta">▶</span></div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="Rio de Janeiro">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Rio de Janeiro<span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/rj/atendimento_preferencial_RJ.png"
+                            alt="Placa de Atendimento Preferencial no Rio de Janeiro - Sinalização oficial com símbolos e texto indicando prioridade para idosos, gestantes, pessoas com deficiência, pessoas com crianças de colo e pessoas com mobilidade reduzida">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="estados-item" data-estado="São paulo SP">
+            <div class="estados-question" tabindex="0" role="button" aria-expanded="false">São Paulo (SP) <span
+                    class="seta">▶</span></div>
+            <div class="estados-answer">
+                <div class="cidade" data-cidade="barueri">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Barueri <span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/sp/atendimento_prioritario_SP.png"
+                            alt="Placa de Atendimento Prioritário em Barueri, São Paulo - Sinalização oficial com símbolos e texto indicando atendimento preferencial para idosos, gestantes, pessoas com deficiência e pessoas com crianças de colo">
+                    </div>
+                </div>
+                <div class="cidade" data-cidade="campinas">
+                    <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Campinas <span
+                            class="seta">▶</span></div>
+                    <div class="cidade-answer">
+                        <img src="./img/estados/sp/atendimento_prioritario_SP.jpg"
+                            alt="Placa de Atendimento Prioritário em Campinas, São Paulo - Sinalização com símbolos e texto indicando atendimento preferencial para idosos, gestantes, pessoas com deficiência, pessoas com crianças de colo e pessoas com mobilidade reduzida">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        function toggleElemento(el) {
+            const content = el.nextElementSibling;
+            const seta = el.querySelector('.seta');
+            const expanded = el.getAttribute('aria-expanded') === 'true';
+            content.style.display = expanded ? 'none' : 'block';
+            el.setAttribute('aria-expanded', !expanded);
+            seta.classList.toggle('ativa', !expanded);
+
+            // Inicializar galerias quando um elemento é expandido
+            if (!expanded) {
+                const galerias = content.querySelectorAll('.galeria-container');
+                galerias.forEach(inicializarGaleria);
+            }
+        }
+
+        // Função para converter elementos de imagem em galerias
+        function converterParaGaleria() {
+            document.querySelectorAll('.cidade-answer').forEach(resposta => {
+                const imagens = resposta.querySelectorAll('img');
+
+                // Só criar galeria se houver mais de uma imagem
+                if (imagens.length > 1) {
+                    // Criar container da galeria
+                    const galeriaContainer = document.createElement('div');
+                    galeriaContainer.className = 'galeria-container';
+
+                    // Criar container das imagens
+                    const galeriaImagens = document.createElement('div');
+                    galeriaImagens.className = 'galeria-imagens';
+
+                    // Adicionar imagens à galeria
+                    imagens.forEach((img, index) => {
+                        const galeriaImagem = document.createElement('div');
+                        galeriaImagem.className = 'galeria-imagem' + (index === 0 ? ' ativa' : '');
+                        galeriaImagem.appendChild(img.cloneNode(true));
+                        galeriaImagens.appendChild(galeriaImagem);
+                    });
+
+                    // Criar navegação
+                    const galeriaNavegacao = document.createElement('div');
+                    galeriaNavegacao.className = 'galeria-navegacao';
+
+                    const botaoAnterior = document.createElement('button');
+                    botaoAnterior.className = 'galeria-botao';
+                    botaoAnterior.textContent = '← Anterior';
+                    botaoAnterior.setAttribute('aria-label', 'Imagem anterior');
+
+                    const botaoProximo = document.createElement('button');
+                    botaoProximo.className = 'galeria-botao';
+                    botaoProximo.textContent = 'Próxima →';
+                    botaoProximo.setAttribute('aria-label', 'Próxima imagem');
+
+                    galeriaNavegacao.appendChild(botaoAnterior);
+                    galeriaNavegacao.appendChild(botaoProximo);
+
+                    // Criar contador
+                    const galeriaContador = document.createElement('div');
+                    galeriaContador.className = 'galeria-contador';
+                    galeriaContador.textContent = `Imagem 1 de ${imagens.length}`;
+
+                    // Montar galeria
+                    galeriaContainer.appendChild(galeriaImagens);
+                    galeriaContainer.appendChild(galeriaNavegacao);
+                    galeriaContainer.appendChild(galeriaContador);
+
+                    // Substituir imagens pela galeria
+                    imagens.forEach(img => img.remove());
+                    resposta.appendChild(galeriaContainer);
+
+                    // Inicializar galeria
+                    inicializarGaleria(galeriaContainer);
+                }
+            });
+        }
+
+        // Inicializar funcionalidade da galeria
+        function inicializarGaleria(galeria) {
+            const imagens = galeria.querySelectorAll('.galeria-imagem');
+            const botaoAnterior = galeria.querySelector('.galeria-botao:first-child');
+            const botaoProximo = galeria.querySelector('.galeria-botao:last-child');
+            const contador = galeria.querySelector('.galeria-contador');
+            let indiceAtual = 0;
+
+            // Função para mostrar imagem específica
+            function mostrarImagem(indice) {
+                // Remover classe ativa de todas as imagens
+                imagens.forEach(img => img.classList.remove('ativa'));
+
+                // Adicionar classe ativa à imagem atual
+                imagens[indice].classList.add('ativa');
+
+                // Atualizar contador
+                contador.textContent = `Imagem ${indice + 1} de ${imagens.length}`;
+            }
+
+            // Evento para botão anterior
+            botaoAnterior.addEventListener('click', () => {
+                indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+                mostrarImagem(indiceAtual);
+            });
+
+            // Evento para botão próximo
+            botaoProximo.addEventListener('click', () => {
+                indiceAtual = (indiceAtual + 1) % imagens.length;
+                mostrarImagem(indiceAtual);
+            });
+        }
+
+        function aplicarListeners() {
+            document.querySelectorAll('.estados-question, .cidade-question').forEach(el => {
+                el.onclick = () => toggleElemento(el);
+                el.onkeydown = (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleElemento(el);
+                    }
+                };
+            });
+        }
+
+
+        // Deixa todos os estados visíveis inicialmente (mas com cidades ocultas)
+        document.querySelectorAll('.estados-item').forEach(estado => {
+            estado.style.display = 'block';
+        });
+
+        // Executa busca e mostra/oculta os itens
+        document.getElementById('searchInput').addEventListener('input', () => {
+            const termo = document.getElementById('searchInput').value.toLowerCase().trim();
+            const estados = document.querySelectorAll('.estados-item');
+
+            if (termo === '') {
+                // Limpar busca: recolher tudo
+                estados.forEach(estado => {
+                    estado.style.display = 'block';
+                    const estadoQuestion = estado.querySelector('.estados-question');
+                    const estadoAnswer = estado.querySelector('.estados-answer');
+                    const seta = estadoQuestion.querySelector('.seta');
+
+                    estadoAnswer.style.display = 'none';
+                    estadoQuestion.setAttribute('aria-expanded', false);
+                    seta.classList.remove('ativa');
+
+                    // Oculta todas as cidades
+                    estado.querySelectorAll('.cidade').forEach(cidade => {
+                        cidade.style.display = 'block';
+                    });
+                });
+
+            } else {
+                estados.forEach(estado => {
+                    const nomeEstado = estado.dataset.estado.toLowerCase();
+                    const cidades = estado.querySelectorAll('.cidade');
+                    let estadoVisivel = false;
+
+                    cidades.forEach(cidade => {
+                        const nomeCidade = cidade.dataset.cidade.toLowerCase();
+                        const corresponde = nomeCidade.includes(termo) || nomeEstado.includes(termo);
+                        cidade.style.display = corresponde ? 'block' : 'none';
+                        if (corresponde) estadoVisivel = true;
+                    });
+
+                    estado.style.display = estadoVisivel ? 'block' : 'none';
+                    const estadoQuestion = estado.querySelector('.estados-question');
+                    const estadoAnswer = estado.querySelector('.estados-answer');
+                    const seta = estadoQuestion.querySelector('.seta');
+
+                    estadoAnswer.style.display = estadoVisivel ? 'block' : 'none';
+                    estadoQuestion.setAttribute('aria-expanded', estadoVisivel);
+                    seta.classList.toggle('ativa', estadoVisivel);
+                });
+            }
+
+            aplicarListeners(); // Garante que os listeners estejam ativos após busca
+            converterParaGaleria();
+        });
+
+        aplicarListeners();
+    </script>
+
+</body>
+
+</html>

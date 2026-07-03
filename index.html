@@ -299,6 +299,249 @@
     </div>
 
     <!-- ══════════════════════════════════════
+         TELA 3.5 – ATENDIMENTO PRIORITÁRIO
+    ══════════════════════════════════════ -->
+    <div id="screen-atendimento-prioritario" class="screen" role="main" aria-label="Atendimento Prioritário">
+      <header class="app-header sub-header" style="background: #9B59B6">
+        <button class="btn-back" id="atendimento-back-btn" aria-label="Voltar">
+          <svg><use href="#icon-arrow-left"/></svg>
+          <span>Voltar</span>
+        </button>
+      </header>
+
+      <div class="screen-scroll">
+        <div class="content-hero">
+          <div class="content-hero-icon" style="background: #9B59B6">
+            <svg><use href="#icon-user"/></svg>
+          </div>
+          <div>
+            <h1 class="content-hero-title">Atendimento Preferencial</h1>
+            <p class="content-hero-desc">Regras e legislações que garantem atendimento preferencial a pessoas com necessidades especiais.</p>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <div class="intro">
+            Nesta página, os Clientes das lojas XIAOMI STORE encontrarão informações sobre <strong>Atendimento Preferencial e Prioritário.</strong>
+            <br><br>
+            <strong>Atendimento Preferencial</strong> e Prioritário de acordo com a Lei Federal nº 10.048/2000:
+            <ul class="pref-list" aria-describedby="desc-list">
+                <li>Pessoas com deficiência;</li>
+                <li>Pessoas com transtorno do espectro autista;</li>
+                <li>Pessoas idosas com idade igual ou superior a 60 (sessenta) anos;</li>
+                <li>As gestantes e as lactantes;</li>
+                <li>Pessoas com criança de colo;</li>
+                <li>Pessoas obesas;</li>
+                <li>Pessoas com mobilidade reduzida;</li>
+                <li>Doadores de sangue, mediante apresentação de comprovante de doação, com validade de 120 (cento e vinte) dias.</li>
+            </ul>
+            Seguem abaixo outras condições de <strong>Atendimento Preferencial e Prioritário</strong> de acordo leis específicas de Estados e Municípios. Verifique as informações referentes à localidade (estado/cidade) da loja em que está sendo atendido e, caso faça parte de algum grupo preferencial / prioritário, informe sua condição ao vendedor.
+          </div>
+        </div>
+
+        <div class="search-wrapper" role="search" style="margin-top:12px; margin-bottom:12px; position: relative;">
+            <label for="searchInputAtendimento" class="visually-hidden">Buscar cidade ou estado</label>
+            <div class="search-container" style="position: relative; display: flex; align-items: center;">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 20px; height: 20px; position: absolute; left: 10px; pointer-events: none;">
+                    <path fill="#888" d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.17 5.59 12.53 3 9.25 3S3.33 5.59 3.09 8.89a6.51 6.51 0 0011.28 4.49l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.25 14C6.9 14 5 12.1 5 9.75S6.9 5.5 9.25 5.5 13.5 7.4 13.5 9.75 11.6 14 9.25 14z" />
+                </svg>
+                <input type="text" id="searchInputAtendimento" placeholder="Buscar cidade ou estado..." aria-label="Buscar cidade ou estado" style="width: 100%; padding: 10px 10px 10px 40px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background-color: #fff;">
+            </div>
+        </div>
+
+        <div class="estados-container" id="estadosContainerAtendimento">
+            <div class="estados-item" data-estado="alagoas">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Alagoas (AL)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Maceio al">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Maceió<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/al/atendimento_preferencial_AL.png" alt="Placa de Atendimento Preferencial em Alagoas">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Bahia BA">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Bahia (BA)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Bahia">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Bahia<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/ba/atendimento_preferencial_BA.png" alt="Placa de Atendimento Preferencial em Bahia">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Ceará CE">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Ceará (CE)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Ceará">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Ceará<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/ce/atendimento_preferencial_CE.png" alt="Placa de Atendimento Preferencial em Ceará">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Distrito Federal DF">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Distrito Federal (DF)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Distrito Federal">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Distrito Federal<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/df/ambiente_filmado_DF.png" alt="Aviso de ambiente sendo filmado no Distrito Federal">
+                            <img src="./img/estados/df/sonegar_crime_DF.png" alt="Aviso de que sonegar é crime no Distrito Federal">
+                            <img src="./img/estados/df/proibido_fumar_DF.gif" alt="Sinalização de proibido fumar no Distrito Federal">
+                            <img src="./img/estados/df/proibido_capacete_DF.png" alt="Aviso de proibido uso de capacete dentro do estabelecimento no Distrito Federal">
+                            <img src="./img/estados/df/proibido_discriminacao_DF.png" alt="Aviso contra discriminação no Distrito Federal">
+                            <img src="./img/estados/df/proibido_sacolas_DF.png" alt="Aviso sobre proibição de sacolas plásticas no Distrito Federal">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Espirito Santo ES">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Espirito Santo (ES)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Espirito">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Espirito Santo<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/es/ambiente_filmado_ES.png" alt="Aviso de ambiente sendo filmado no Espírito Santo">
+                            <img src="./img/estados/es/procon_ES.png" alt="Informações de contato do Procon do Espírito Santo">
+                            <img src="./img/estados/es/proibido_fumar_ES.gif" alt="Sinalização de proibido fumar no Espírito Santo">
+                            <img src="./img/estados/es/proibido_capacete_ES.webp" alt="Aviso de proibido uso de capacete dentro do estabelecimento no Espírito Santo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Maranhao MA">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Maranhão (MA)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Sao Luiz">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">São Luís<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/ma/atendimento_preferencial_MA.png" alt="Placa de Atendimento Preferencial no Maranhão">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Mato Grosso do Sul MT">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Mato Grosso do Sul (MT)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Campo Grande">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Campo Grande<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/mt/atendimento_prioritario_MT.png" alt="Placa de Atendimento Prioritário em Mato Grosso">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Minas Gerais MG">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Minas Gerais (MG)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Belo Horizonte">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Belo Horizonte<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/mg/atendimento_prioritario_MG.png" alt="Placa de Atendimento Prioritário em Belo Horizonte">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Para PA">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Pará (PA)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Para">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Pará<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/pa/atendimento_preferencial_PA.png" alt="Placa de Atendimento Preferencial no Pará">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Paraiba PB">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Paraíba (PB)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Paraiba">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Paríba<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/pb/1. Atendimento Prioritário.jpg" alt="Placa de Atendimento Preferencial na Paraíba">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Paraiba PE">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Pernambuco (PE)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Pernambuco">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Pernambuco<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/pe/atendimento_preferencial_PE.png" alt="Placa de Atendimento Preferencial em Pernambuco">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Piauí PI">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Piauí (PI)<span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Piuai">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Piauí<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/pi/atendimento_preferencial_PI.png" alt="Placa de Atendimento Preferencial no Piauí">
+                        </div>
+                    </div>
+                    <div class="cidade" data-cidade="Teresina">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Teresina<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/pi/atendimento_preferencial_PI.png" alt="Placa de Atendimento Preferencial em Teresina">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="Rio de Janeiro RJ">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Rio de Janeiro (RJ) <span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="Rio de Janeiro">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Rio de Janeiro<span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/rj/atendimento_preferencial_RJ.png" alt="Placa de Atendimento Preferencial no Rio de Janeiro">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estados-item" data-estado="São paulo SP">
+                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">São Paulo (SP) <span class="seta">▶</span></div>
+                <div class="estados-answer">
+                    <div class="cidade" data-cidade="barueri">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Barueri <span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/sp/atendimento_prioritario_SP.png" alt="Placa de Atendimento Prioritário em Barueri">
+                        </div>
+                    </div>
+                    <div class="cidade" data-cidade="campinas">
+                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Campinas <span class="seta">▶</span></div>
+                        <div class="cidade-answer">
+                            <img src="./img/estados/sp/atendimento_prioritario_SP.jpg" alt="Placa de Atendimento Prioritário em Campinas">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
          TELA 4 – BUSCA
     ══════════════════════════════════════ -->
     <div id="screen-search" class="screen" role="main" aria-label="Busca">
