@@ -79,14 +79,12 @@ const DATA = {
           general: {
             title: "Código de Defesa do Consumidor",
             customHtml: `
-<div class="privacy-policy">
-    <h1>Exemplar do Código de Defesa do Consumidor</h1>
-    <p>O Código de Defesa do Consumidor (CDC) – Lei nº 8.078, de 11 de setembro de 1990 – estabelece normas de proteção e defesa nas relações de consumo, com o objetivo de assegurar o respeito à dignidade, saúde e segurança do consumidor.</p>
-    <ul>
-        <li><strong>Disponibilidade em Loja:</strong> Em cumprimento à lei, um exemplar físico e atualizado do CDC está disponível para consulta em todas as nossas lojas. Solicite a um de nossos colaboradores caso deseje acessá-lo.</li>
-        <li><strong>Garantias e Direitos:</strong> O CDC garante proteção contra práticas abusivas ou enganosas, estabelecendo regras claras e prazos legais para trocas, devoluções e garantias de produtos e serviços.</li>
-        <li><strong>Informação Clara:</strong> A lei assegura o acesso claro e adequado às informações sobre os produtos e serviços que oferecemos, incluindo composição, preço, garantia e riscos.</li>
-    </ul>
+<div class="privacy-policy" style="text-align: center; padding: 40px 20px;">
+    <h1 style="text-align: center;">Exemplar do Código de Defesa do Consumidor</h1>
+    <p style="margin-bottom: 30px; font-size: 1rem; color: var(--color-text-muted);">Clique no botão abaixo para acessar a versão digital e atualizada do Código de Defesa do Consumidor (CDC) diretamente do portal do Governo Federal.</p>
+    <a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #002D72, #001f52); color: #fff; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.2s;">
+        Acessar o Código de Defesa do Consumidor
+    </a>
 </div>
             `,
           },
