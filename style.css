@@ -1516,7 +1516,14 @@ ul.pref-list li {
 }
 
 .privacy-policy ul {
-    margin-left: 20px;
+    list-style-type: disc;
+    margin-left: 25px;
+    margin-bottom: 16px;
+}
+
+.privacy-policy ol {
+    list-style-type: decimal;
+    margin-left: 25px;
     margin-bottom: 16px;
 }
 

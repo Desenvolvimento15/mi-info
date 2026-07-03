@@ -24,13 +24,30 @@ const DATA = {
           description: "Informações e orientações de segurança para transações financeiras.",
           general: {
             title: "Regras de Segurança",
-            text: "Siga nossas orientações para garantir a segurança em todas as suas transações financeiras nas nossas unidades.",
-            items: [
-              "Nunca compartilhe suas senhas com terceiros",
-              "Verifique sempre o valor antes de confirmar o pagamento",
-              "Não permita que seu cartão seja levado para longe da sua vista",
-              "Utilize apenas os nossos canais oficiais de pagamento"
-            ],
+            customHtml: `
+<div class="privacy-policy">
+    <h1>AVISO DE REGRAS DE SEGURANÇA SOBRE TRANSAÇÕES FINANCEIRAS</h1>
+    <p><strong>Rede de Lojas MiBrasil</strong><br>Última atualização: abril de 2026 (v.1)</p>
+    <p>A Rede de Lojas Mibrasil é comprometida com a proteção da segurança financeira das Lojas e dos seus CLIENTES, possuindo rígidas políticas internas a serem seguidas pelos seus colaboradores / prestadores de serviços, visando a prevenção a fraudes e a preservação da excelência de atendimento, tudo em observância às legislações aplicáveis e princípios de conduta ética.</p>
+    <p>Este AVISO contém informações sobre regras de segurança referentes às transações financeiras realizadas por CLIENTES da Rede de Lojas Mibrasil, no ato de pagamento de produtos, tais como, operações com cartão de crédito ou débito, PIX e outros meios eletrônicos de pagamento.</p>
+
+    <h2>Para os fins desse aviso, considera-se:</h2>
+    <ul>
+        <li><strong>Titular do meio de pagamento eletrônico (TITULAR):</strong> a pessoa física ou jurídica titular da conta bancária vinculada ao pix ou aplicativos de pagamento, de cartões de crédito ou débito (físicos ou virtuais), de aplicativos ou outros meios virtuais de pagamentos, assim como o proprietário do smartphone ou outros aparelhos eletrônicos nos quais tais aplicativos ou cartões virtuais estejam instalados.</li>
+        <li><strong>Clientes da Rede de Lojas Mibrasil (CLIENTE):</strong> pessoas físicas e/ou representantes de pessoas jurídicas que (i) compareçam presencialmente ou façam contatos com a lojas da Rede Mibrasil com o intuito de informações e/ou compra de produtos; (ii) concluam a compra de produtos mediante a utilização de meios de pagamento aceitos pela loja, que sejam de titularidade do próprio CLIENTE ou de terceiro que o tenha autorizado, sob exclusiva responsabilidade do titular.</li>
+    </ul>
+
+    <h2>INFORMAÇÕES IMPORTANTES AOS CLIENTES:</h2>
+    <ol>
+        <li>Os Titulares dos meios de pagamento eletrônico são responsáveis pela guarda e posse de tais meios, assim como pela privacidade de senhas / logins de acesso, de modo a prevenir e evitar fraudes que possam vir a causar prejuízos tanto aos próprios TITULARES quanto aos comerciantes em geral, devendo seguir todas as obrigações contratuais e orientações de segurança assumidas junto as suas respectivas instituições financeiras, operadoras de cartões e demais prestadores de serviços financeiros.</li>
+        <li>A posse de cartões /aplicativos/ demais meios de pagamentos eletrônicos, com a ciência de senhas ou demais meios de acesso que viabilizem a conclusão do pagamento da compra pelo CLIENTE serão consideradas, pela Rede de Lojas Mibrasil, como autorização de uso dadas a este pelo TITULAR do meio de pagamento utilizado.</li>
+        <li>A Rede de Lojas Mibrasil não é responsável pelo uso desautorizado e/ou ilegal e/ou fora dos limites autorizados por terceiros que estejam em posse de cartões, aplicativos e demais meios de pagamento eletrônicos, logins e/ou senhas de acesso de TITULARES e utilizem tais meios para realizar o pagamento de compras de produtos junto as lojas da Rede Mibrasil.</li>
+        <li>Os colaboradores da Rede de Lojas Mibrasil, seguindo regras de políticas internas de segurança e compliance, podem vir a solicitar dados pessoais e apresentação de documentos de identificação dos CLIENTES, bem como de dados pessoais, documentos de identificação e/ou de comprovante de autorização dos TITULARES, no momento do pagamento da compra. A conclusão da compra em tais situações somente ocorrerá após a devida apresentação dos dados e/ou documentos solicitados.</li>
+        <li>O tratamento dos dados pessoais eventualmente solicitados conforme item 4 deste AVISO se dará em observância às regras da Lei Geral de Proteção de Dados (LGPD) e de acordo com os termos do Aviso de Privacidade da Loja da Rede Mibrasil na qual o atendimento seja prestado. Consulte o Aviso de Privacidade.</li>
+        <li>Se, após ler este AVISO, restar qualquer dúvida, comentário e/ou sugestão, solicitamos que, por favor, procure o Colaborador responsável pela Loja da Rede Mibrasil na qual o Sr(a). se encontra.</li>
+    </ol>
+</div>
+            `,
           },
         },
         {
@@ -40,13 +57,18 @@ const DATA = {
           description: "Telefones e canais de contato dos órgãos de defesa do consumidor.",
           general: {
             title: "Contatos Úteis do Procon",
-            text: "O Procon é o órgão responsável por proteger e defender os direitos dos consumidores em todo o país.",
-            items: [
-              "Consulte o Procon do seu estado para atendimentos específicos",
-              "Tenha em mãos nota fiscal e documentos de identificação",
-              "Acesse o site consumidor.gov.br para resoluções online",
-              "Nossas unidades possuem os contatos locais visíveis nos caixas"
-            ],
+            customHtml: `
+<div class="privacy-policy">
+    <h1>Contatos do Procon</h1>
+    <p>O Procon é o órgão responsável por proteger e defender os direitos dos consumidores. Caso necessite de orientação ou queira registrar uma reclamação, disponibilizamos as informações abaixo:</p>
+    <ul>
+        <li><strong>Atendimento Local:</strong> Consulte o Procon do seu estado para informações sobre atendimentos presenciais específicos e endereços das unidades.</li>
+        <li><strong>Documentação Necessária:</strong> Ao entrar em contato, tenha sempre em mãos a nota fiscal da compra e seus documentos de identificação pessoal.</li>
+        <li><strong>Atendimento Online:</strong> Acesse o site consumidor.gov.br para registro e resolução de reclamações de forma online e oficial.</li>
+        <li><strong>Informação na Loja:</strong> Lembre-se que todas as nossas unidades possuem os contatos telefônicos do Procon local expostos visivelmente nos caixas.</li>
+    </ul>
+</div>
+            `,
           },
         },
         {
@@ -56,13 +78,17 @@ const DATA = {
           description: "Direitos e garantias estabelecidos pelo CDC.",
           general: {
             title: "Código de Defesa do Consumidor",
-            text: "O Código de Defesa do Consumidor (Lei nº 8.078/1990) estabelece normas de proteção e defesa nas relações de consumo.",
-            items: [
-              "Exemplar físico disponível para consulta em todas as lojas",
-              "Garante proteção contra práticas abusivas ou enganosas",
-              "Estabelece regras claras e os prazos legais para trocas e devoluções",
-              "Assegura o acesso claro às informações dos produtos e serviços"
-            ],
+            customHtml: `
+<div class="privacy-policy">
+    <h1>Exemplar do Código de Defesa do Consumidor</h1>
+    <p>O Código de Defesa do Consumidor (CDC) – Lei nº 8.078, de 11 de setembro de 1990 – estabelece normas de proteção e defesa nas relações de consumo, com o objetivo de assegurar o respeito à dignidade, saúde e segurança do consumidor.</p>
+    <ul>
+        <li><strong>Disponibilidade em Loja:</strong> Em cumprimento à lei, um exemplar físico e atualizado do CDC está disponível para consulta em todas as nossas lojas. Solicite a um de nossos colaboradores caso deseje acessá-lo.</li>
+        <li><strong>Garantias e Direitos:</strong> O CDC garante proteção contra práticas abusivas ou enganosas, estabelecendo regras claras e prazos legais para trocas, devoluções e garantias de produtos e serviços.</li>
+        <li><strong>Informação Clara:</strong> A lei assegura o acesso claro e adequado às informações sobre os produtos e serviços que oferecemos, incluindo composição, preço, garantia e riscos.</li>
+    </ul>
+</div>
+            `,
           },
         },
       ],
@@ -937,7 +963,8 @@ function openContent(themeId, moduleId) {
   // Hide tabs for specific modules
   const tabsContainer = document.querySelector('.tabs-container');
   if (tabsContainer) {
-    tabsContainer.style.display = moduleId === 'aviso-privacidade' ? 'none' : '';
+    const hiddenTabsModules = ['aviso-privacidade', 'regras-seguranca', 'contatos-procon', 'codigo-defesa'];
+    tabsContainer.style.display = hiddenTabsModules.includes(moduleId) ? 'none' : '';
   }
 
   // General content
