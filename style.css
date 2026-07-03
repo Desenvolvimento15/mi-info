@@ -1482,3 +1482,78 @@ ul.pref-list li {
 .cidade-question[role="button"] {
     user-select: none;
 }
+
+/* ═══════════════════════════════════════════
+   PRIVACY POLICY CUSTOM STYLES
+════════════════════════════════════════════ */
+.privacy-policy {
+    font-family: inherit;
+    line-height: 1.6;
+    color: var(--color-text);
+    padding: 10px 5px;
+}
+
+.privacy-policy h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.privacy-policy h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 5px;
+}
+
+.privacy-policy p {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.privacy-policy ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+}
+
+.privacy-policy li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.privacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    background-color: #fff;
+}
+
+.privacy-table th,
+.privacy-table td {
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.privacy-table th {
+    background-color: #f7f9fc;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.privacy-table tbody tr:nth-child(even) {
+    background-color: #fcfcfc;
+}

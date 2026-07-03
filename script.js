@@ -18,82 +18,50 @@ const DATA = {
       description: "Informações sobre atendimento ao cliente, trocas, devoluções e seus direitos nas compras.",
       modules: [
         {
-          id: "trocas-devolucoes",
-          icon: "refresh",
-          title: "Aviso de regras de segurança sobre transações financeiras",
-          description: "Aviso de Regras de Segurança",
-          general: {
-            title: "Aviso de regras de segurança sobre transações financeiras",
-            text: "Conheça as regras nacionais para trocas e devoluções de produtos em todas as nossas unidades, conforme o Código de Defesa do Consumidor.",
-            items: [
-              "Prazo de 7 dias para desistência (compras online)",
-              "Vício aparente: 30 dias (produtos não duráveis)",
-              "Vício aparente: 90 dias (produtos duráveis)",
-              "Nota fiscal necessária para qualquer troca",
-            ],
-          },
-        },
-        {
-          id: "atendimento-cliente",
-          icon: "user",
-          title: "Atendimento ao Cliente",
-          description: "Canais e padrões de atendimento ao consumidor.",
-          general: {
-            title: "Padrão de Atendimento Nacional",
-            text: "Nosso compromisso é oferecer atendimento ágil, respeitoso e eficiente em todas as unidades do Brasil.",
-            items: [
-              "Atendimento presencial em todas as unidades",
-              "SAC 0800 disponível 24h",
-              "Resposta a e-mails em até 48h úteis",
-              "Chat online de segunda a sábado, 8h às 20h",
-            ],
-          },
-        },
-        {
-          id: "prazo-entrega",
-          icon: "clock",
-          title: "Prazo de Entrega",
-          description: "Informações sobre prazos e rastreamento de pedidos.",
-          general: {
-            title: "Prazos de Entrega",
-            text: "Os prazos de entrega variam conforme a modalidade escolhida e a região de destino.",
-            items: [
-              "Entrega expressa: até 2 dias úteis (capitais)",
-              "Entrega padrão: 3 a 7 dias úteis",
-              "Retirada na loja: disponível no mesmo dia",
-              "Rastreamento disponível em tempo real pelo app",
-            ],
-          },
-        },
-        {
-          id: "reclamacoes",
-          icon: "alert",
-          title: "Reclamações",
-          description: "Como registrar e acompanhar reclamações.",
-          general: {
-            title: "Canal de Reclamações",
-            text: "Registre sua reclamação pelos canais oficiais. Nosso time entra em contato em até 5 dias úteis.",
-            items: [
-              "SAC: 0800 707 0000",
-              "Ouvidoria: disponível para casos não resolvidos",
-              "Procon: em caso de não resolução em 30 dias",
-              "Reclame Aqui: @mibrasiloficial",
-            ],
-          },
-        },
-        {
-          id: "garantia",
+          id: "regras-seguranca",
           icon: "shield",
-          title: "Garantia do Produto",
-          description: "Informações sobre garantia legal e contratual.",
+          title: "Aviso de regras de segurança sobre transações financeiras",
+          description: "Informações e orientações de segurança para transações financeiras.",
           general: {
-            title: "Garantias",
-            text: "Todo produto possui garantia legal prevista pelo CDC, além de garantia contratual oferecida pelo fabricante.",
+            title: "Regras de Segurança",
+            text: "Siga nossas orientações para garantir a segurança em todas as suas transações financeiras nas nossas unidades.",
             items: [
-              "Garantia legal: 90 dias (produtos duráveis)",
-              "Garantia contratual: conforme certificado do fabricante",
-              "Extensão de garantia disponível para compra",
-              "Assistência técnica autorizada em todas as capitais",
+              "Nunca compartilhe suas senhas com terceiros",
+              "Verifique sempre o valor antes de confirmar o pagamento",
+              "Não permita que seu cartão seja levado para longe da sua vista",
+              "Utilize apenas os nossos canais oficiais de pagamento"
+            ],
+          },
+        },
+        {
+          id: "contatos-procon",
+          icon: "phone",
+          title: "Contatos do procon",
+          description: "Telefones e canais de contato dos órgãos de defesa do consumidor.",
+          general: {
+            title: "Contatos Úteis do Procon",
+            text: "O Procon é o órgão responsável por proteger e defender os direitos dos consumidores em todo o país.",
+            items: [
+              "Consulte o Procon do seu estado para atendimentos específicos",
+              "Tenha em mãos nota fiscal e documentos de identificação",
+              "Acesse o site consumidor.gov.br para resoluções online",
+              "Nossas unidades possuem os contatos locais visíveis nos caixas"
+            ],
+          },
+        },
+        {
+          id: "codigo-defesa",
+          icon: "file",
+          title: "Exemplar do código de defesa consumidor",
+          description: "Direitos e garantias estabelecidos pelo CDC.",
+          general: {
+            title: "Código de Defesa do Consumidor",
+            text: "O Código de Defesa do Consumidor (Lei nº 8.078/1990) estabelece normas de proteção e defesa nas relações de consumo.",
+            items: [
+              "Exemplar físico disponível para consulta em todas as lojas",
+              "Garante proteção contra práticas abusivas ou enganosas",
+              "Estabelece regras claras e os prazos legais para trocas e devoluções",
+              "Assegura o acesso claro às informações dos produtos e serviços"
             ],
           },
         },
@@ -109,83 +77,174 @@ const DATA = {
         "Informações sobre proteção de dados, privacidade e seus direitos sob a Lei Geral de Proteção de Dados.",
       modules: [
         {
-          id: "coleta-dados",
+          id: "aviso-privacidade",
           icon: "file",
-          title: "Coleta de Dados",
-          description: "Quais dados coletamos e como utilizamos.",
+          title: "Aviso de privacidade de dados",
+          description: "Política de privacidade e proteção de dados pessoais.",
           general: {
-            title: "Coleta e Uso de Dados",
-            text: "Coletamos apenas os dados necessários para oferecer nossos serviços com qualidade, segurança e personalização.",
-            items: [
-              "Dados de identificação (nome, CPF, e-mail)",
-              "Histórico de compras e preferências",
-              "Dados de navegação em plataformas digitais",
-              "Consentimento explícito para marketing",
-            ],
-          },
-        },
-        {
-          id: "cameras",
-          icon: "camera",
-          title: "Monitoramento por Câmeras",
-          description: "Uso de câmeras de segurança nas dependências da loja.",
-          general: {
-            title: "Câmeras de Segurança",
-            text: "Nossas lojas utilizam câmeras de videomonitoramento para garantir a segurança de clientes, colaboradores e patrimônio.",
-            items: [
-              "Câmeras em operação 24 horas",
-              "Gravações armazenadas por 30 dias",
-              "Acesso restrito a equipe de segurança autorizada",
-              "Uso exclusivo para fins de segurança",
-            ],
-          },
-        },
-        {
-          id: "direitos-lgpd",
-          icon: "user",
-          title: "Seus Direitos (LGPD)",
-          description: "Conheça seus direitos garantidos pela Lei 13.709/2018.",
-          general: {
-            title: "Direitos do Titular de Dados",
-            text: "A LGPD garante ao titular dos dados uma série de direitos em relação ao tratamento de suas informações.",
-            items: [
-              "Acesso aos dados pessoais armazenados",
-              "Correção de dados incompletos ou desatualizados",
-              "Eliminação de dados desnecessários",
-              "Portabilidade dos dados a outro fornecedor",
-            ],
-          },
-        },
-        {
-          id: "cookies",
-          icon: "wifi",
-          title: "Cookies e Rastreamento",
-          description: "Como utilizamos cookies em nossas plataformas digitais.",
-          general: {
-            title: "Política de Cookies",
-            text: "Utilizamos cookies para melhorar sua experiência de navegação e personalizar conteúdos e ofertas.",
-            items: [
-              "Cookies essenciais: necessários para o funcionamento",
-              "Cookies analíticos: para melhorar a experiência",
-              "Cookies de marketing: para personalização de ofertas",
-              "Você pode gerenciar suas preferências a qualquer momento",
-            ],
-          },
-        },
-        {
-          id: "dpo",
-          icon: "phone",
-          title: "Contato do DPO",
-          description: "Canal para questões relacionadas à proteção de dados.",
-          general: {
-            title: "Encarregado de Dados (DPO)",
-            text: "Nosso Encarregado de Proteção de Dados (DPO) está disponível para esclarecer dúvidas e receber solicitações.",
-            items: [
-              "E-mail: dpo@mibrasil.com.br",
-              "Prazo de resposta: até 15 dias úteis",
-              "Solicitações de exclusão: até 30 dias",
-              "Relatório de impacto disponível mediante solicitação",
-            ],
+            title: "Aviso de Privacidade",
+            customHtml: `
+<div class="privacy-policy">
+    <h1>Aviso de Privacidade</h1>
+    <p><strong>Última atualização: novembro de 2025 (v.2)</strong></p>
+
+    <p>A loja online MiBrasil, disponível no site www.mibrasil.com.br, é representada pela seguinte empresa, responsável pelo tratamento de dados objeto deste Aviso de Privacidade:</p>
+
+    <p><strong>IZU COMÉRCIO DE ELETRÔNICOS LTDA. (“IZU”)</strong>, pessoa jurídica de direito privado, inscrita no CNPJ/MF sob o nº 34.744.895/0003-52. Av. Embaixador Bilac Pinto, 1005, Sala 02 Colina das Palmeiras – CEP 37.538-650 Santa Rita do Sapucaí/MG</p>
+
+    <p>A IZU está comprometida com a privacidade e a proteção dos dados pessoais de seus Usuários. Este Aviso de Privacidade (“Aviso”) informa de forma clara como é realizado o tratamento dos dados pessoais coletados, as hipóteses legais que autorizam esse tratamento, as finalidades da coleta e os direitos que o Usuário, como titular de dados, possui.</p>
+
+    <p>A atualização deste Aviso faz parte do compromisso da Lojista em alinhar suas práticas à legislação brasileira aplicável, em especial à Lei Geral de Proteção de Dados Pessoais – LGPD (Lei nº 13.709/18), bem como ao Marco Civil da Internet (Lei nº 12.965/14) e seu regulamento.</p>
+
+    <h2>1. DEFINIÇÕES E TERMOS UTILIZADOS NESTE AVISO</h2>
+    <p>Para facilitar a leitura e compreensão deste Aviso, segue abaixo os principais termos usados neste documento, conforme definidos pela LGPD:</p>
+    <ul>
+        <li><strong>a) Dado pessoal:</strong> qualquer informação que identifique ou possa identificar uma pessoa natural;</li>
+        <li><strong>b) Banco de dados:</strong> conjunto organizado de dados pessoais, armazenados de forma física ou eletrônica, em um ou mais locais;</li>
+        <li><strong>c) Titular:</strong> pessoa natural a quem os dados pessoais se referem;</li>
+        <li><strong>d) Tratamento:</strong> qualquer operação realizada com dados pessoais, tais como coleta, uso, armazenamento, compartilhamento, eliminação ou modificação;</li>
+        <li><strong>e) Consentimento:</strong> manifestação livre, informada e clara pela qual o titular concorda com o tratamento de seus dados para uma finalidade determinada;</li>
+        <li><strong>f) Controlador:</strong> pessoa natural ou jurídica a quem competem as decisões referentes ao tratamento de dados pessoais;</li>
+        <li><strong>g) Operador:</strong> pessoa natural ou jurídica que realiza o tratamento de dados pessoais em nome do controlador;</li>
+        <li><strong>h) Encarregado (DPO):</strong> pessoa indicada pelo controlador para atuar como canal de comunicação entre o controlador, os titulares e a ANPD.</li>
+    </ul>
+
+    <h2>2. DADOS PESSOAIS COLETADOS PELA IZU</h2>
+    <p>A IZU poderá coletar e tratar diferentes categorias de dados pessoais, de acordo com a interação do usuário com o site www.mibrasil.com.br</p>
+    <ul>
+        <li><strong>a) Dados de Navegação:</strong> Durante a navegação, poderão ser registrados as seguintes informações: Endereço de IP (Internet Protocol), Sistema operacional do dispositivo, Tipo e versão do navegador, opções habilitadas e plug-ins instalados, Geolocalização e Páginas acessadas (com respectivas datas e horários);<br><em>Observação: essas informações não são compartilhadas com terceiros.</em></li>
+        <li><strong>b) Dados de Cadastro:</strong> Ao criar uma conta no site www.mibrasil.com.br, serão solicitados: Nome completo, Data de nascimento, CPF, Endereço completo, E-mail e telefones;</li>
+        <li><strong>c) Dados de Compra:</strong> Ao comprar no site www.mibrasil.com.br, a IZU coletará as seguintes informações: Detalhes e valores dos produtos adquiridos na compra, Forma de pagamento, Informações sobre documentos de identificação, Nome e endereço para entrega dos produtos.</li>
+        <li><strong>d) Dados de Atendimento (SAC):</strong> Ao contatar o Serviço de Atendimento ao Cliente, poderão ser solicitados dados como: nome completo, CPF, número do pedido, telefone e e-mail, a fim de viabilizar o atendimento adequado.</li>
+        <li><strong>e) Dados para Suporte Técnico (DL Comércio de Eletrônicos LTDA.):</strong> A IZU disponibiliza em seu site www.mibrasil.com.br meios de contato com a distribuidora DL, que poderá solicitar: Nome, CPF, telefone, modelo e número de série/IMEI do produto, fotos e endereço completo.<br><em>Observação: esses dados são tratados diretamente pela DL, e não pela IZU. Para mais informações, consulte o Aviso de Privacidade – DL.</em></li>
+        <li><strong>f) Dados para Ações de Publicidade:</strong> Ao inscrever-se no pop-up “Promoções e Lançamentos”, o usuário autoriza o envio de newsletters com ofertas e comunicações personalizadas. Para isso, poderão ser coletados: nome, e-mail e telefone (WhatsApp).<br><em>Observação: O descadastro pode ser solicitado a qualquer momento por meio do link disponível no contato recebido</em></li>
+        <li><strong>g) Dados para Campanhas e Programas:</strong> Ao aderir a campanhas ou programas específicos, poderão ser coletados dados pessoais adicionais. Cada iniciativa contará com regras de privacidade próprias, que devem ser consultadas previamente pelo titular.</li>
+        <li><strong>h) Dados para Pesquisa de Satisfação:</strong> Após a realização de uma compra, a IZU poderá enviar um e-mail contendo um link para que o cliente avalie o desempenho da loja.<br><em>Observação: O preenchimento é opcional e, caso o cliente prefira, poderá solicitar a exclusão de sua participação, deixando de receber esse tipo de mensagem em futuras compras.</em></li>
+    </ul>
+
+    <h2>3. COMO SÃO TRATADOS SEUS DADOS PESSOAIS</h2>
+    <div class="table-responsive">
+        <table class="privacy-table">
+            <thead>
+                <tr>
+                    <th>Categoria dos Dados Pessoais</th>
+                    <th>Finalidade</th>
+                    <th>Hipótese Legal</th>
+                    <th>Prazo de Retenção</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dados de Navegação</td>
+                    <td>Mensurar a performance da plataforma e aprimorar a funcionalidade do site, melhorar a experiência do usuário, realizar análises e gerar estatísticas</td>
+                    <td>Cumprimento de obrigação legal (Art. 7º, inc. II, LGPD)</td>
+                    <td>Pelo período de 6 meses (conforme Art.15 da Lei nº 12.965/14)</td>
+                </tr>
+                <tr>
+                    <td>Dados de Cadastro</td>
+                    <td>Identificação do Usuário, criação de conta e viabilizar as compras</td>
+                    <td>Consentimento do titular (art.7º, inc. I, LGPD)</td>
+                    <td>Até a revogação do consentimento pelo titular</td>
+                </tr>
+                <tr>
+                    <td>Dados de Compra</td>
+                    <td>Prestar atendimento ao cliente, atendendo solicitações, reclamações e fornecer suporte ao cliente</td>
+                    <td>Para coleta: Execução de contrato (art. 7º, inc. V, LGPD)<br>Para retenção: Cumprimento de obrigação legal (art.7º, inc. II, LGPD)</td>
+                    <td>5 anos após a compra (Art. 173 do CTN)</td>
+                </tr>
+                <tr>
+                    <td>Dados para Suporte Técnico (DL)</td>
+                    <td>Prestação de serviços de Suporte Técnico dos aparelhos adquiridos na IZU</td>
+                    <td>Para coleta: Execução de contrato (art. 7º, inc. V, LGPD)<br>Para retenção: Cumprimento de obrigação legal (art. 7º, inc. II, LGPD)</td>
+                    <td>Enquanto durar a relação contratual + 5 anos após o término (Art. 27, CDC).</td>
+                </tr>
+                <tr>
+                    <td>Dados da seção “Trabalhe Conosco”</td>
+                    <td>Avaliar candidatos e conduzir processos seletivos para vagas disponíveis ou futuras.</td>
+                    <td>Para coleta: Procedimentos preliminares relacionados a contrato de trabalho (art. 7º, V, LGPD)<br>Para retenção: Consentimento do titular (art.7º, inc. I, LGPD)</td>
+                    <td>Pelo tempo necessário para cumprir sua finalidade, salvo revogação do consentimento pelo titular</td>
+                </tr>
+                <tr>
+                    <td>Dados para Ações de Publicidade</td>
+                    <td>Envio de comunicações de marketing e conteúdos personalizados</td>
+                    <td>Consentimento do titular (art.7º, inc. I, LGPD)</td>
+                    <td>Até a revogação do consentimento pelo titular</td>
+                </tr>
+                <tr>
+                    <td>Dados para Campanhas e Programas</td>
+                    <td>Gestão de promoções, sorteios e descontos</td>
+                    <td>Para coleta: Consentimento do titular (art.7º, inc. I, LGPD)<br>Para retenção: Cumprimento de obrigação legal (art.7º, inc. II, LGPD)</td>
+                    <td>Enquanto durar a campanha ou programa + 5 anos após o término (Art. 27, CDC).</td>
+                </tr>
+                <tr>
+                    <td>Dados para Pesquisa de Satisfação</td>
+                    <td>Avaliar a experiência do cliente, identificar melhorias e apoiar decisões de negócio</td>
+                    <td>Legítimo interesse (art. 7º, IX, LGPD)</td>
+                    <td>Pelo tempo necessário para análise e consolidação dos resultados, salvo revogação do consentimento pelo titular</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>4. COMPARTILHAMENTO DOS DADOS</h2>
+    <p>A IZU não comercializa, transfere ou utiliza dados pessoais de usuários(as) para finalidades distintas das previstas neste documento. O compartilhamento de dados ocorre exclusivamente quando necessário para a execução das atividades da empresa e sempre em conformidade com as finalidades aqui estabelecidas. Essas hipóteses podem incluir:</p>
+    <ul>
+        <li><strong>Gerenciamento e operação do comércio eletrônico:</strong> parceria com empresas especializadas para manter a funcionalidade e eficiência da plataforma.</li>
+        <li><strong>Prevenção de fraudes:</strong> validação de transações realizadas com seu nome de usuário e senha, por meio de parceiros antifraude, reduzindo riscos de operações indevidas.</li>
+        <li><strong>Processamento de pagamentos:</strong> envio de informações aos facilitadores de pagamento, conforme a forma de pagamento escolhida, para viabilizar a transação.</li>
+        <li><strong>Logística e entrega:</strong> fornecimento de dados às transportadoras e empresas de entrega para garantir que o pedido chegue corretamente ao destino.</li>
+        <li><strong>Ações de publicidade:</strong> mediante consentimento prévio, compartilhamento de informações com parceiros responsáveis pelo envio segmentado e automatizado de comunicações promocionais.</li>
+        <li><strong>Atendimento de pós-venda e suporte ao cliente:</strong> compartilhamento de informações com parceiros, quando necessário para auxiliar na resolução de problemas relacionado ao produto adquirido ou a assuntos afins.</li>
+        <li><strong>Autoridades e órgãos competentes:</strong> quando houver obrigação legal ou regulatória, inclusive para cumprimento de ordens judiciais ou atendimento a solicitações oficiais.</li>
+    </ul>
+    <p>Sempre que houver compartilhamento, adotamos os melhores esforços para garantir que:</p>
+    <ul>
+        <li>Apenas as informações estritamente necessárias sejam repassadas;</li>
+        <li>Os parceiros e prestadores de serviços da IZU adotam padrões de segurança e privacidade alinhados aos da empresa, preservando, sempre que possível, a integridade e a confidencialidade dos dados.</li>
+    </ul>
+
+    <h2>5. TRATAMENTO DE DADOS DE CRIANÇAS E ADOLESCENTES</h2>
+    <p>A IZU não coleta dados pessoais de crianças e adolescentes (indivíduos com menos de 18 anos), e não direciona suas campanhas de marketing ou publicidade para esse público. Caso sejam identificados, adotaremos medidas para exclusão imediata.</p>
+
+    <h2>6. TRANSFERÊNCIA INTERNACIONAL DE DADOS</h2>
+    <p>Alguns parceiros da IZU utilizam ambientes de armazenamento em nuvem que podem incluir servidores localizados fora do Brasil. Nesses casos, os dados pessoais são mantidos com níveis adequados de proteção, em conformidade com a LGPD e com padrões de segurança e privacidade compatíveis com aqueles estabelecidos neste Aviso.</p>
+
+    <h2>7. USO DE COOKIES</h2>
+    <p>Para oferecer uma melhor experiência de navegação no site www.mibrasil.com.br e disponibilizar serviços personalizados, a IZU utiliza cookies. Você pode desabilitar essa funcionalidade diretamente nas configurações do seu navegador; no entanto, algumas funções e recursos do site poderão ficar indisponíveis ou apresentar limitações. Para mais informações sobre o uso de cookies, consulte Aviso de Cookies.</p>
+
+    <h2>8. SEGURANÇA DOS DADOS PESSOAIS</h2>
+    <p>A IZU adota medidas de segurança técnicas e administrativas para proteger os dados pessoais contra acessos não autorizados, bem como contra situações de destruição, perda, alteração, comunicação ou difusão indevida.</p>
+    <p>O tratamento das informações pessoais segue as diretrizes da Política de Segurança da Informação da empresa. O acesso a esses dados é restrito a uma equipe devidamente capacitada, vinculada a compromissos de confidencialidade e responsável por assegurar a proteção contínua das informações.</p>
+    <p>A IZU não se responsabiliza por danos, prejuízos ou perda de informações decorrentes de ações de terceiros, bem como nos casos de eventos fortuitos ou situações de força maior fora de seu controle.</p>
+    <p>Em caso de violação de segurança envolvendo dados pessoais que possa afetar significativamente o titular, a IZU compromete-se a comunicar prontamente o titular e adotar medidas para mitigar possíveis impactos, conforme a legislação aplicável.</p>
+    <p>Além disso, a IZU revisa e atualiza periodicamente suas políticas e procedimentos de segurança para assegurar a proteção contínua dos dados pessoais.</p>
+
+    <h2>9. DIREITOS DO TITULARES</h2>
+    <p>Enquanto titular dos seus dados pessoais, o Usuário possui os seguintes direitos, que podem ser exercidos a qualquer momento:</p>
+    <ul>
+        <li>Confirmação da existência de tratamento;</li>
+        <li>Acesso aos dados pessoais;</li>
+        <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+        <li>Anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com o disposto nesta Lei;</li>
+        <li>Portabilidade dos dados a outro fornecedor de serviço ou produto, mediante requisição expressa, de acordo com a regulamentação da ANPD;</li>
+        <li>Revogação do consentimento e consequente eliminação dos dados pessoais tratados, exceto nas hipóteses previstas no art. 16 da LGPD;</li>
+        <li>Informação das entidades públicas e privadas com as quais o controlador compartilhou seus dados;</li>
+        <li>Informação sobre a possibilidade de não fornecer consentimento e sobre as consequências da negativa;</li>
+        <li>Solicitação de revisão por intervenção humana de decisões tomadas exclusivamente com base em tratamento automatizado, incluindo definição de perfis.</li>
+    </ul>
+    <p>Caso deseje exercer qualquer um desses direitos, entre em contato com a IZU pelos canais indicados ao final deste Aviso. Para sua segurança e evitar fraudes, poderemos solicitar um documento de identificação e, se necessário, outras informações para autenticar sua solicitação e garantir a proteção dos seus dados.</p>
+    <p>Após a comprovação da sua identidade, a IZU se compromete a responder à sua solicitação no menor prazo possível, respeitando o prazo máximo de 15 (quinze) dias, conforme previsto na LGPD.</p>
+
+    <h2>10. COMENTÁRIOS, DÚVIDAS E SUGESTÕES</h2>
+    <p>Se, após ler este Aviso, você tiver qualquer dúvida, comentário ou sugestão sobre as práticas de privacidade e proteção de dados pessoais, ou se desejar exercer qualquer um dos seus direitos relacionados ao tratamento de dados pessoais, entre em contato com o Encarregado pelo Tratamento de Dados (DPO), através do seguinte e-mail dpo@mibrasil.com.br – Rafael Palma de Araujo</p>
+    <p>Atenção: As comunicações do DPO são realizadas exclusivamente por este canal oficial. Desconsidere qualquer contato em nome do DPO proveniente de outros endereços de e-mail, como medida de segurança contra fraudes e comunicações indevidas.</p>
+    <p>Ressaltamos que este canal de comunicação é exclusivo para questões relacionadas à privacidade e ao tratamento de dados pessoais dos clientes do Rede de Lojas MiBrasil (XIAOMI STORE).</p>
+    <p>Para assuntos referentes a produtos e suporte técnico, por favor, utilize os canais disponíveis em Contatos | Xiaomi Brasil Loja Oficial</p>
+
+    <h2>11. ALTERAÇÕES DO AVISO</h2>
+    <p>A Lojista poderá alterar este Aviso de Privacidade a qualquer momento, visando refletir mudanças legislativas, regulatórias, tecnológicas ou operacionais. Para se manter a par de eventuais mudanças das práticas de privacidade da IZU relativas aos seus dados pessoais, é recomendável que você consulte periodicamente a versão mais atualizada desse Aviso.</p>
+</div>
+`
           },
         },
       ],
@@ -875,6 +934,12 @@ function openContent(themeId, moduleId) {
   // Reset tabs
   switchTab('general');
 
+  // Hide tabs for specific modules
+  const tabsContainer = document.querySelector('.tabs-container');
+  if (tabsContainer) {
+    tabsContainer.style.display = moduleId === 'aviso-privacidade' ? 'none' : '';
+  }
+
   // General content
   renderGeneralContent(mod.general);
 
@@ -894,16 +959,22 @@ function openContent(themeId, moduleId) {
 
 function renderGeneralContent(general) {
   const container = $('general-content');
+
+  if (general.customHtml) {
+    container.innerHTML = general.customHtml;
+    return;
+  }
+
   container.innerHTML = `
     <h2 class="card-section-title">${general.title}</h2>
     <p class="card-text">${general.text}</p>
     <div class="check-list">
-      ${general.items.map(item => `
+      ${general.items ? general.items.map(item => `
         <div class="check-item">
           <div class="check-icon">${svgUse('check')}</div>
           <span>${item}</span>
         </div>
-      `).join('')}
+      `).join('') : ''}
     </div>
     <div class="alert-card">
       ${svgUse('alert', 'alert-icon')}
@@ -1049,7 +1120,7 @@ function buildSearchIndex() {
         themeColor: theme.color,
         title: mod.title,
         summary: mod.description,
-        keywords: `${theme.title} ${mod.title} ${mod.description} ${mod.general.items.join(' ')}`.toLowerCase()
+        keywords: `${theme.title} ${mod.title} ${mod.description} ${mod.general.items ? mod.general.items.join(' ') : ''}`.toLowerCase()
       });
     });
   });
