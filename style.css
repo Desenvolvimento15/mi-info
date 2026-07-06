@@ -1,4 +1,4 @@
-/* ═══════════════════════════════════════════
+﻿/* ═══════════════════════════════════════════
    CSS CUSTOM PROPERTIES
 ════════════════════════════════════════════ */
 :root {
@@ -1569,82 +1569,44 @@ ul.pref-list li {
    PRIVACIDADE E LGPD – TELA DE BUSCA
 ════════════════════════════════════════════ */
 
-/* Hero */
-.priv-hero {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: linear-gradient(135deg, #27AE60 0%, #2ECC71 100%);
-  padding: 20px 16px;
-  margin: 0;
+/* ── Search wrapper ── */
+.priv-search-wrap {
+  padding: 4px 0 8px;
 }
 
-.priv-hero-icon {
+.priv-search-box {
+  display: flex;
+  align-items: center;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0 10px 0 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  height: 48px;
+}
+
+.priv-search-box:focus-within {
+  border-color: #27AE60;
+  box-shadow: 0 0 0 3px rgba(39,174,96,0.14);
+}
+
+.priv-search-ico {
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  background: rgba(255,255,255,0.22);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.priv-hero-icon svg {
-  width: 28px;
-  height: 28px;
-  stroke: #fff;
+  color: #9ca3af;
+  stroke: currentColor;
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition: color 0.2s;
+  pointer-events: none;
 }
 
-.priv-hero-title {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #fff;
-  margin: 0 0 4px;
-  line-height: 1.2;
-}
-
-.priv-hero-desc {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.88);
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* Search box */
-.priv-search-box {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  background: #fff;
-  border: 2px solid #27AE60;
-  border-radius: 14px;
-  margin: 16px 12px;
-  padding: 4px 10px 4px 14px;
-  box-shadow: 0 4px 18px rgba(39,174,96,0.18);
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.priv-search-box:focus-within {
-  box-shadow: 0 4px 24px rgba(39,174,96,0.32);
-  border-color: #1e8449;
-}
-
-.priv-search-label {
-  display: flex;
-  align-items: center;
+.priv-search-box:focus-within .priv-search-ico {
   color: #27AE60;
-  flex-shrink: 0;
-}
-
-.priv-search-ico {
-  width: 22px;
-  height: 22px;
 }
 
 .priv-search-input {
@@ -1653,30 +1615,43 @@ ul.pref-list li {
   outline: none;
   font-family: inherit;
   font-size: 0.95rem;
-  color: #1a1a2e;
+  color: var(--color-text);
   background: transparent;
-  padding: 10px 8px;
+  padding: 0 8px;
   min-width: 0;
+  height: 100%;
 }
 
 .priv-search-input::placeholder {
-  color: #a0aec0;
+  color: #b0bec5;
 }
 
-/* hide native clear button on webkit */
 .priv-search-input::-webkit-search-cancel-button { display: none; }
 
 .priv-search-clear {
   border: none;
   background: none;
-  color: #a0aec0;
-  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
   cursor: pointer;
   padding: 6px;
   border-radius: 50%;
-  line-height: 1;
   flex-shrink: 0;
   transition: color 0.15s, background 0.15s;
+  width: 32px;
+  height: 32px;
+}
+
+.priv-search-clear svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .priv-search-clear:hover {
@@ -1684,82 +1659,93 @@ ul.pref-list li {
   background: #f0faf4;
 }
 
-/* Empty / placeholder state */
+/* ── Empty / placeholder states ── */
 .priv-empty-state {
   text-align: center;
-  padding: 36px 24px 24px;
+  padding: 40px 20px 20px;
 }
 
-.priv-empty-icon {
-  font-size: 3rem;
-  margin-bottom: 12px;
-  line-height: 1;
+.priv-empty-icon-wrap {
+  width: 72px;
+  height: 72px;
+  background: #f0faf4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.priv-empty-icon-wrap svg {
+  width: 34px;
+  height: 34px;
 }
 
 .priv-empty-title {
   font-weight: 700;
   font-size: 1rem;
-  color: #1a1a2e;
-  margin: 0 0 6px;
+  color: var(--color-text);
+  margin: 0 0 8px;
 }
 
 .priv-empty-sub {
   font-size: 0.85rem;
-  color: #6b7280;
-  line-height: 1.5;
+  color: var(--color-text-muted);
+  line-height: 1.6;
   margin: 0;
+  max-width: 280px;
+  margin-inline: auto;
 }
 
-/* Results list */
+/* ── Results list ── */
 .priv-results {
-  padding: 0 12px 16px;
+  padding: 8px 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
-/* Result count badge */
 .priv-result-count {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #27AE60;
+  color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 0 2px 6px;
+  letter-spacing: 0.06em;
+  padding: 0 2px 4px;
 }
 
-/* Individual result card */
+/* ── Individual result card ── */
 .priv-card {
-  background: #fff;
+  background: var(--color-surface);
   border-radius: 12px;
-  border: 1.5px solid #d1f2e4;
-  box-shadow: 0 2px 8px rgba(39,174,96,0.08);
+  border: 1.5px solid var(--color-border);
   overflow: hidden;
-  transition: box-shadow 0.2s ease, transform 0.15s ease;
-  animation: priv-fade-in 0.2s ease both;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  animation: priv-fade-in 0.18s ease both;
 }
 
 .priv-card:hover {
-  box-shadow: 0 6px 20px rgba(39,174,96,0.18);
-  transform: translateY(-2px);
+  border-color: #b0dfca;
+  box-shadow: 0 4px 16px rgba(39,174,96,0.12);
+  transform: translateY(-1px);
 }
 
 @keyframes priv-fade-in {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 .priv-card-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 13px 14px 10px;
-  border-bottom: 1px solid #e8f8f0;
+  gap: 12px;
+  padding: 12px 14px;
 }
 
 .priv-card-badges {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 4px;
   flex-shrink: 0;
 }
@@ -1769,18 +1755,19 @@ ul.pref-list li {
   align-items: center;
   justify-content: center;
   font-size: 0.6rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 3px 7px;
-  border-radius: 6px;
+  padding: 2px 6px;
+  border-radius: 5px;
   white-space: nowrap;
+  line-height: 1.4;
 }
 
 .priv-badge-uf {
-  background: #e8f8f0;
-  color: #1a6b3c;
-  border: 1px solid #b0dfca;
+  background: #f0faf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
 }
 
 .priv-badge-aviso {
@@ -1795,17 +1782,15 @@ ul.pref-list li {
 
 .priv-card-shopping {
   font-weight: 700;
-  font-size: 0.95rem;
-  color: #111827;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 0.92rem;
+  color: var(--color-text);
+  line-height: 1.3;
 }
 
 .priv-card-location {
   font-size: 0.78rem;
-  color: #6b7280;
-  margin-top: 2px;
+  color: var(--color-text-muted);
+  margin-top: 3px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1815,26 +1800,27 @@ ul.pref-list li {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin: 0 14px 13px;
-  padding: 11px 16px;
+  gap: 7px;
+  margin: 0 14px 12px;
+  padding: 10px 14px;
   background: linear-gradient(135deg, #27AE60 0%, #2ECC71 100%);
   color: #fff;
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   text-decoration: none;
   border-radius: 9px;
-  transition: filter 0.2s ease, transform 0.1s ease;
+  transition: filter 0.18s ease, transform 0.1s ease;
+  letter-spacing: 0.01em;
 }
 
-.priv-card-link:hover {
-  filter: brightness(1.08);
-  transform: translateY(-1px);
+.priv-card-link:active {
+  filter: brightness(0.95);
+  transform: scale(0.98);
 }
 
 .priv-card-link-ico {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   stroke: #fff;
   fill: none;
   stroke-width: 2.5;
@@ -1843,7 +1829,7 @@ ul.pref-list li {
   flex-shrink: 0;
 }
 
-/* Highlight matched text */
+/* ── Highlight ── */
 .priv-highlight {
   background: #d4f5e0;
   color: #145a32;
@@ -1851,3 +1837,4 @@ ul.pref-list li {
   padding: 0 2px;
   font-weight: 700;
 }
+

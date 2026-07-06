@@ -554,52 +554,61 @@
 
       <div class="screen-scroll">
 
-        <!-- Hero verde -->
-        <div class="priv-hero">
-          <div class="priv-hero-icon" aria-hidden="true">
+        <!-- Hero — mesmo padrão dos outros temas -->
+        <div class="content-hero">
+          <div class="content-hero-icon" style="background: #27AE60">
             <svg><use href="#icon-lock"/></svg>
           </div>
           <div>
-            <h1 class="priv-hero-title">Aviso de Privacidade</h1>
-            <p class="priv-hero-desc">Consulte o Aviso de Privacidade específico do seu shopping.</p>
+            <h1 class="content-hero-title">Aviso de Privacidade</h1>
+            <p class="content-hero-desc">Consulte o Aviso de Privacidade específico do seu shopping.</p>
           </div>
         </div>
 
-        <!-- Caixa de busca -->
-        <div class="priv-search-box">
-          <label for="searchInputPrivacidade" class="priv-search-label">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="priv-search-ico" aria-hidden="true">
-              <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16a6.47 6.47 0 004.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 115.5 9.5 4.5 4.5 0 019.5 14z"/>
-            </svg>
-          </label>
-          <input
-            type="search"
-            id="searchInputPrivacidade"
-            class="priv-search-input"
-            placeholder="Buscar por shopping, cidade ou estado…"
-            aria-label="Buscar por shopping, cidade ou estado"
-            autocomplete="off"
-          >
-          <button class="priv-search-clear" id="privSearchClearBtn" aria-label="Limpar busca" style="display:none">✕</button>
+        <!-- Barra de busca -->
+        <div class="priv-search-wrap">
+          <div class="priv-search-box" id="privSearchBox">
+            <svg class="priv-search-ico" aria-hidden="true"><use href="#icon-search"/></svg>
+            <input
+              type="search"
+              id="searchInputPrivacidade"
+              class="priv-search-input"
+              placeholder="Shopping, cidade ou estado…"
+              aria-label="Buscar por shopping, cidade ou estado"
+              autocomplete="off"
+            >
+            <button class="priv-search-clear" id="privSearchClearBtn" aria-label="Limpar busca" style="display:none">
+              <svg aria-hidden="true"><use href="#icon-close"/></svg>
+            </button>
+          </div>
         </div>
 
-        <!-- Estado vazio (placeholder inicial) -->
+        <!-- Estado inicial vazio -->
         <div id="privResultsEmpty" class="priv-empty-state">
-          <div class="priv-empty-icon" aria-hidden="true">🔒</div>
-          <p class="priv-empty-title">Digite para buscar</p>
-          <p class="priv-empty-sub">Informe o nome do shopping, cidade ou estado para encontrar o Aviso de Privacidade correspondente.</p>
+          <div class="priv-empty-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <p class="priv-empty-title">Busque seu shopping</p>
+          <p class="priv-empty-sub">Digite o nome do shopping, cidade ou estado para encontrar o Aviso de Privacidade correspondente.</p>
         </div>
 
-        <!-- Resultados da busca -->
-        <div id="privResultsList" class="priv-results" aria-live="polite" aria-label="Resultados da busca de avisos de privacidade" style="display:none">
+        <!-- Resultados -->
+        <div id="privResultsList" class="priv-results" aria-live="polite" style="display:none">
           <!-- Preenchido pelo JS -->
         </div>
 
         <!-- Sem resultados -->
         <div id="privNoResults" class="priv-empty-state" style="display:none">
-          <div class="priv-empty-icon" aria-hidden="true">🔍</div>
-          <p class="priv-empty-title">Nenhum resultado encontrado</p>
-          <p class="priv-empty-sub">Tente buscar pelo nome do shopping, cidade ou estado.</p>
+          <div class="priv-empty-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              <line x1="8" y1="8" x2="14" y2="14"/><line x1="14" y1="8" x2="8" y2="14"/>
+            </svg>
+          </div>
+          <p class="priv-empty-title">Nenhum resultado</p>
+          <p class="priv-empty-sub">Tente buscar por outro termo.</p>
         </div>
 
       </div>
