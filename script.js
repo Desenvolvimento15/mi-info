@@ -1218,7 +1218,7 @@ function showInitialSearch() {
     <p style="font-size:0.78rem;color:#6B7280;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Temas em destaque</p>
     ${themes.map(t => `
       <button class="search-theme-card" data-theme="${t.id}">
-        <div style="width:36px;height:36px;background:${t.color};border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <div class="search-theme-icon-wrap" style="background:${t.color}">
           ${svgUse(t.icon)}
         </div>
         <div style="flex:1;text-align:left">
