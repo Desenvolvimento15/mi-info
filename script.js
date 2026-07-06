@@ -1532,10 +1532,7 @@ function bindEvents() {
       ${matches.map((d, i) => `
         <div class="priv-card" style="animation-delay:${i * 0.05}s">
           <div class="priv-card-header">
-            <div class="priv-card-badges">
-              <span class="priv-card-badge priv-badge-uf">${d.uf}</span>
-              <span class="priv-card-badge priv-badge-aviso">${d.aviso}</span>
-            </div>
+            <span class="priv-card-badge priv-badge-uf">${d.uf}</span>
             <div class="priv-card-names">
               <div class="priv-card-shopping">${privHighlight(d.shopping, q)}</div>
               <div class="priv-card-location">${privHighlight(d.cidade, q)} · ${privHighlight(d.estado, q)}</div>
@@ -1543,7 +1540,7 @@ function bindEvents() {
           </div>
           <a href="${d.url}" target="_blank" rel="noopener" class="priv-card-link">
             <svg class="priv-card-link-ico" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            ${d.label}
+            Aviso de Privacidade
           </a>
         </div>
       `).join('')}
