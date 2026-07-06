@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -10,322 +11,429 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════
      SVG ICON SPRITE
 ════════════════════════════════════════════ -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  <symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-  </symbol>
-  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-  </symbol>
-  <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.2 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/>
-  </symbol>
-  <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-  </symbol>
-  <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-  </symbol>
-  <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
-  </symbol>
-  <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-  </symbol>
-  <symbol id="icon-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
-  </symbol>
-  <symbol id="icon-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="3" x2="12" y2="20"/><path d="M3 6l4 8-4 2"/><path d="M21 6l-4 8 4 2"/><line x1="3" y1="16" x2="9" y2="16"/><line x1="15" y1="16" x2="21" y2="16"/><line x1="8" y1="20" x2="16" y2="20"/>
-  </symbol>
-  <symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
-  </symbol>
-  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
-  </symbol>
-  <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-  </symbol>
-  <symbol id="icon-plus-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
-  </symbol>
-  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="20 6 9 17 4 12"/>
-  </symbol>
-  <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-  </symbol>
-  <symbol id="icon-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/>
-  </symbol>
-  <symbol id="icon-credit-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
-  </symbol>
-  <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-  </symbol>
-  <symbol id="icon-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/>
-  </symbol>
-  <symbol id="icon-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
-  </symbol>
-  <symbol id="icon-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
-  </symbol>
-  <symbol id="icon-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
-  </symbol>
-  <symbol id="icon-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/>
-  </symbol>
-  <symbol id="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
-  </symbol>
-  <symbol id="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-  </symbol>
-  <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-  </symbol>
-  <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-  </symbol>
-  <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
-  </symbol>
-</svg>
 
-<!-- ═══════════════════════════════════════════
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+      <polyline points="9 22 9 12 15 12 15 22" />
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path
+        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.2 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z" />
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12" />
+      <polyline points="12 19 5 12 12 5" />
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
+    </symbol>
+    <symbol id="icon-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <path d="M16 10a4 4 0 01-8 0" />
+    </symbol>
+    <symbol id="icon-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="3" x2="12" y2="20" />
+      <path d="M3 6l4 8-4 2" />
+      <path d="M21 6l-4 8 4 2" />
+      <line x1="3" y1="16" x2="9" y2="16" />
+      <line x1="15" y1="16" x2="21" y2="16" />
+      <line x1="8" y1="20" x2="16" y2="20" />
+    </symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0110 0v4" />
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </symbol>
+    <symbol id="icon-plus-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="12" y1="8" x2="12" y2="16" />
+      <line x1="8" y1="12" x2="16" y2="12" />
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12" />
+    </symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="12" y1="8" x2="12" y2="12" />
+      <line x1="12" y1="16" x2="12.01" y2="16" />
+    </symbol>
+    <symbol id="icon-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
+      <circle cx="12" cy="13" r="4" />
+    </symbol>
+    <symbol id="icon-credit-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+      <line x1="1" y1="10" x2="23" y2="10" />
+    </symbol>
+    <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+      <circle cx="12" cy="12" r="3" />
+    </symbol>
+    <symbol id="icon-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
+      <path d="M13.73 21a2 2 0 01-3.46 0" />
+    </symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+    </symbol>
+    <symbol id="icon-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 4 23 10 17 10" />
+      <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10" />
+    </symbol>
+    <symbol id="icon-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M5 12.55a11 11 0 0114.08 0" />
+      <path d="M1.42 9a16 16 0 0121.16 0" />
+      <path d="M8.53 16.11a6 6 0 016.95 0" />
+      <line x1="12" y1="20" x2="12.01" y2="20" />
+    </symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="12" y1="16" x2="12" y2="12" />
+      <line x1="12" y1="8" x2="12.01" y2="8" />
+    </symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polygon
+        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <line x1="8" y1="6" x2="21" y2="6" />
+      <line x1="8" y1="12" x2="21" y2="12" />
+      <line x1="8" y1="18" x2="21" y2="18" />
+      <line x1="3" y1="6" x2="3.01" y2="6" />
+      <line x1="3" y1="12" x2="3.01" y2="12" />
+      <line x1="3" y1="18" x2="3.01" y2="18" />
+    </symbol>
+  </svg>
+
+  <!-- ═══════════════════════════════════════════
      APP ROOT
 ════════════════════════════════════════════ -->
-<div id="app">
+  <div id="app">
 
-  <!-- Drawer overlay -->
-  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+    <!-- Drawer overlay -->
+    <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
 
-  <!-- ─── DRAWER MENU ─────────────────────── -->
-  <nav id="drawer" class="drawer" role="navigation" aria-label="Menu lateral" aria-hidden="true">
-    <div class="drawer-header">
-      <div class="drawer-logo">
-        <span class="logo-mi">MI</span>
-        <span class="logo-text">BRASIL</span>
+    <!-- ─── DRAWER MENU ─────────────────────── -->
+    <nav id="drawer" class="drawer" role="navigation" aria-label="Menu lateral" aria-hidden="true">
+      <div class="drawer-header">
+        <div class="drawer-logo">
+          <span class="logo-mi">MI</span>
+          <span class="logo-text">BRASIL</span>
+        </div>
+        <button class="drawer-close btn-icon" id="drawer-close-btn" aria-label="Fechar menu">
+          <svg>
+            <use href="#icon-close" />
+          </svg>
+        </button>
       </div>
-      <button class="drawer-close btn-icon" id="drawer-close-btn" aria-label="Fechar menu">
-        <svg><use href="#icon-close"/></svg>
-      </button>
-    </div>
-    <ul class="drawer-nav" role="list">
-      <li><button class="drawer-nav-item active" data-screen="home" role="menuitem">
-        <svg class="nav-icon"><use href="#icon-home"/></svg> Início
-      </button></li>
-      <li><button class="drawer-nav-item" data-screen="themes-drawer" role="menuitem">
-        <svg class="nav-icon"><use href="#icon-list"/></svg> Temas
-      </button></li>
-      <li><button class="drawer-nav-item" data-screen="search" role="menuitem">
-        <svg class="nav-icon"><use href="#icon-search"/></svg> Buscar
-      </button></li>
-      <li><button class="drawer-nav-item" data-screen="contact" role="menuitem">
-        <svg class="nav-icon"><use href="#icon-phone"/></svg> Contato
-      </button></li>
-      <li><button class="drawer-nav-item" data-screen="about" role="menuitem">
-        <svg class="nav-icon"><use href="#icon-info"/></svg> Sobre
-      </button></li>
-    </ul>
-    <div class="drawer-footer">
-      <p>MI Brasil © 2026</p>
-      <p>Versão 2.0.0</p>
-    </div>
-  </nav>
+      <ul class="drawer-nav" role="list">
+        <li><button class="drawer-nav-item active" data-screen="home" role="menuitem">
+            <svg class="nav-icon">
+              <use href="#icon-home" />
+            </svg> Início
+          </button></li>
+        <li><button class="drawer-nav-item" data-screen="themes-drawer" role="menuitem">
+            <svg class="nav-icon">
+              <use href="#icon-list" />
+            </svg> Temas
+          </button></li>
+        <li><button class="drawer-nav-item" data-screen="search" role="menuitem">
+            <svg class="nav-icon">
+              <use href="#icon-search" />
+            </svg> Buscar
+          </button></li>
+        <li><button class="drawer-nav-item" data-screen="contact" role="menuitem">
+            <svg class="nav-icon">
+              <use href="#icon-phone" />
+            </svg> Contato
+          </button></li>
+        <li><button class="drawer-nav-item" data-screen="about" role="menuitem">
+            <svg class="nav-icon">
+              <use href="#icon-info" />
+            </svg> Sobre
+          </button></li>
+      </ul>
+      <div class="drawer-footer">
+        <p>MI Brasil © 2026</p>
+        <p>Versão 2.0.0</p>
+      </div>
+    </nav>
 
-  <!-- ─── SCREENS CONTAINER ───────────────── -->
-  <div id="screens-container">
+    <!-- ─── SCREENS CONTAINER ───────────────── -->
+    <div id="screens-container">
 
-    <!-- ══════════════════════════════════════
+      <!-- ══════════════════════════════════════
          TELA 1 – HOME
     ══════════════════════════════════════ -->
-    <div id="screen-home" class="screen active" role="main" aria-label="Início">
-      <header class="app-header" role="banner">
-        <div class="header-logo">
-          <div class="logo-badge">
-            <span class="logo-mi">MI</span>
+      <div id="screen-home" class="screen active" role="main" aria-label="Início">
+        <header class="app-header" role="banner">
+          <div class="header-logo">
+            <div class="logo-badge">
+              <span class="logo-mi">MI</span>
+            </div>
+            <span class="logo-name">MI BRASIL</span>
           </div>
-          <span class="logo-name">MI BRASIL</span>
-        </div>
-        <button class="btn-icon" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
-          <svg><use href="#icon-menu"/></svg>
-        </button>
-      </header>
+          <button class="btn-icon" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="drawer">
+            <svg>
+              <use href="#icon-menu" />
+            </svg>
+          </button>
+        </header>
 
-      <div class="screen-scroll">
-        <div class="home-welcome">
-          <h1 class="welcome-title">Bem-vindo!</h1>
-          <p class="welcome-subtitle">Aqui você encontra informações importantes sobre sua experiência e nossos compromissos.</p>
-        </div>
-
-        <div class="section-label">Selecione o tema desejado para mais informações.</div>
-
-        <div class="home-grid" id="home-grid" role="list" aria-label="Temas de informação">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-    </div>
-
-    <!-- ══════════════════════════════════════
-         TELA 2 – LISTAGEM DO TEMA
-    ══════════════════════════════════════ -->
-    <div id="screen-theme" class="screen" role="main" aria-label="Módulos do tema">
-      <header class="app-header sub-header" id="theme-header">
-        <button class="btn-back" id="theme-back-btn" aria-label="Voltar">
-          <svg><use href="#icon-arrow-left"/></svg>
-          <span>Voltar</span>
-        </button>
-      </header>
-
-      <div class="screen-scroll">
-        <div class="theme-hero" id="theme-hero">
-          <div class="theme-hero-icon" id="theme-hero-icon" aria-hidden="true"></div>
-          <div class="theme-hero-text">
-            <h1 class="theme-hero-title" id="theme-hero-title"></h1>
-            <p class="theme-hero-desc" id="theme-hero-desc"></p>
+        <div class="screen-scroll">
+          <div class="home-welcome">
+            <h1 class="welcome-title">Bem-vindo!</h1>
+            <p class="welcome-subtitle">Aqui você encontra informações importantes sobre sua experiência e nossos
+              compromissos.</p>
           </div>
-        </div>
 
-        <div class="modules-list" id="modules-list" role="list" aria-label="Lista de módulos">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-    </div>
+          <div class="section-label">Selecione o tema desejado para mais informações.</div>
 
-    <!-- ══════════════════════════════════════
-         TELA 3 – CONTEÚDO COM ABAS
-    ══════════════════════════════════════ -->
-    <div id="screen-content" class="screen" role="main" aria-label="Conteúdo">
-      <header class="app-header sub-header">
-        <button class="btn-back" id="content-back-btn" aria-label="Voltar">
-          <svg><use href="#icon-arrow-left"/></svg>
-          <span>Voltar</span>
-        </button>
-      </header>
-
-      <div class="screen-scroll">
-        <div class="content-hero" id="content-hero">
-          <div class="content-hero-icon" id="content-hero-icon" aria-hidden="true"></div>
-          <div>
-            <h1 class="content-hero-title" id="content-hero-title"></h1>
-            <p class="content-hero-desc" id="content-hero-desc"></p>
-          </div>
-        </div>
-
-        <!-- Tabs -->
-        <div class="tabs-container" role="tablist" aria-label="Navegação por abas">
-          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-panel-general" id="tab-general" data-tab="general">
-            Informações Gerais
-          </button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-state" id="tab-state" data-tab="state">
-            Por Estado
-          </button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-city" id="tab-city" data-tab="city">
-            Por Cidade
-          </button>
-        </div>
-
-        <!-- Tab Panel: Informações Gerais -->
-        <div class="tab-panel active" id="tab-panel-general" role="tabpanel" aria-labelledby="tab-general">
-          <div class="content-card" id="general-content">
+          <div class="home-grid" id="home-grid" role="list" aria-label="Temas de informação">
             <!-- Populated by JS -->
           </div>
         </div>
+      </div>
 
-        <!-- Tab Panel: Por Estado -->
-        <div class="tab-panel" id="tab-panel-state" role="tabpanel" aria-labelledby="tab-state">
-          <div class="content-card">
-            <label class="select-label" for="state-select">Selecione seu estado</label>
-            <div class="select-wrapper">
-              <select id="state-select" class="custom-select" aria-label="Selecione o estado">
-                <option value="">Selecione seu estado</option>
-              </select>
-              <svg class="select-arrow"><use href="#icon-arrow-right"/></svg>
-            </div>
-            <div id="state-content" class="state-content" aria-live="polite">
-              <!-- Populated by JS on select change -->
+      <!-- ══════════════════════════════════════
+         TELA 2 – LISTAGEM DO TEMA
+    ══════════════════════════════════════ -->
+      <div id="screen-theme" class="screen" role="main" aria-label="Módulos do tema">
+        <header class="app-header sub-header" id="theme-header">
+          <button class="btn-back" id="theme-back-btn" aria-label="Voltar">
+            <svg>
+              <use href="#icon-arrow-left" />
+            </svg>
+            <span>Voltar</span>
+          </button>
+        </header>
+
+        <div class="screen-scroll">
+          <div class="theme-hero" id="theme-hero">
+            <div class="theme-hero-icon" id="theme-hero-icon" aria-hidden="true"></div>
+            <div class="theme-hero-text">
+              <h1 class="theme-hero-title" id="theme-hero-title"></h1>
+              <p class="theme-hero-desc" id="theme-hero-desc"></p>
             </div>
           </div>
+
+          <div class="modules-list" id="modules-list" role="list" aria-label="Lista de módulos">
+            <!-- Populated by JS -->
+          </div>
         </div>
+      </div>
 
-        <!-- Tab Panel: Por Cidade -->
-        <div class="tab-panel" id="tab-panel-city" role="tabpanel" aria-labelledby="tab-city">
-          <div class="content-card">
-            <label class="select-label" for="city-state-select">Selecione o estado</label>
-            <div class="select-wrapper">
-              <select id="city-state-select" class="custom-select" aria-label="Estado">
-                <option value="">Selecione o estado</option>
-              </select>
-              <svg class="select-arrow"><use href="#icon-arrow-right"/></svg>
+      <!-- ══════════════════════════════════════
+         TELA 3 – CONTEÚDO COM ABAS
+    ══════════════════════════════════════ -->
+      <div id="screen-content" class="screen" role="main" aria-label="Conteúdo">
+        <header class="app-header sub-header">
+          <button class="btn-back" id="content-back-btn" aria-label="Voltar">
+            <svg>
+              <use href="#icon-arrow-left" />
+            </svg>
+            <span>Voltar</span>
+          </button>
+        </header>
+
+        <div class="screen-scroll">
+          <div class="content-hero" id="content-hero">
+            <div class="content-hero-icon" id="content-hero-icon" aria-hidden="true"></div>
+            <div>
+              <h1 class="content-hero-title" id="content-hero-title"></h1>
+              <p class="content-hero-desc" id="content-hero-desc"></p>
             </div>
+          </div>
 
-            <div id="city-select-wrapper" class="city-select-group" style="display:none">
-              <label class="select-label" for="city-select">Selecione a cidade</label>
-              <div class="select-wrapper">
-                <select id="city-select" class="custom-select" aria-label="Cidade">
-                  <option value="">Selecione a cidade</option>
-                </select>
-                <svg class="select-arrow"><use href="#icon-arrow-right"/></svg>
-              </div>
-            </div>
+          <!-- Tabs -->
+          <div class="tabs-container" role="tablist" aria-label="Navegação por abas">
+            <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-panel-general"
+              id="tab-general" data-tab="general">
+              Informações Gerais
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-state" id="tab-state"
+              data-tab="state">
+              Por Estado
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-city" id="tab-city"
+              data-tab="city">
+              Por Cidade
+            </button>
+          </div>
 
-            <div id="unit-select-wrapper" class="city-select-group" style="display:none">
-              <label class="select-label" for="unit-select">Selecione a loja</label>
-              <div class="select-wrapper">
-                <select id="unit-select" class="custom-select" aria-label="Loja">
-                  <option value="">Selecione a loja</option>
-                </select>
-                <svg class="select-arrow"><use href="#icon-arrow-right"/></svg>
-              </div>
-            </div>
-
-            <div id="city-content" class="city-content" aria-live="polite">
+          <!-- Tab Panel: Informações Gerais -->
+          <div class="tab-panel active" id="tab-panel-general" role="tabpanel" aria-labelledby="tab-general">
+            <div class="content-card" id="general-content">
               <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Tab Panel: Por Estado -->
+          <div class="tab-panel" id="tab-panel-state" role="tabpanel" aria-labelledby="tab-state">
+            <div class="content-card">
+              <label class="select-label" for="state-select">Selecione seu estado</label>
+              <div class="select-wrapper">
+                <select id="state-select" class="custom-select" aria-label="Selecione o estado">
+                  <option value="">Selecione seu estado</option>
+                </select>
+                <svg class="select-arrow">
+                  <use href="#icon-arrow-right" />
+                </svg>
+              </div>
+              <div id="state-content" class="state-content" aria-live="polite">
+                <!-- Populated by JS on select change -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Panel: Por Cidade -->
+          <div class="tab-panel" id="tab-panel-city" role="tabpanel" aria-labelledby="tab-city">
+            <div class="content-card">
+              <label class="select-label" for="city-state-select">Selecione o estado</label>
+              <div class="select-wrapper">
+                <select id="city-state-select" class="custom-select" aria-label="Estado">
+                  <option value="">Selecione o estado</option>
+                </select>
+                <svg class="select-arrow">
+                  <use href="#icon-arrow-right" />
+                </svg>
+              </div>
+
+              <div id="city-select-wrapper" class="city-select-group" style="display:none">
+                <label class="select-label" for="city-select">Selecione a cidade</label>
+                <div class="select-wrapper">
+                  <select id="city-select" class="custom-select" aria-label="Cidade">
+                    <option value="">Selecione a cidade</option>
+                  </select>
+                  <svg class="select-arrow">
+                    <use href="#icon-arrow-right" />
+                  </svg>
+                </div>
+              </div>
+
+              <div id="unit-select-wrapper" class="city-select-group" style="display:none">
+                <label class="select-label" for="unit-select">Selecione a loja</label>
+                <div class="select-wrapper">
+                  <select id="unit-select" class="custom-select" aria-label="Loja">
+                    <option value="">Selecione a loja</option>
+                  </select>
+                  <svg class="select-arrow">
+                    <use href="#icon-arrow-right" />
+                  </svg>
+                </div>
+              </div>
+
+              <div id="city-content" class="city-content" aria-live="polite">
+                <!-- Populated by JS -->
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ══════════════════════════════════════
+      <!-- ══════════════════════════════════════
          TELA 3.5 – ATENDIMENTO PRIORITÁRIO
     ══════════════════════════════════════ -->
-    <div id="screen-atendimento-prioritario" class="screen" role="main" aria-label="Atendimento Prioritário">
-      <header class="app-header sub-header" style="background: #9B59B6">
-        <button class="btn-back" id="atendimento-back-btn" aria-label="Voltar">
-          <svg><use href="#icon-arrow-left"/></svg>
-          <span>Voltar</span>
-        </button>
-      </header>
+      <div id="screen-atendimento-prioritario" class="screen" role="main" aria-label="Atendimento Prioritário">
+        <header class="app-header sub-header" style="background: #9B59B6">
+          <button class="btn-back" id="atendimento-back-btn" aria-label="Voltar">
+            <svg>
+              <use href="#icon-arrow-left" />
+            </svg>
+            <span>Voltar</span>
+          </button>
+        </header>
 
-      <div class="screen-scroll">
-        <div class="content-hero">
-          <div class="content-hero-icon" style="background: #9B59B6">
-            <svg><use href="#icon-user"/></svg>
+        <div class="screen-scroll">
+          <div class="content-hero">
+            <div class="content-hero-icon" style="background: #9B59B6">
+              <svg>
+                <use href="#icon-user" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="content-hero-title">Atendimento Preferencial</h1>
+              <p class="content-hero-desc">Regras e legislações que garantem atendimento preferencial a pessoas com
+                necessidades especiais.</p>
+            </div>
           </div>
-          <div>
-            <h1 class="content-hero-title">Atendimento Preferencial</h1>
-            <p class="content-hero-desc">Regras e legislações que garantem atendimento preferencial a pessoas com necessidades especiais.</p>
-          </div>
-        </div>
 
-        <div class="content-card">
-          <div class="intro">
-            Nesta página, os Clientes das lojas XIAOMI STORE encontrarão informações sobre <strong>Atendimento Preferencial e Prioritário.</strong>
-            <br><br>
-            <strong>Atendimento Preferencial</strong> e Prioritário de acordo com a Lei Federal nº 10.048/2000:
-            <ul class="pref-list" aria-describedby="desc-list">
+          <div class="content-card">
+            <div class="intro">
+              Nesta página, os Clientes das lojas XIAOMI STORE encontrarão informações sobre <strong>Atendimento
+                Preferencial e Prioritário.</strong>
+              <br><br>
+              <strong>Atendimento Preferencial</strong> e Prioritário de acordo com a Lei Federal nº 10.048/2000:
+              <ul class="pref-list" aria-describedby="desc-list">
                 <li>Pessoas com deficiência;</li>
                 <li>Pessoas com transtorno do espectro autista;</li>
                 <li>Pessoas idosas com idade igual ou superior a 60 (sessenta) anos;</li>
@@ -333,433 +441,527 @@
                 <li>Pessoas com criança de colo;</li>
                 <li>Pessoas obesas;</li>
                 <li>Pessoas com mobilidade reduzida;</li>
-                <li>Doadores de sangue, mediante apresentação de comprovante de doação, com validade de 120 (cento e vinte) dias.</li>
-            </ul>
-            Seguem abaixo outras condições de <strong>Atendimento Preferencial e Prioritário</strong> de acordo leis específicas de Estados e Municípios. Verifique as informações referentes à localidade (estado/cidade) da loja em que está sendo atendido e, caso faça parte de algum grupo preferencial / prioritário, informe sua condição ao vendedor.
+                <li>Doadores de sangue, mediante apresentação de comprovante de doação, com validade de 120 (cento e
+                  vinte) dias.</li>
+              </ul>
+              Seguem abaixo outras condições de <strong>Atendimento Preferencial e Prioritário</strong> de acordo leis
+              específicas de Estados e Municípios. Verifique as informações referentes à localidade (estado/cidade) da
+              loja em que está sendo atendido e, caso faça parte de algum grupo preferencial / prioritário, informe sua
+              condição ao vendedor.
+            </div>
           </div>
-        </div>
 
-        <div class="search-wrapper" role="search" style="margin-top:12px; margin-bottom:12px; position: relative;">
+          <div class="search-wrapper" role="search" style="margin-top:12px; margin-bottom:12px; position: relative;">
             <label for="searchInputAtendimento" class="visually-hidden">Buscar cidade ou estado</label>
             <div class="search-container" style="position: relative; display: flex; align-items: center;">
-                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 20px; height: 20px; position: absolute; left: 10px; pointer-events: none;">
-                    <path fill="#888" d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.17 5.59 12.53 3 9.25 3S3.33 5.59 3.09 8.89a6.51 6.51 0 0011.28 4.49l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.25 14C6.9 14 5 12.1 5 9.75S6.9 5.5 9.25 5.5 13.5 7.4 13.5 9.75 11.6 14 9.25 14z" />
-                </svg>
-                <input type="text" id="searchInputAtendimento" placeholder="Buscar cidade ou estado..." aria-label="Buscar cidade ou estado" style="width: 100%; padding: 10px 10px 10px 40px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background-color: #fff;">
+              <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                style="width: 20px; height: 20px; position: absolute; left: 10px; pointer-events: none;">
+                <path fill="#888"
+                  d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.17 5.59 12.53 3 9.25 3S3.33 5.59 3.09 8.89a6.51 6.51 0 0011.28 4.49l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.25 14C6.9 14 5 12.1 5 9.75S6.9 5.5 9.25 5.5 13.5 7.4 13.5 9.75 11.6 14 9.25 14z" />
+              </svg>
+              <input type="text" id="searchInputAtendimento" placeholder="Buscar cidade ou estado..."
+                aria-label="Buscar cidade ou estado"
+                style="width: 100%; padding: 10px 10px 10px 40px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background-color: #fff;">
             </div>
-        </div>
+          </div>
 
-        <div class="estados-container" id="estadosContainerAtendimento">
+          <div class="estados-container" id="estadosContainerAtendimento">
             <div class="estados-item" data-estado="alagoas">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Alagoas (AL)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Maceio al">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Maceió<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/al/atendimento_preferencial_AL.png" alt="Placa de Atendimento Preferencial em Alagoas">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Alagoas (AL)<span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Maceio al">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Maceió<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/al/atendimento_preferencial_AL.png"
+                      alt="Placa de Atendimento Preferencial em Alagoas">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Bahia BA">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Bahia (BA)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Bahia">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Bahia<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/ba/atendimento_preferencial_BA.png" alt="Placa de Atendimento Preferencial em Bahia">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Bahia (BA)<span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Bahia">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Bahia<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/ba/atendimento_preferencial_BA.png"
+                      alt="Placa de Atendimento Preferencial em Bahia">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Ceará CE">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Ceará (CE)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Ceará">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Ceará<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/ce/atendimento_preferencial_CE.png" alt="Placa de Atendimento Preferencial em Ceará">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Ceará (CE)<span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Ceará">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Ceará<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/ce/atendimento_preferencial_CE.png"
+                      alt="Placa de Atendimento Preferencial em Ceará">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Distrito Federal DF">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Distrito Federal (DF)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Distrito Federal">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Distrito Federal<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/df/ambiente_filmado_DF.png" alt="Aviso de ambiente sendo filmado no Distrito Federal">
-                            <img src="./img/estados/df/sonegar_crime_DF.png" alt="Aviso de que sonegar é crime no Distrito Federal">
-                            <img src="./img/estados/df/proibido_fumar_DF.gif" alt="Sinalização de proibido fumar no Distrito Federal">
-                            <img src="./img/estados/df/proibido_capacete_DF.png" alt="Aviso de proibido uso de capacete dentro do estabelecimento no Distrito Federal">
-                            <img src="./img/estados/df/proibido_discriminacao_DF.png" alt="Aviso contra discriminação no Distrito Federal">
-                            <img src="./img/estados/df/proibido_sacolas_DF.png" alt="Aviso sobre proibição de sacolas plásticas no Distrito Federal">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Distrito Federal (DF)<span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Distrito Federal">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Distrito Federal<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/df/ambiente_filmado_DF.png"
+                      alt="Aviso de ambiente sendo filmado no Distrito Federal">
+                    <img src="./img/estados/df/sonegar_crime_DF.png"
+                      alt="Aviso de que sonegar é crime no Distrito Federal">
+                    <img src="./img/estados/df/proibido_fumar_DF.gif"
+                      alt="Sinalização de proibido fumar no Distrito Federal">
+                    <img src="./img/estados/df/proibido_capacete_DF.png"
+                      alt="Aviso de proibido uso de capacete dentro do estabelecimento no Distrito Federal">
+                    <img src="./img/estados/df/proibido_discriminacao_DF.png"
+                      alt="Aviso contra discriminação no Distrito Federal">
+                    <img src="./img/estados/df/proibido_sacolas_DF.png"
+                      alt="Aviso sobre proibição de sacolas plásticas no Distrito Federal">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Espirito Santo ES">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Espirito Santo (ES)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Espirito">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Espirito Santo<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/es/ambiente_filmado_ES.png" alt="Aviso de ambiente sendo filmado no Espírito Santo">
-                            <img src="./img/estados/es/procon_ES.png" alt="Informações de contato do Procon do Espírito Santo">
-                            <img src="./img/estados/es/proibido_fumar_ES.gif" alt="Sinalização de proibido fumar no Espírito Santo">
-                            <img src="./img/estados/es/proibido_capacete_ES.webp" alt="Aviso de proibido uso de capacete dentro do estabelecimento no Espírito Santo">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Espirito Santo (ES)<span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Espirito">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Espirito Santo<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/es/ambiente_filmado_ES.png"
+                      alt="Aviso de ambiente sendo filmado no Espírito Santo">
+                    <img src="./img/estados/es/procon_ES.png" alt="Informações de contato do Procon do Espírito Santo">
+                    <img src="./img/estados/es/proibido_fumar_ES.gif"
+                      alt="Sinalização de proibido fumar no Espírito Santo">
+                    <img src="./img/estados/es/proibido_capacete_ES.webp"
+                      alt="Aviso de proibido uso de capacete dentro do estabelecimento no Espírito Santo">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Maranhao MA">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Maranhão (MA)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Sao Luiz">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">São Luís<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/ma/atendimento_preferencial_MA.png" alt="Placa de Atendimento Preferencial no Maranhão">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Maranhão (MA)<span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Sao Luiz">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">São Luís<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/ma/atendimento_preferencial_MA.png"
+                      alt="Placa de Atendimento Preferencial no Maranhão">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Mato Grosso do Sul MT">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Mato Grosso do Sul (MT)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Campo Grande">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Campo Grande<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/mt/atendimento_prioritario_MT.png" alt="Placa de Atendimento Prioritário em Mato Grosso">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Mato Grosso do Sul
+                (MT)<span class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Campo Grande">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Campo Grande<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/mt/atendimento_prioritario_MT.png"
+                      alt="Placa de Atendimento Prioritário em Mato Grosso">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Minas Gerais MG">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Minas Gerais (MG)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Belo Horizonte">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Belo Horizonte<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/mg/atendimento_prioritario_MG.png" alt="Placa de Atendimento Prioritário em Belo Horizonte">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Minas Gerais (MG)<span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Belo Horizonte">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Belo Horizonte<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/mg/atendimento_prioritario_MG.png"
+                      alt="Placa de Atendimento Prioritário em Belo Horizonte">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Para PA">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Pará (PA)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Para">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Pará<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/pa/atendimento_preferencial_PA.png" alt="Placa de Atendimento Preferencial no Pará">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Pará (PA)<span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Para">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Pará<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/pa/atendimento_preferencial_PA.png"
+                      alt="Placa de Atendimento Preferencial no Pará">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Paraiba PB">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Paraíba (PB)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Paraiba">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Paríba<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/pb/1. Atendimento Prioritário.jpg" alt="Placa de Atendimento Preferencial na Paraíba">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Paraíba (PB)<span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Paraiba">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Paríba<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/pb/1. Atendimento Prioritário.jpg"
+                      alt="Placa de Atendimento Preferencial na Paraíba">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Paraiba PE">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Pernambuco (PE)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Pernambuco">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Pernambuco<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/pe/atendimento_preferencial_PE.png" alt="Placa de Atendimento Preferencial em Pernambuco">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Pernambuco (PE)<span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Pernambuco">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Pernambuco<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/pe/atendimento_preferencial_PE.png"
+                      alt="Placa de Atendimento Preferencial em Pernambuco">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Piauí PI">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Piauí (PI)<span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Piuai">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Piauí<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/pi/atendimento_preferencial_PI.png" alt="Placa de Atendimento Preferencial no Piauí">
-                        </div>
-                    </div>
-                    <div class="cidade" data-cidade="Teresina">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Teresina<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/pi/atendimento_preferencial_PI.png" alt="Placa de Atendimento Preferencial em Teresina">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Piauí (PI)<span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Piuai">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Piauí<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/pi/atendimento_preferencial_PI.png"
+                      alt="Placa de Atendimento Preferencial no Piauí">
+                  </div>
                 </div>
+                <div class="cidade" data-cidade="Teresina">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Teresina<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/pi/atendimento_preferencial_PI.png"
+                      alt="Placa de Atendimento Preferencial em Teresina">
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="Rio de Janeiro RJ">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Rio de Janeiro (RJ) <span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="Rio de Janeiro">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Rio de Janeiro<span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/rj/atendimento_preferencial_RJ.png" alt="Placa de Atendimento Preferencial no Rio de Janeiro">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">Rio de Janeiro (RJ) <span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="Rio de Janeiro">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Rio de Janeiro<span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/rj/atendimento_preferencial_RJ.png"
+                      alt="Placa de Atendimento Preferencial no Rio de Janeiro">
+                  </div>
                 </div>
+              </div>
             </div>
 
             <div class="estados-item" data-estado="São paulo SP">
-                <div class="estados-question" tabindex="0" role="button" aria-expanded="false">São Paulo (SP) <span class="seta">▶</span></div>
-                <div class="estados-answer">
-                    <div class="cidade" data-cidade="barueri">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Barueri <span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/sp/atendimento_prioritario_SP.png" alt="Placa de Atendimento Prioritário em Barueri">
-                        </div>
-                    </div>
-                    <div class="cidade" data-cidade="campinas">
-                        <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Campinas <span class="seta">▶</span></div>
-                        <div class="cidade-answer">
-                            <img src="./img/estados/sp/atendimento_prioritario_SP.jpg" alt="Placa de Atendimento Prioritário em Campinas">
-                        </div>
-                    </div>
+              <div class="estados-question" tabindex="0" role="button" aria-expanded="false">São Paulo (SP) <span
+                  class="seta">▶</span></div>
+              <div class="estados-answer">
+                <div class="cidade" data-cidade="barueri">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Barueri <span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/sp/atendimento_prioritario_SP.png"
+                      alt="Placa de Atendimento Prioritário em Barueri">
+                  </div>
                 </div>
+                <div class="cidade" data-cidade="campinas">
+                  <div class="cidade-question" tabindex="0" role="button" aria-expanded="false">Campinas <span
+                      class="seta">▶</span></div>
+                  <div class="cidade-answer">
+                    <img src="./img/estados/sp/atendimento_prioritario_SP.jpg"
+                      alt="Placa de Atendimento Prioritário em Campinas">
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- ══════════════════════════════════════
+      <!-- ══════════════════════════════════════
          TELA 3.6 – PRIVACIDADE E LGPD
     ══════════════════════════════════════ -->
-    <div id="screen-privacidade-lgpd" class="screen" role="main" aria-label="Privacidade e LGPD">
-      <header class="app-header sub-header" style="background: #27AE60">
-        <button class="btn-back" id="privacidade-back-btn" aria-label="Voltar">
-          <svg><use href="#icon-arrow-left"/></svg>
-          <span>Voltar</span>
-        </button>
-      </header>
-
-      <div class="screen-scroll">
-
-        <!-- Hero — mesmo padrão dos outros temas -->
-        <div class="content-hero">
-          <div class="content-hero-icon" style="background: #27AE60">
-            <svg><use href="#icon-lock"/></svg>
-          </div>
-          <div>
-            <h1 class="content-hero-title">Aviso de Privacidade</h1>
-            <p class="content-hero-desc">Consulte o Aviso de Privacidade específico do seu shopping.</p>
-          </div>
-        </div>
-
-        <!-- Barra de busca -->
-        <div class="priv-search-wrap">
-          <div class="priv-search-box" id="privSearchBox">
-            <svg class="priv-search-ico" aria-hidden="true"><use href="#icon-search"/></svg>
-            <input
-              type="search"
-              id="searchInputPrivacidade"
-              class="priv-search-input"
-              placeholder="Shopping, cidade ou estado…"
-              aria-label="Buscar por shopping, cidade ou estado"
-              autocomplete="off"
-            >
-            <button class="priv-search-clear" id="privSearchClearBtn" aria-label="Limpar busca" style="display:none">
-              <svg aria-hidden="true"><use href="#icon-close"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Estado inicial vazio -->
-        <div id="privResultsEmpty" class="priv-empty-state">
-          <div class="priv-empty-icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      <div id="screen-privacidade-lgpd" class="screen" role="main" aria-label="Privacidade e LGPD">
+        <header class="app-header sub-header" style="background: #27AE60">
+          <button class="btn-back" id="privacidade-back-btn" aria-label="Voltar">
+            <svg>
+              <use href="#icon-arrow-left" />
             </svg>
+            <span>Voltar</span>
+          </button>
+        </header>
+
+        <div class="screen-scroll">
+
+          <!-- Hero — mesmo padrão dos outros temas -->
+          <div class="content-hero">
+            <div class="content-hero-icon" style="background: #27AE60">
+              <svg>
+                <use href="#icon-lock" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="content-hero-title">Aviso de Privacidade</h1>
+              <p class="content-hero-desc">Consulte o Aviso de Privacidade específico do seu shopping.</p>
+            </div>
           </div>
-          <p class="priv-empty-title">Busque seu shopping</p>
-          <p class="priv-empty-sub">Digite o nome do shopping, cidade ou estado para encontrar o Aviso de Privacidade correspondente.</p>
-        </div>
 
-        <!-- Resultados -->
-        <div id="privResultsList" class="priv-results" aria-live="polite" style="display:none">
-          <!-- Preenchido pelo JS -->
-        </div>
-
-        <!-- Sem resultados -->
-        <div id="privNoResults" class="priv-empty-state" style="display:none">
-          <div class="priv-empty-icon-wrap" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              <line x1="8" y1="8" x2="14" y2="14"/><line x1="14" y1="8" x2="8" y2="14"/>
-            </svg>
+          <!-- Barra de busca -->
+          <div class="priv-search-wrap">
+            <div class="priv-search-box" id="privSearchBox">
+              <svg class="priv-search-ico" aria-hidden="true">
+                <use href="#icon-search" />
+              </svg>
+              <input type="search" id="searchInputPrivacidade" class="priv-search-input"
+                placeholder="Shopping, cidade ou estado…" aria-label="Buscar por shopping, cidade ou estado"
+                autocomplete="off">
+              <button class="priv-search-clear" id="privSearchClearBtn" aria-label="Limpar busca" style="display:none">
+                <svg aria-hidden="true">
+                  <use href="#icon-close" />
+                </svg>
+              </button>
+            </div>
           </div>
-          <p class="priv-empty-title">Nenhum resultado</p>
-          <p class="priv-empty-sub">Tente buscar por outro termo.</p>
-        </div>
 
+          <!-- Estado inicial vazio -->
+          <div id="privResultsEmpty" class="priv-empty-state">
+            <div class="priv-empty-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </div>
+            <p class="priv-empty-title">Busque seu shopping</p>
+            <p class="priv-empty-sub">Digite o nome do shopping, cidade ou estado para encontrar o Aviso de Privacidade
+              correspondente.</p>
+          </div>
+
+          <!-- Resultados -->
+          <div id="privResultsList" class="priv-results" aria-live="polite" style="display:none">
+            <!-- Preenchido pelo JS -->
+          </div>
+
+          <!-- Sem resultados -->
+          <div id="privNoResults" class="priv-empty-state" style="display:none">
+            <div class="priv-empty-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="8" y1="8" x2="14" y2="14" />
+                <line x1="14" y1="8" x2="8" y2="14" />
+              </svg>
+            </div>
+            <p class="priv-empty-title">Nenhum resultado</p>
+            <p class="priv-empty-sub">Tente buscar por outro termo.</p>
+          </div>
+
+        </div>
       </div>
-    </div>
 
 
-    <!-- ══════════════════════════════════════
+      <!-- ══════════════════════════════════════
          TELA 4 – BUSCA
     ══════════════════════════════════════ -->
-    <div id="screen-search" class="screen" role="main" aria-label="Busca">
-      <header class="app-header sub-header">
-        <div class="header-logo">
-          <div class="logo-badge"><span class="logo-mi">MI</span></div>
-          <span class="logo-name">MI BRASIL</span>
-        </div>
-        <button class="btn-icon" id="hamburger-btn-search" aria-label="Abrir menu">
-          <svg><use href="#icon-menu"/></svg>
-        </button>
-      </header>
+      <div id="screen-search" class="screen" role="main" aria-label="Busca">
+        <header class="app-header sub-header">
+          <div class="header-logo">
+            <div class="logo-badge"><span class="logo-mi">MI</span></div>
+            <span class="logo-name">MI BRASIL</span>
+          </div>
+          <button class="btn-icon" id="hamburger-btn-search" aria-label="Abrir menu">
+            <svg>
+              <use href="#icon-menu" />
+            </svg>
+          </button>
+        </header>
 
-      <div class="screen-scroll">
-        <h1 class="search-page-title">Buscar informações</h1>
+        <div class="screen-scroll">
+          <h1 class="search-page-title">Buscar informações</h1>
 
-        <div class="search-bar-wrapper">
-          <svg class="search-bar-icon" aria-hidden="true"><use href="#icon-search"/></svg>
-          <input
-            type="search"
-            id="search-input"
-            class="search-bar"
-            placeholder="Digite o que você procura..."
-            aria-label="Campo de busca"
-            autocomplete="off"
-          />
-        </div>
+          <div class="search-bar-wrapper">
+            <svg class="search-bar-icon" aria-hidden="true">
+              <use href="#icon-search" />
+            </svg>
+            <input type="search" id="search-input" class="search-bar" placeholder="Digite o que você procura..."
+              aria-label="Campo de busca" autocomplete="off" />
+          </div>
 
-        <div class="filter-group">
-          <label class="filter-label" for="filter-select">Filtrar por tema</label>
-          <div class="select-wrapper">
-            <select id="filter-select" class="custom-select" aria-label="Filtrar por tema">
-              <option value="">Todos os temas</option>
-            </select>
-            <svg class="select-arrow"><use href="#icon-arrow-right"/></svg>
+          <div class="filter-group">
+            <label class="filter-label" for="filter-select">Filtrar por tema</label>
+            <div class="select-wrapper">
+              <select id="filter-select" class="custom-select" aria-label="Filtrar por tema">
+                <option value="">Todos os temas</option>
+              </select>
+              <svg class="select-arrow">
+                <use href="#icon-arrow-right" />
+              </svg>
+            </div>
+          </div>
+
+          <div id="search-results" class="search-results" aria-live="polite" aria-label="Resultados da busca">
+            <!-- Populated by JS -->
           </div>
         </div>
-
-        <div id="search-results" class="search-results" aria-live="polite" aria-label="Resultados da busca">
-          <!-- Populated by JS -->
-        </div>
       </div>
-    </div>
 
-    <!-- ══════════════════════════════════════
+      <!-- ══════════════════════════════════════
          TELA 5 – CONTATO
     ══════════════════════════════════════ -->
-    <div id="screen-contact" class="screen" role="main" aria-label="Contato">
-      <header class="app-header sub-header">
-        <button class="btn-back" id="contact-back-btn" aria-label="Voltar">
-          <svg><use href="#icon-arrow-left"/></svg>
-          <span>Voltar</span>
-        </button>
-      </header>
+      <div id="screen-contact" class="screen" role="main" aria-label="Contato">
+        <header class="app-header sub-header">
+          <button class="btn-back" id="contact-back-btn" aria-label="Voltar">
+            <svg>
+              <use href="#icon-arrow-left" />
+            </svg>
+            <span>Voltar</span>
+          </button>
+        </header>
 
-      <div class="screen-scroll">
-        <div class="contact-hero">
-          <div class="contact-icon-wrap" aria-hidden="true">
-            <svg><use href="#icon-chat"/></svg>
+        <div class="screen-scroll">
+          <div class="contact-hero">
+            <div class="contact-icon-wrap" aria-hidden="true">
+              <svg>
+                <use href="#icon-chat" />
+              </svg>
+            </div>
+            <h1>Fale Conosco</h1>
+            <p>Canais oficiais de atendimento e suporte ao cliente.</p>
           </div>
-          <h1>Fale Conosco</h1>
-          <p>Canais oficiais de atendimento e suporte ao cliente.</p>
-        </div>
 
-        <div id="contact-cards" class="contact-cards">
-          <!-- Populated by JS -->
-        </div>
+          <div id="contact-cards" class="contact-cards">
+            <!-- Populated by JS -->
+          </div>
 
-        <div class="content-card alert-card" style="margin-top:12px">
-          <svg class="alert-icon" aria-hidden="true"><use href="#icon-alert"/></svg>
-          <p>Em caso de emergência, acione o canal de atendimento da sua unidade local. Nosso compromisso é atendê-lo com rapidez e respeito.</p>
+          <div class="content-card alert-card" style="margin-top:12px">
+            <svg class="alert-icon" aria-hidden="true">
+              <use href="#icon-alert" />
+            </svg>
+            <p>Em caso de emergência, acione o canal de atendimento da sua unidade local. Nosso compromisso é atendê-lo
+              com rapidez e respeito.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- ══════════════════════════════════════
+      <!-- ══════════════════════════════════════
          TELA 6 – SOBRE
     ══════════════════════════════════════ -->
-    <div id="screen-about" class="screen" role="main" aria-label="Sobre">
-      <header class="app-header sub-header">
-        <button class="btn-back" id="about-back-btn" aria-label="Voltar">
-          <svg><use href="#icon-arrow-left"/></svg>
-          <span>Voltar</span>
-        </button>
-      </header>
+      <div id="screen-about" class="screen" role="main" aria-label="Sobre">
+        <header class="app-header sub-header">
+          <button class="btn-back" id="about-back-btn" aria-label="Voltar">
+            <svg>
+              <use href="#icon-arrow-left" />
+            </svg>
+            <span>Voltar</span>
+          </button>
+        </header>
 
-      <div class="screen-scroll">
-        <div class="about-hero">
-          <div class="about-logo">
-            <span class="logo-mi">MI</span>
-            <span class="logo-text">BRASIL</span>
+        <div class="screen-scroll">
+          <div class="about-hero">
+            <div class="about-logo">
+              <span class="logo-mi">MI</span>
+              <span class="logo-text">BRASIL</span>
+            </div>
+            <h1>Sobre o Sistema</h1>
           </div>
-          <h1>Sobre o Sistema</h1>
-        </div>
-        <div class="content-card" style="margin-bottom:12px">
-          <h2 class="card-section-title">O que é este sistema?</h2>
-          <p style="color:#4B5563;line-height:1.7;font-size:0.875rem">
-            O Hub Digital de Informações ao Cliente MI Brasil é uma plataforma institucional acessada via QR Code em nossas lojas físicas. Aqui você encontra todas as informações legais, políticas, regulamentos e direitos relativos à sua experiência de compra.
-          </p>
-        </div>
-        <div class="content-card" style="margin-bottom:12px">
-          <h2 class="card-section-title">Nossos pilares</h2>
-          <div class="about-pillars">
-            <div class="pillar-item">
-              <svg aria-hidden="true"><use href="#icon-eye"/></svg>
-              <span>Transparência</span>
-            </div>
-            <div class="pillar-item">
-              <svg aria-hidden="true"><use href="#icon-check"/></svg>
-              <span>Conformidade</span>
-            </div>
-            <div class="pillar-item">
-              <svg aria-hidden="true"><use href="#icon-star"/></svg>
-              <span>Respeito</span>
+          <div class="content-card" style="margin-bottom:12px">
+            <h2 class="card-section-title">O que é este sistema?</h2>
+            <p style="color:#4B5563;line-height:1.7;font-size:0.875rem">
+              O Hub Digital de Informações ao Cliente MI Brasil é uma plataforma institucional acessada via QR Code em
+              nossas lojas físicas. Aqui você encontra todas as informações legais, políticas, regulamentos e direitos
+              relativos à sua experiência de compra.
+            </p>
+          </div>
+          <div class="content-card" style="margin-bottom:12px">
+            <h2 class="card-section-title">Nossos pilares</h2>
+            <div class="about-pillars">
+              <div class="pillar-item">
+                <svg aria-hidden="true">
+                  <use href="#icon-eye" />
+                </svg>
+                <span>Transparência</span>
+              </div>
+              <div class="pillar-item">
+                <svg aria-hidden="true">
+                  <use href="#icon-check" />
+                </svg>
+                <span>Conformidade</span>
+              </div>
+              <div class="pillar-item">
+                <svg aria-hidden="true">
+                  <use href="#icon-star" />
+                </svg>
+                <span>Respeito</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="content-card">
-          <h2 class="card-section-title">Versão</h2>
-          <p style="color:#4B5563;font-size:0.875rem">Versão 2.0.0 · Atualizado em junho de 2026</p>
+          <div class="content-card">
+            <h2 class="card-section-title">Versão</h2>
+            <p style="color:#4B5563;font-size:0.875rem">Versão 2.0.0 · Atualizado em junho de 2026</p>
+          </div>
         </div>
       </div>
-    </div>
 
-  </div><!-- /screens-container -->
+    </div><!-- /screens-container -->
 
-  <!-- ─── BOTTOM NAVIGATION ───────────────── -->
-  <nav id="bottom-nav" class="bottom-nav" role="navigation" aria-label="Navegação principal">
-    <button class="bottom-nav-item active" data-nav="home" aria-label="Início" aria-current="page">
-      <svg class="bottom-nav-icon"><use href="#icon-home"/></svg>
-      <span>Início</span>
-    </button>
-    <button class="bottom-nav-item" data-nav="search" aria-label="Buscar">
-      <svg class="bottom-nav-icon"><use href="#icon-search"/></svg>
-      <span>Buscar</span>
-    </button>
-    <button class="bottom-nav-item" data-nav="contact" aria-label="Contato">
-      <svg class="bottom-nav-icon"><use href="#icon-phone"/></svg>
-      <span>Contato</span>
-    </button>
-  </nav>
+    <!-- ─── BOTTOM NAVIGATION ───────────────── -->
+    <nav id="bottom-nav" class="bottom-nav" role="navigation" aria-label="Navegação principal">
+      <button class="bottom-nav-item active" data-nav="home" aria-label="Início" aria-current="page">
+        <svg class="bottom-nav-icon">
+          <use href="#icon-home" />
+        </svg>
+        <span>Início</span>
+      </button>
+      <button class="bottom-nav-item" data-nav="search" aria-label="Buscar">
+        <svg class="bottom-nav-icon">
+          <use href="#icon-search" />
+        </svg>
+        <span>Buscar</span>
+      </button>
+      <button class="bottom-nav-item" data-nav="contact" aria-label="Contato">
+        <svg class="bottom-nav-icon">
+          <use href="#icon-phone" />
+        </svg>
+        <span>Contato</span>
+      </button>
+    </nav>
 
-</div><!-- /app -->
+  </div><!-- /app -->
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
