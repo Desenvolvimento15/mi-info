@@ -1757,19 +1757,35 @@ ul.pref-list li {
   border-bottom: 1px solid #e8f8f0;
 }
 
+.priv-card-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
 .priv-card-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #27AE60, #2ECC71);
-  color: #fff;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 3px 7px;
   border-radius: 6px;
-  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.priv-badge-uf {
+  background: #e8f8f0;
+  color: #1a6b3c;
+  border: 1px solid #b0dfca;
+}
+
+.priv-badge-aviso {
+  background: linear-gradient(135deg, #27AE60, #2ECC71);
+  color: #fff;
 }
 
 .priv-card-names {

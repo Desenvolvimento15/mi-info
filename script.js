@@ -1428,47 +1428,65 @@ function bindEvents() {
 
   // ─── PRIVACIDADE E LGPD – Busca por shopping/cidade/estado ──────────────
   const PRIV_DATA = [
-    {
-      shopping: 'Shopping Zury',
-      cidade:   'Cidade Zury',
-      estado:   'Estado Zury',
-      uf:       'ZY',
-      url:      'https://www.mibrasil.com.br/aviso-de-privacidade-zury',
-      label:    'Aviso de Privacidade – Zury'
-    },
-    {
-      shopping: 'Shopping Awa',
-      cidade:   'Cidade Awa',
-      estado:   'Estado Awa',
-      uf:       'AW',
-      url:      'https://www.mibrasil.com.br/aviso-de-privacidade-awa',
-      label:    'Aviso de Privacidade – Awa'
-    },
-    {
-      shopping: 'Shopping Gifu',
-      cidade:   'Cidade Gifu',
-      estado:   'Estado Gifu',
-      uf:       'GF',
-      url:      'https://www.mibrasil.com.br/aviso-de-privacidade-gifu',
-      label:    'Aviso de Privacidade – Gifu'
-    },
-    {
-      shopping: 'Shopping 4 – Exemplo',
-      cidade:   'Cidade Exemplo 4',
-      estado:   'Estado Exemplo 4',
-      uf:       'EX',
-      url:      '#',
-      label:    'Aviso de Privacidade – Shopping 4'
-    },
-    {
-      shopping: 'Shopping 5 – Exemplo',
-      cidade:   'Cidade Exemplo 5',
-      estado:   'Estado Exemplo 5',
-      uf:       'EX',
-      url:      '#',
-      label:    'Aviso de Privacidade – Shopping 5'
-    },
+    // ── ZURY ─────────────────────────────────────────────────────────────
+    { shopping: 'Shopping Center Norte',   cidade: 'São Paulo',          estado: 'São Paulo',       uf: 'SP', aviso: 'Zury', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-zury', label: 'Aviso de Privacidade – Zury' },
+    { shopping: 'Shopping Aricanduva',     cidade: 'São Paulo',          estado: 'São Paulo',       uf: 'SP', aviso: 'Zury', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-zury', label: 'Aviso de Privacidade – Zury' },
+    { shopping: 'Shopping Vitória',        cidade: 'Serra',              estado: 'Espírito Santo',  uf: 'ES', aviso: 'Zury', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-zury', label: 'Aviso de Privacidade – Zury' },
+    { shopping: 'Shopping Campo Grande',   cidade: 'Rio de Janeiro',     estado: 'Rio de Janeiro',  uf: 'RJ', aviso: 'Zury', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-zury', label: 'Aviso de Privacidade – Zury' },
+    { shopping: 'Shopping Vila Velha',     cidade: 'Vila Velha',         estado: 'Espírito Santo',  uf: 'ES', aviso: 'Zury', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-zury', label: 'Aviso de Privacidade – Zury' },
+    { shopping: 'Shopping União de Osasco',cidade: 'Osasco',             estado: 'São Paulo',       uf: 'SP', aviso: 'Zury', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-zury', label: 'Aviso de Privacidade – Zury' },
+
+    // ── AWA ──────────────────────────────────────────────────────────────
+    { shopping: 'Shopping Ibirapuera',             cidade: 'São Paulo',          estado: 'São Paulo',        uf: 'SP', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Shopping Recife',                 cidade: 'Recife',             estado: 'Pernambuco',       uf: 'PE', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'North Shopping Fortaleza',        cidade: 'Fortaleza',          estado: 'Ceará',            uf: 'CE', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Iguatemi Bosque Fortaleza',       cidade: 'Fortaleza',          estado: 'Ceará',            uf: 'CE', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Shopping Iguatemi Porto Alegre',  cidade: 'Porto Alegre',       estado: 'Rio Grande do Sul', uf: 'RS', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Shopping Estação BH',             cidade: 'Belo Horizonte',     estado: 'Minas Gerais',     uf: 'MG', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Shopping Parangaba',              cidade: 'Fortaleza',          estado: 'Ceará',            uf: 'CE', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'ParkShopping Brasília',           cidade: 'Brasília',           estado: 'Distrito Federal', uf: 'DF', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Grand Plaza Shopping',            cidade: 'Santo André',        estado: 'São Paulo',        uf: 'SP', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Shopping Pátio Maceió',           cidade: 'Maceió',             estado: 'Alagoas',          uf: 'AL', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Maceió Shopping',                 cidade: 'Maceió',             estado: 'Alagoas',          uf: 'AL', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Shopping da Ilha',                cidade: 'São Luís',           estado: 'Maranhão',         uf: 'MA', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Litoral Plaza Shopping',          cidade: 'Caucaia',            estado: 'Ceará',            uf: 'CE', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Boulevard Shopping Belém',        cidade: 'Belém',              estado: 'Pará',             uf: 'PA', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Shopping Tacaruna',               cidade: 'Recife',             estado: 'Pernambuco',       uf: 'PE', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Midway Mall',                     cidade: 'Natal',              estado: 'Rio Grande do Norte', uf: 'RN', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Shopping Jardins',                cidade: 'Aracaju',            estado: 'Sergipe',          uf: 'SE', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Shopping Rio Poty',               cidade: 'Teresina',           estado: 'Piauí',            uf: 'PI', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Manaíra Shopping',                cidade: 'João Pessoa',        estado: 'Paraíba',          uf: 'PB', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Partage Shopping',                cidade: 'Campina Grande',     estado: 'Paraíba',          uf: 'PB', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Sumaúma Park Shopping',           cidade: 'Manaus',             estado: 'Amazonas',         uf: 'AM', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+    { shopping: 'Manauara Shopping',               cidade: 'Manaus',             estado: 'Amazonas',         uf: 'AM', aviso: 'awa', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-awa', label: 'Aviso de Privacidade – awa' },
+
+    // ── GIFU ─────────────────────────────────────────────────────────────
+    { shopping: 'Morumbi Shopping',                       cidade: 'São Paulo',           estado: 'São Paulo',  uf: 'SP', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+    { shopping: 'Shopping Eldorado',                      cidade: 'São Paulo',           estado: 'São Paulo',  uf: 'SP', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+    { shopping: 'Salvador Shopping',                      cidade: 'Salvador',            estado: 'Bahia',      uf: 'BA', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+    { shopping: 'Shopping da Bahia',                      cidade: 'Salvador',            estado: 'Bahia',      uf: 'BA', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+    { shopping: 'Shopping Metrópole',                     cidade: 'São Bernardo do Campo', estado: 'São Paulo', uf: 'SP', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+    { shopping: 'Shopping Interlagos',                    cidade: 'São Paulo',           estado: 'São Paulo',  uf: 'SP', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+    { shopping: 'Boulevard Shopping Feira de Santana',    cidade: 'Feira de Santana',    estado: 'Bahia',      uf: 'BA', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+    { shopping: 'Novo Shopping Center Ribeirão Preto',    cidade: 'Ribeirão Preto',      estado: 'São Paulo',  uf: 'SP', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+    { shopping: 'Shopping Tamboré',                       cidade: 'Santana de Parnaíba', estado: 'São Paulo',  uf: 'SP', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+    { shopping: 'Maxi Shopping Jundiaí',                  cidade: 'Jundiaí',             estado: 'São Paulo',  uf: 'SP', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+    { shopping: 'Mogi Shopping',                          cidade: 'Mogi das Cruzes',     estado: 'São Paulo',  uf: 'SP', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+    { shopping: 'Taubaté Shopping',                       cidade: 'Taubaté',             estado: 'São Paulo',  uf: 'SP', aviso: 'Gifu', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-gifu', label: 'Aviso de Privacidade – Gifu' },
+
+    // ── FUKUI ────────────────────────────────────────────────────────────
+    { shopping: 'Barra Shopping',        cidade: 'Rio de Janeiro', estado: 'Rio de Janeiro', uf: 'RJ', aviso: 'fukui', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-fukui', label: 'Aviso de Privacidade – fukui' },
+    { shopping: 'Norte Shopping',        cidade: 'Rio de Janeiro', estado: 'Rio de Janeiro', uf: 'RJ', aviso: 'fukui', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-fukui', label: 'Aviso de Privacidade – fukui' },
+    { shopping: 'Plaza Shopping Niterói',cidade: 'Niterói',        estado: 'Rio de Janeiro', uf: 'RJ', aviso: 'fukui', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-fukui', label: 'Aviso de Privacidade – fukui' },
+
+    // ── AOMORI ───────────────────────────────────────────────────────────
+    { shopping: 'Bangú Shopping',        cidade: 'Rio de Janeiro', estado: 'Rio de Janeiro', uf: 'RJ', aviso: 'aomori', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-aomori', label: 'Aviso de Privacidade – aomori' },
+    { shopping: 'Madureira Shopping',    cidade: 'Rio de Janeiro', estado: 'Rio de Janeiro', uf: 'RJ', aviso: 'aomori', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-aomori', label: 'Aviso de Privacidade – aomori' },
+    { shopping: 'Carioca Shopping',      cidade: 'Rio de Janeiro', estado: 'Rio de Janeiro', uf: 'RJ', aviso: 'aomori', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-aomori', label: 'Aviso de Privacidade – aomori' },
+    { shopping: 'Shopping Grande Rio',   cidade: 'Duque de Caxias',estado: 'Rio de Janeiro', uf: 'RJ', aviso: 'aomori', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-aomori', label: 'Aviso de Privacidade – aomori' },
+    { shopping: 'Shopping Nova Iguaçu',  cidade: 'Nova Iguaçu',   estado: 'Rio de Janeiro', uf: 'RJ', aviso: 'aomori', url: 'https://www.mibrasil.com.br/aviso-de-privacidade-aomori', label: 'Aviso de Privacidade – aomori' },
   ];
+
 
   function privHighlight(text, query) {
     if (!query) return text;
@@ -1493,7 +1511,9 @@ function bindEvents() {
     const matches = PRIV_DATA.filter(d =>
       d.shopping.toLowerCase().includes(q) ||
       d.cidade.toLowerCase().includes(q)   ||
-      d.estado.toLowerCase().includes(q)
+      d.estado.toLowerCase().includes(q)   ||
+      d.aviso.toLowerCase().includes(q)    ||
+      d.uf.toLowerCase().includes(q)
     );
 
     if (!matches.length) {
@@ -1512,7 +1532,10 @@ function bindEvents() {
       ${matches.map((d, i) => `
         <div class="priv-card" style="animation-delay:${i * 0.05}s">
           <div class="priv-card-header">
-            <span class="priv-card-badge">${d.uf}</span>
+            <div class="priv-card-badges">
+              <span class="priv-card-badge priv-badge-uf">${d.uf}</span>
+              <span class="priv-card-badge priv-badge-aviso">${d.aviso}</span>
+            </div>
             <div class="priv-card-names">
               <div class="priv-card-shopping">${privHighlight(d.shopping, q)}</div>
               <div class="priv-card-location">${privHighlight(d.cidade, q)} · ${privHighlight(d.estado, q)}</div>
