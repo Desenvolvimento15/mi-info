@@ -1330,7 +1330,7 @@ function bindEvents() {
 
           if (termo === '') {
               estados.forEach(estado => {
-                  estado.style.display = 'block';
+                  estado.style.display = 'none';
                   const estadoQuestion = estado.querySelector('.estados-question');
                   const estadoAnswer = estado.querySelector('.estados-answer');
                   const seta = estadoQuestion.querySelector('.seta');

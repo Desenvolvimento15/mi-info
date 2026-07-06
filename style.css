@@ -1300,15 +1300,101 @@ input:focus:not(:focus-visible) {
     border: 0;
 }
 
+details.pref-box {
+    background: rgba(155, 89, 182, 0.05);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(155, 89, 182, 0.2);
+    margin-bottom: 24px;
+    transition: all var(--transition);
+}
+
+summary.pref-box-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 0;
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    cursor: pointer;
+    list-style: none;
+}
+
+summary.pref-box-title::-webkit-details-marker {
+    display: none;
+}
+
+.pref-box-chevron {
+    width: 20px;
+    height: 20px;
+    color: #9B59B6;
+    flex-shrink: 0;
+    transition: transform var(--transition);
+}
+
+details.pref-box[open] .pref-box-chevron {
+    transform: rotate(180deg);
+}
+
+.pref-box-content {
+    margin-top: 16px;
+}
+
 ul.pref-list {
-    margin: 0 0 16px 1.1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin: 0;
     padding: 0;
-    list-style-position: inside;
+    list-style: none;
 }
 
 ul.pref-list li {
-    margin: 10px 0;
-    line-height: 1.45;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--color-surface);
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--color-text);
+    margin: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+ul.pref-list li svg {
+    width: 18px;
+    height: 18px;
+    color: #9B59B6;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.pref-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.pref-note svg {
+    width: 20px;
+    height: 20px;
+    color: #F59E0B;
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .estados-container {
@@ -1323,6 +1409,7 @@ ul.pref-list li {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
 }
 
 .estados-question {

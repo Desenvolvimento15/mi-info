@@ -162,6 +162,9 @@
       <circle cx="12" cy="12" r="10" />
       <polyline points="12 6 12 12 16 14" />
     </symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </symbol>
     <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
       stroke-linejoin="round">
       <line x1="8" y1="6" x2="21" y2="6" />
@@ -375,25 +378,35 @@
 
           <div class="content-card">
             <div class="intro">
-              Nesta página, os Clientes das lojas XIAOMI STORE encontrarão informações sobre <strong>Atendimento
-                Preferencial e Prioritário.</strong>
-              <br><br>
-              <strong>Atendimento Preferencial</strong> e Prioritário de acordo com a Lei Federal nº 10.048/2000:
-              <ul class="pref-list" aria-describedby="desc-list">
-                <li>Pessoas com deficiência;</li>
-                <li>Pessoas com transtorno do espectro autista;</li>
-                <li>Pessoas idosas com idade igual ou superior a 60 (sessenta) anos;</li>
-                <li>As gestantes e as lactantes;</li>
-                <li>Pessoas com criança de colo;</li>
-                <li>Pessoas obesas;</li>
-                <li>Pessoas com mobilidade reduzida;</li>
-                <li>Doadores de sangue, mediante apresentação de comprovante de doação, com validade de 120 (cento e
-                  vinte) dias.</li>
-              </ul>
-              Seguem abaixo outras condições de <strong>Atendimento Preferencial e Prioritário</strong> de acordo leis
-              específicas de Estados e Municípios. Verifique as informações referentes à localidade (estado/cidade) da
-              loja em que está sendo atendido e, caso faça parte de algum grupo preferencial / prioritário, informe sua
-              condição ao vendedor.
+              <p style="margin-bottom: 20px; font-size: 0.95rem; line-height: 1.5; color: var(--color-text-muted);">
+                Nesta página, os clientes das lojas <strong>MI BRASIL</strong> encontrarão informações sobre as regras de <strong>Atendimento Preferencial e Prioritário</strong>.
+              </p>
+
+              <details class="pref-box">
+                <summary class="pref-box-title">
+                  <span>De acordo com a Lei Federal nº 10.048/2000, têm direito a atendimento prioritário:</span>
+                  <svg class="pref-box-chevron"><use href="#icon-chevron-down" /></svg>
+                </summary>
+                <div class="pref-box-content">
+                  <ul class="pref-list" aria-describedby="desc-list">
+                    <li><svg><use href="#icon-check" /></svg><span>Pessoas com deficiência</span></li>
+                    <li><svg><use href="#icon-check" /></svg><span>Pessoas com transtorno do espectro autista</span></li>
+                    <li><svg><use href="#icon-check" /></svg><span>Pessoas idosas (60+ anos)</span></li>
+                    <li><svg><use href="#icon-check" /></svg><span>Gestantes e lactantes</span></li>
+                    <li><svg><use href="#icon-check" /></svg><span>Pessoas com criança de colo</span></li>
+                    <li><svg><use href="#icon-check" /></svg><span>Pessoas obesas</span></li>
+                    <li><svg><use href="#icon-check" /></svg><span>Pessoas com mobilidade reduzida</span></li>
+                    <li><svg><use href="#icon-check" /></svg><span>Doadores de sangue (comprovante até 120 dias)</span></li>
+                  </ul>
+                </div>
+              </details>
+
+              <div class="pref-note">
+                <svg><use href="#icon-info"/></svg>
+                <div>
+                  <strong>Nota Importante:</strong> Abaixo você encontra outras condições de atendimento prioritário regidas por leis estaduais e municipais. Busque pela localidade da loja e, caso faça parte de um grupo preferencial, informe sua condição à equipe.
+                </div>
+              </div>
             </div>
           </div>
 
