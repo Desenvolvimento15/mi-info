@@ -803,7 +803,6 @@ function navigateTo(screenId, pushHistory = true) {
   }
 
   updateBottomNav(screenId);
-  updateDrawerNav(screenId);
 }
 
 function goBack() {
@@ -825,37 +824,7 @@ function updateBottomNav(screenId) {
   });
 }
 
-function updateDrawerNav(screenId) {
-  document.querySelectorAll('.drawer-nav-item').forEach(btn => {
-    const s = btn.dataset.screen;
-    const active = s === screenId || (s === 'home' && screenId === 'theme') || (s === 'home' && screenId === 'content');
-    btn.classList.toggle('active', active);
-  });
-}
 
-/* ─────────────────────────────────────────
-   DRAWER
-───────────────────────────────────────── */
-function openDrawer() {
-  const drawer = $('drawer');
-  const overlay = $('drawer-overlay');
-  drawer.classList.add('open');
-  drawer.setAttribute('aria-hidden', 'false');
-  overlay.classList.add('visible');
-  $('hamburger-btn') && $('hamburger-btn').setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden';
-  $('drawer-close-btn').focus();
-}
-
-function closeDrawer() {
-  const drawer = $('drawer');
-  const overlay = $('drawer-overlay');
-  drawer.classList.remove('open');
-  drawer.setAttribute('aria-hidden', 'true');
-  overlay.classList.remove('visible');
-  $('hamburger-btn') && $('hamburger-btn').setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-}
 
 /* ─────────────────────────────────────────
    RENDER: HOME GRID
@@ -1261,31 +1230,6 @@ function renderContacts() {
 ───────────────────────────────────────── */
 function bindEvents() {
 
-  // Hamburger buttons
-  ['hamburger-btn', 'hamburger-btn-search'].forEach(id => {
-    const btn = $(id);
-    if (btn) btn.addEventListener('click', openDrawer);
-  });
-
-  // Drawer close
-  $('drawer-close-btn').addEventListener('click', closeDrawer);
-  $('drawer-overlay').addEventListener('click', closeDrawer);
-
-  // Drawer nav items
-  document.querySelectorAll('.drawer-nav-item').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const screen = btn.dataset.screen;
-      closeDrawer();
-      if (screen === 'themes-drawer') {
-        navigateTo('home');
-      } else if (screen === 'about') {
-        State.history.push(State.currentScreen);
-        navigateTo('about', false);
-      } else {
-        navigateTo(screen);
-      }
-    });
-  });
 
   // Bottom nav
   document.querySelectorAll('.bottom-nav-item').forEach(btn => {

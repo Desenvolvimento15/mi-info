@@ -241,116 +241,7 @@ svg {
   opacity: .75;
 }
 
-/* ═══════════════════════════════════════════
-   DRAWER
-════════════════════════════════════════════ */
-.drawer-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-  z-index: 100;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition);
-  max-width: var(--max-width);
-}
 
-.drawer-overlay.visible {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.drawer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 280px;
-  max-width: 85%;
-  height: 100%;
-  background: var(--color-primary);
-  z-index: 101;
-  display: flex;
-  flex-direction: column;
-  transform: translateX(-100%);
-  transition: transform var(--transition);
-  max-height: 100vh;
-  overflow-y: auto;
-  box-shadow: 4px 0 24px rgba(0,0,0,.3);
-}
-
-.drawer.open {
-  transform: translateX(0);
-}
-
-.drawer-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 16px 16px;
-  border-bottom: 1px solid rgba(255,255,255,.12);
-  flex-shrink: 0;
-}
-
-.drawer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.drawer-logo .logo-badge {
-  width: 40px;
-  height: 40px;
-}
-
-.drawer-close {
-  color: rgba(255,255,255,.8);
-}
-
-.drawer-nav {
-  flex: 1;
-  padding: 12px 0;
-}
-
-.drawer-nav-item {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 20px;
-  color: rgba(255,255,255,.75);
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-align: left;
-  border-left: 3px solid transparent;
-  transition: all var(--transition-fast);
-}
-
-.drawer-nav-item .nav-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-.drawer-nav-item:hover,
-.drawer-nav-item:focus-visible {
-  background: rgba(255,255,255,.08);
-  color: #FFFFFF;
-}
-
-.drawer-nav-item.active {
-  background: rgba(255,255,255,.12);
-  color: #FFFFFF;
-  border-left-color: var(--color-yellow);
-}
-
-.drawer-footer {
-  padding: 16px 20px;
-  border-top: 1px solid rgba(255,255,255,.12);
-  color: rgba(255,255,255,.4);
-  font-size: 0.75rem;
-  line-height: 1.6;
-  flex-shrink: 0;
-}
 
 /* ═══════════════════════════════════════════
    HOME SCREEN
@@ -382,27 +273,25 @@ svg {
 
 .home-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 14px;
   padding-bottom: 8px;
 }
 
 /* ─── HOME CARD ───────────────────────────── */
 .home-card {
-  border-radius: var(--radius-lg);
-  padding: 22px 14px 18px;
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  text-align: center;
+  gap: 16px;
+  text-align: left;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition);
-  min-height: 120px;
   border: none;
   width: 100%;
 }
@@ -418,15 +307,15 @@ svg {
 }
 
 .home-card-icon {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   color: #FFFFFF;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,.2));
   flex-shrink: 0;
 }
 
 .home-card-title {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #FFFFFF;
   line-height: 1.3;
