@@ -898,8 +898,8 @@ function openTheme(themeId) {
   if (!theme) return;
   State.currentThemeId = themeId;
 
-  if (themeId === 'atendimento-prioritario') {
-    navigateTo('atendimento-prioritario');
+  if (themeId === 'atendimento-prioritario' || themeId === 'privacidade-lgpd') {
+    navigateTo(themeId);
     return;
   }
 
@@ -1303,6 +1303,7 @@ function bindEvents() {
   $('contact-back-btn').addEventListener('click', goBack);
   $('about-back-btn').addEventListener('click', goBack);
   $('atendimento-back-btn').addEventListener('click', goBack);
+  $('privacidade-back-btn').addEventListener('click', goBack);
 
   // Tabs
   document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -1424,6 +1425,128 @@ function bindEvents() {
           aplicarListenersAtendimento();
       });
   }
+
+  // ─── PRIVACIDADE E LGPD – Busca por shopping/cidade/estado ──────────────
+  const PRIV_DATA = [
+    {
+      shopping: 'Shopping Zury',
+      cidade:   'Cidade Zury',
+      estado:   'Estado Zury',
+      uf:       'ZY',
+      url:      'https://www.mibrasil.com.br/aviso-de-privacidade-zury',
+      label:    'Aviso de Privacidade – Zury'
+    },
+    {
+      shopping: 'Shopping Awa',
+      cidade:   'Cidade Awa',
+      estado:   'Estado Awa',
+      uf:       'AW',
+      url:      'https://www.mibrasil.com.br/aviso-de-privacidade-awa',
+      label:    'Aviso de Privacidade – Awa'
+    },
+    {
+      shopping: 'Shopping Gifu',
+      cidade:   'Cidade Gifu',
+      estado:   'Estado Gifu',
+      uf:       'GF',
+      url:      'https://www.mibrasil.com.br/aviso-de-privacidade-gifu',
+      label:    'Aviso de Privacidade – Gifu'
+    },
+    {
+      shopping: 'Shopping 4 – Exemplo',
+      cidade:   'Cidade Exemplo 4',
+      estado:   'Estado Exemplo 4',
+      uf:       'EX',
+      url:      '#',
+      label:    'Aviso de Privacidade – Shopping 4'
+    },
+    {
+      shopping: 'Shopping 5 – Exemplo',
+      cidade:   'Cidade Exemplo 5',
+      estado:   'Estado Exemplo 5',
+      uf:       'EX',
+      url:      '#',
+      label:    'Aviso de Privacidade – Shopping 5'
+    },
+  ];
+
+  function privHighlight(text, query) {
+    if (!query) return text;
+    const esc = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return text.replace(new RegExp(`(${esc})`, 'gi'),
+      '<mark class="priv-highlight">$1</mark>');
+  }
+
+  function renderPrivResults(query) {
+    const elEmpty    = $('privResultsEmpty');
+    const elResults  = $('privResultsList');
+    const elNoResult = $('privNoResults');
+    const q = (query || '').toLowerCase().trim();
+
+    if (!q) {
+      elEmpty.style.display   = '';
+      elResults.style.display = 'none';
+      elNoResult.style.display = 'none';
+      return;
+    }
+
+    const matches = PRIV_DATA.filter(d =>
+      d.shopping.toLowerCase().includes(q) ||
+      d.cidade.toLowerCase().includes(q)   ||
+      d.estado.toLowerCase().includes(q)
+    );
+
+    if (!matches.length) {
+      elEmpty.style.display   = 'none';
+      elResults.style.display = 'none';
+      elNoResult.style.display = '';
+      return;
+    }
+
+    elEmpty.style.display   = 'none';
+    elNoResult.style.display = 'none';
+    elResults.style.display  = 'flex';
+
+    elResults.innerHTML = `
+      <p class="priv-result-count">${matches.length} resultado${matches.length > 1 ? 's' : ''} encontrado${matches.length > 1 ? 's' : ''}</p>
+      ${matches.map((d, i) => `
+        <div class="priv-card" style="animation-delay:${i * 0.05}s">
+          <div class="priv-card-header">
+            <span class="priv-card-badge">${d.uf}</span>
+            <div class="priv-card-names">
+              <div class="priv-card-shopping">${privHighlight(d.shopping, q)}</div>
+              <div class="priv-card-location">${privHighlight(d.cidade, q)} · ${privHighlight(d.estado, q)}</div>
+            </div>
+          </div>
+          <a href="${d.url}" target="_blank" rel="noopener" class="priv-card-link">
+            <svg class="priv-card-link-ico" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            ${d.label}
+          </a>
+        </div>
+      `).join('')}
+    `;
+  }
+
+  const privSearchInput = $('searchInputPrivacidade');
+  const privClearBtn    = $('privSearchClearBtn');
+
+  if (privSearchInput) {
+    privSearchInput.addEventListener('input', () => {
+      const q = privSearchInput.value;
+      privClearBtn.style.display = q ? '' : 'none';
+      renderPrivResults(q);
+    });
+  }
+
+  if (privClearBtn) {
+    privClearBtn.addEventListener('click', () => {
+      privSearchInput.value = '';
+      privClearBtn.style.display = 'none';
+      renderPrivResults('');
+      privSearchInput.focus();
+    });
+  }
+
 
   // Keyboard: Escape closes drawer
   document.addEventListener('keydown', e => {

@@ -542,6 +542,71 @@
     </div>
 
     <!-- ══════════════════════════════════════
+         TELA 3.6 – PRIVACIDADE E LGPD
+    ══════════════════════════════════════ -->
+    <div id="screen-privacidade-lgpd" class="screen" role="main" aria-label="Privacidade e LGPD">
+      <header class="app-header sub-header" style="background: #27AE60">
+        <button class="btn-back" id="privacidade-back-btn" aria-label="Voltar">
+          <svg><use href="#icon-arrow-left"/></svg>
+          <span>Voltar</span>
+        </button>
+      </header>
+
+      <div class="screen-scroll">
+
+        <!-- Hero verde -->
+        <div class="priv-hero">
+          <div class="priv-hero-icon" aria-hidden="true">
+            <svg><use href="#icon-lock"/></svg>
+          </div>
+          <div>
+            <h1 class="priv-hero-title">Aviso de Privacidade</h1>
+            <p class="priv-hero-desc">Consulte o Aviso de Privacidade específico do seu shopping.</p>
+          </div>
+        </div>
+
+        <!-- Caixa de busca -->
+        <div class="priv-search-box">
+          <label for="searchInputPrivacidade" class="priv-search-label">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="priv-search-ico" aria-hidden="true">
+              <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16a6.47 6.47 0 004.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 115.5 9.5 4.5 4.5 0 019.5 14z"/>
+            </svg>
+          </label>
+          <input
+            type="search"
+            id="searchInputPrivacidade"
+            class="priv-search-input"
+            placeholder="Buscar por shopping, cidade ou estado…"
+            aria-label="Buscar por shopping, cidade ou estado"
+            autocomplete="off"
+          >
+          <button class="priv-search-clear" id="privSearchClearBtn" aria-label="Limpar busca" style="display:none">✕</button>
+        </div>
+
+        <!-- Estado vazio (placeholder inicial) -->
+        <div id="privResultsEmpty" class="priv-empty-state">
+          <div class="priv-empty-icon" aria-hidden="true">🔒</div>
+          <p class="priv-empty-title">Digite para buscar</p>
+          <p class="priv-empty-sub">Informe o nome do shopping, cidade ou estado para encontrar o Aviso de Privacidade correspondente.</p>
+        </div>
+
+        <!-- Resultados da busca -->
+        <div id="privResultsList" class="priv-results" aria-live="polite" aria-label="Resultados da busca de avisos de privacidade" style="display:none">
+          <!-- Preenchido pelo JS -->
+        </div>
+
+        <!-- Sem resultados -->
+        <div id="privNoResults" class="priv-empty-state" style="display:none">
+          <div class="priv-empty-icon" aria-hidden="true">🔍</div>
+          <p class="priv-empty-title">Nenhum resultado encontrado</p>
+          <p class="priv-empty-sub">Tente buscar pelo nome do shopping, cidade ou estado.</p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════
          TELA 4 – BUSCA
     ══════════════════════════════════════ -->
     <div id="screen-search" class="screen" role="main" aria-label="Busca">
