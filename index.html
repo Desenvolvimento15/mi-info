@@ -161,7 +161,8 @@
       <circle cx="12" cy="12" r="10" />
       <polyline points="12 6 12 12 16 14" />
     </symbol>
-    <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
       <polyline points="6 9 12 15 18 9"></polyline>
     </symbol>
     <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -179,7 +180,17 @@
      APP ROOT
 ════════════════════════════════════════════ -->
   <div id="app">
-
+    <!-- Desktop Warning -->
+    <div id="desktop-warning">
+      <div class="desktop-warning-content">
+        <svg>
+          <use href="#icon-phone" />
+        </svg>
+        <h2>Acesso Restrito</h2>
+        <p>Por favor, acesse através de um
+          celular</p>
+      </div>
+    </div>
 
     <!-- ─── SCREENS CONTAINER ───────────────── -->
     <div id="screens-container">
@@ -193,7 +204,7 @@
             <div class="logo-badge">
               <span class="logo-mi">MI</span>
             </div>
-            <span class="logo-name">MI BRASIL</span>
+            <span class="logo-name">BRASIL</span>
           </div>
         </header>
 
@@ -378,32 +389,55 @@
           <div class="content-card">
             <div class="intro">
               <p style="margin-bottom: 20px; font-size: 0.95rem; line-height: 1.5; color: var(--color-text-muted);">
-                Nesta página, os clientes das lojas <strong>MI BRASIL</strong> encontrarão informações sobre as regras de <strong>Atendimento Preferencial e Prioritário</strong>.
+                Nesta página, os clientes das lojas <strong>MI BRASIL</strong> encontrarão informações sobre as regras
+                de <strong>Atendimento Preferencial e Prioritário</strong>.
               </p>
 
               <details class="pref-box">
                 <summary class="pref-box-title">
                   <span>De acordo com a Lei Federal nº 10.048/2000, têm direito a atendimento prioritário:</span>
-                  <svg class="pref-box-chevron"><use href="#icon-chevron-down" /></svg>
+                  <svg class="pref-box-chevron">
+                    <use href="#icon-chevron-down" />
+                  </svg>
                 </summary>
                 <div class="pref-box-content">
                   <ul class="pref-list" aria-describedby="desc-list">
-                    <li><svg><use href="#icon-check" /></svg><span>Pessoas com deficiência</span></li>
-                    <li><svg><use href="#icon-check" /></svg><span>Pessoas com transtorno do espectro autista</span></li>
-                    <li><svg><use href="#icon-check" /></svg><span>Pessoas idosas (60+ anos)</span></li>
-                    <li><svg><use href="#icon-check" /></svg><span>Gestantes e lactantes</span></li>
-                    <li><svg><use href="#icon-check" /></svg><span>Pessoas com criança de colo</span></li>
-                    <li><svg><use href="#icon-check" /></svg><span>Pessoas obesas</span></li>
-                    <li><svg><use href="#icon-check" /></svg><span>Pessoas com mobilidade reduzida</span></li>
-                    <li><svg><use href="#icon-check" /></svg><span>Doadores de sangue (comprovante até 120 dias)</span></li>
+                    <li><svg>
+                        <use href="#icon-check" />
+                      </svg><span>Pessoas com deficiência</span></li>
+                    <li><svg>
+                        <use href="#icon-check" />
+                      </svg><span>Pessoas com transtorno do espectro autista</span></li>
+                    <li><svg>
+                        <use href="#icon-check" />
+                      </svg><span>Pessoas idosas (60+ anos)</span></li>
+                    <li><svg>
+                        <use href="#icon-check" />
+                      </svg><span>Gestantes e lactantes</span></li>
+                    <li><svg>
+                        <use href="#icon-check" />
+                      </svg><span>Pessoas com criança de colo</span></li>
+                    <li><svg>
+                        <use href="#icon-check" />
+                      </svg><span>Pessoas obesas</span></li>
+                    <li><svg>
+                        <use href="#icon-check" />
+                      </svg><span>Pessoas com mobilidade reduzida</span></li>
+                    <li><svg>
+                        <use href="#icon-check" />
+                      </svg><span>Doadores de sangue (comprovante até 120 dias)</span></li>
                   </ul>
                 </div>
               </details>
 
               <div class="pref-note">
-                <svg><use href="#icon-info"/></svg>
+                <svg>
+                  <use href="#icon-info" />
+                </svg>
                 <div>
-                  <strong>Nota Importante:</strong> Abaixo você encontra outras condições de atendimento prioritário regidas por leis estaduais e municipais. Busque pela localidade da loja e, caso faça parte de um grupo preferencial, informe sua condição à equipe.
+                  <strong>Nota Importante:</strong> Abaixo você encontra outras condições de atendimento prioritário
+                  regidas por leis estaduais e municipais. Busque pela localidade da loja e, caso faça parte de um grupo
+                  preferencial, informe sua condição à equipe.
                 </div>
               </div>
             </div>

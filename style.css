@@ -1830,3 +1830,53 @@ ul.pref-list li svg {
   font-weight: 700;
 }
 
+/* ── Desktop Warning Overlay ── */
+#desktop-warning {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-bg);
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.desktop-warning-content {
+  max-width: 440px;
+  background: var(--color-surface);
+  padding: 40px 30px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: 1px solid var(--color-border);
+}
+
+.desktop-warning-content svg {
+  width: 64px;
+  height: 64px;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+}
+
+.desktop-warning-content h2 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.desktop-warning-content p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+@media (min-width: 768px) {
+  #desktop-warning {
+    display: flex;
+  }
+}
