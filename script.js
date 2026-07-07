@@ -92,24 +92,7 @@ const DATA = {
             `,
           },
         },
-        {
-          id: "residuos-eletronicos",
-          icon: "refresh",
-          title: "Resíduos Eletrônicos",
-          description: "Acesse nossa página sobre o descarte consciente de resíduos eletrônicos.",
-          general: {
-            title: "Resíduos Eletrônicos",
-            customHtml: `
-<div class="privacy-policy" style="text-align: center; padding: 40px 20px;">
-    <h1 style="text-align: center;">Resíduos Eletrônicos</h1>
-    <p style="margin-bottom: 30px; font-size: 1rem; color: var(--color-text-muted);">Clique no botão abaixo para acessar a página sobre o descarte consciente de resíduos eletrônicos.</p>
-    <a href="https://www.mibrasil.com.br/residuos-eletronicos" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #002D72, #001f52); color: #fff; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.2s;">
-        Acessar Resíduos Eletrônicos
-    </a>
-</div>
-            `,
-          },
-        },
+
         {
           id: "formas-pagamento",
           icon: "credit-card",
@@ -552,13 +535,39 @@ const DATA = {
           description: "Orientações sobre descarte correto de lixo eletrônico.",
           general: {
             title: "Descarte Consciente de Eletrônicos",
-            text: "Oferecemos pontos de coleta para o descarte adequado de aparelhos eletrônicos, baterias e pilhas em conformidade com a Política Nacional de Resíduos Sólidos.",
-            items: [
-              "Logística reversa e preservação ambiental",
-              "Descarte seguro de baterias de lítio e componentes tóxicos",
-              "Pontos de coleta identificados nas lojas físicas",
-              "Proteção do meio ambiente"
-            ],
+            customHtml: `
+<div class="privacy-policy" style="text-align: left; padding: 20px;">
+    <h1 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 15px; color: #333;">Descarte de Equipamentos Eletrônicos</h1>
+    <p style="margin-bottom: 25px; font-size: 1rem; color: #4B5563; line-height: 1.6;">Oferecemos pontos de coleta para o descarte adequado de aparelhos eletrônicos, baterias e pilhas em conformidade com a Política Nacional de Resíduos Sólidos.</p>
+    
+    <ul style="list-style: none; padding: 0; margin-bottom: 35px;">
+        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #333;">
+            <svg style="width: 18px; height: 18px; color: #10B981; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            Logística reversa e preservação ambiental
+        </li>
+        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #333;">
+            <svg style="width: 18px; height: 18px; color: #10B981; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            Descarte seguro de baterias de lítio e componentes tóxicos
+        </li>
+        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #333;">
+            <svg style="width: 18px; height: 18px; color: #10B981; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            Pontos de coleta identificados nas lojas físicas
+        </li>
+        <li style="display: flex; align-items: center; gap: 10px; color: #333;">
+            <svg style="width: 18px; height: 18px; color: #10B981; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            Proteção do meio ambiente
+        </li>
+    </ul>
+
+    <div style="border-top: 1px solid #e5e7eb; padding-top: 30px; text-align: center;">
+        <h2 style="font-size: 1.15rem; font-weight: 700; color: #333; margin-bottom: 10px;">Resíduos Eletrônicos</h2>
+        <p style="margin-bottom: 25px; font-size: 1rem; color: #4B5563;">Clique no botão abaixo para acessar a nossa página completa sobre o descarte consciente de resíduos eletrônicos.</p>
+        <a href="https://www.mibrasil.com.br/residuos-eletronicos" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #002D72, #001f52); color: #fff; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.2s;">
+            Acessar Resíduos Eletrônicos
+        </a>
+    </div>
+</div>
+            `,
           },
         },
         {
@@ -1025,7 +1034,7 @@ function openContent(themeId, moduleId) {
   // Hide tabs for specific modules
   const tabsContainer = document.querySelector('.tabs-container');
   if (tabsContainer) {
-    const hiddenTabsModules = ['aviso-privacidade', 'regras-seguranca', 'contatos-procon', 'codigo-defesa', 'residuos-eletronicos', 'formas-pagamento'];
+    const hiddenTabsModules = ['aviso-privacidade', 'regras-seguranca', 'contatos-procon', 'codigo-defesa', 'descarte-eletronicos', 'formas-pagamento'];
     tabsContainer.style.display = hiddenTabsModules.includes(moduleId) ? 'none' : '';
   }
 
