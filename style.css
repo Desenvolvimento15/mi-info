@@ -1859,7 +1859,7 @@ ul.pref-list li svg {
   width: 64px;
   height: 64px;
   color: var(--color-primary);
-  margin-bottom: 24px;
+  margin: 0 auto 24px auto;
 }
 
 .desktop-warning-content h2 {

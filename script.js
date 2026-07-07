@@ -58,15 +58,18 @@ const DATA = {
           general: {
             title: "Contatos Úteis do Procon",
             customHtml: `
-<div class="privacy-policy">
-    <h1>Contatos do Procon</h1>
-    <p>O Procon é o órgão responsável por proteger e defender os direitos dos consumidores. Caso necessite de orientação ou queira registrar uma reclamação, disponibilizamos as informações abaixo:</p>
-    <ul>
-        <li><strong>Atendimento Local:</strong> Consulte o Procon do seu estado para informações sobre atendimentos presenciais específicos e endereços das unidades.</li>
-        <li><strong>Documentação Necessária:</strong> Ao entrar em contato, tenha sempre em mãos a nota fiscal da compra e seus documentos de identificação pessoal.</li>
-        <li><strong>Atendimento Online:</strong> Acesse o site consumidor.gov.br para registro e resolução de reclamações de forma online e oficial.</li>
-        <li><strong>Informação na Loja:</strong> Lembre-se que todas as nossas unidades possuem os contatos telefônicos do Procon local expostos visivelmente nos caixas.</li>
-    </ul>
+<div class="privacy-policy" style="text-align: center; padding: 40px 20px;">
+    <h1 style="text-align: center; margin-bottom: 20px;">Contatos do Procon</h1>
+    
+    <p style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: #333;">DISQUE 151 - Tel: (19) 3734-2000</p>
+    <p style="font-size: 1.1rem; margin-bottom: 30px;">
+        <a href="https://procon.campinas.sp.gov.br" target="_blank" style="color: #002D72; text-decoration: underline;">Site: procon.campinas.sp.gov.br</a>
+    </p>
+    
+    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; border: 1px solid #e5e7eb; display: inline-block; text-align: center; max-width: 400px;">
+        <p style="font-size: 1rem; color: #4b5563; line-height: 1.6; margin-bottom: 5px;">Este estabelecimento possui um exemplar<br>do Código de Defesa do Consumidor</p>
+        <p style="font-size: 0.9rem; color: #6b7280; font-weight: 700;">Lei 8.078, de 11 de setembro de 1990</p>
+    </div>
 </div>
             `,
           },
@@ -85,6 +88,98 @@ const DATA = {
     <a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #002D72, #001f52); color: #fff; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.2s;">
         Acessar o Código de Defesa do Consumidor
     </a>
+</div>
+            `,
+          },
+        },
+        {
+          id: "residuos-eletronicos",
+          icon: "refresh",
+          title: "Resíduos Eletrônicos",
+          description: "Acesse nossa página sobre o descarte consciente de resíduos eletrônicos.",
+          general: {
+            title: "Resíduos Eletrônicos",
+            customHtml: `
+<div class="privacy-policy" style="text-align: center; padding: 40px 20px;">
+    <h1 style="text-align: center;">Resíduos Eletrônicos</h1>
+    <p style="margin-bottom: 30px; font-size: 1rem; color: var(--color-text-muted);">Clique no botão abaixo para acessar a página sobre o descarte consciente de resíduos eletrônicos.</p>
+    <a href="https://www.mibrasil.com.br/residuos-eletronicos" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #002D72, #001f52); color: #fff; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.2s;">
+        Acessar Resíduos Eletrônicos
+    </a>
+</div>
+            `,
+          },
+        },
+        {
+          id: "formas-pagamento",
+          icon: "credit-card",
+          title: "Formas de Pagamento",
+          description: "Consulte as formas de pagamento e opções de parcelamento aceitas.",
+          general: {
+            title: "Formas de Pagamento e Parcelamento",
+            customHtml: `
+<div style="font-family: var(--font-family); color: var(--color-text); padding: 5px;">
+    
+    <div style="background: #f8f9fa; border-left: 4px solid var(--color-primary); padding: 15px 20px; border-radius: 4px; margin-bottom: 25px;">
+        <h1 style="font-size: 1.15rem; font-weight: 700; color: var(--color-primary); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <svg style="width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2;" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            FORMAS DE PAGAMENTO ACEITAS
+        </h1>
+        <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px; font-weight: 500;">
+                <svg style="width: 18px; height: 18px; color: #10B981; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                Dinheiro
+            </li>
+            <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px; font-weight: 500;">
+                <svg style="width: 18px; height: 18px; color: #10B981; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                Pix
+            </li>
+            <li style="display: flex; align-items: center; gap: 8px; font-weight: 500;">
+                <svg style="width: 18px; height: 18px; color: #10B981; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                Cartão de débito e crédito
+            </li>
+        </ul>
+    </div>
+
+    <div style="margin-bottom: 25px;">
+        <p style="font-size: 0.95rem; font-weight: 700; color: #4B5563; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.5px;">Bandeiras Aceitas</p>
+        <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap; background: white; padding: 15px; border-radius: 8px; border: 1px solid #E5E7EB; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/120px-American_Express_logo_%282018%29.svg.png" alt="American Express" style="height: 30px; width: auto; object-fit: contain;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Diners_Club_Logo3.svg/120px-Diners_Club_Logo3.svg.png" alt="Diners Club" style="height: 30px; width: auto; object-fit: contain;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Elo_logo.svg/120px-Elo_logo.svg.png" alt="Elo" style="height: 30px; width: auto; object-fit: contain;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/120px-MasterCard_Logo.svg.png" alt="MasterCard" style="height: 30px; width: auto; object-fit: contain;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/120px-Visa_Inc._logo.svg.png" alt="VISA" style="height: 22px; width: auto; object-fit: contain;">
+        </div>
+        <div style="margin-top: 15px; display: inline-flex; align-items: center; gap: 8px; background: #FEF2F2; color: #DC2626; padding: 8px 12px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; border: 1px solid #FCA5A5;">
+            <svg style="width: 18px; height: 18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            Não aceitamos cheque
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; border-left: 4px solid #F59E0B; padding: 15px 20px; border-radius: 4px;">
+        <h1 style="font-size: 1.15rem; font-weight: 700; color: #D97706; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+            <svg style="width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2;" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            REGRAS DE PARCELAMENTO
+        </h1>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li style="display: flex; gap: 10px; font-size: 0.95rem; line-height: 1.5; color: #4B5563;">
+                <svg style="width: 18px; height: 18px; color: #F59E0B; flex-shrink: 0; margin-top: 2px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>A quantidade máxima de parcelas varia para cada produto. Verifique as placas e preços.</span>
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 0.95rem; line-height: 1.5; color: #4B5563;">
+                <svg style="width: 18px; height: 18px; color: #F59E0B; flex-shrink: 0; margin-top: 2px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Nas compras de mais de um produto, consulte a forma de parcelamento com o vendedor.</span>
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 0.95rem; line-height: 1.5; color: #4B5563;">
+                <svg style="width: 18px; height: 18px; color: #F59E0B; flex-shrink: 0; margin-top: 2px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>O número de parcelas <strong>SEM JUROS</strong> poderá ser reduzido para observar os limites de cada bandeira do cartão. Consulte o vendedor.</span>
+            </li>
+            <li style="display: flex; gap: 10px; font-size: 0.95rem; line-height: 1.5; color: #4B5563;">
+                <svg style="width: 18px; height: 18px; color: #F59E0B; flex-shrink: 0; margin-top: 2px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>A possibilidade e as condições de parcelamento superiores, <strong>COM JUROS</strong>, devem ser consultadas com o vendedor.</span>
+            </li>
+        </ul>
+    </div>
 </div>
             `,
           },
@@ -930,7 +1025,7 @@ function openContent(themeId, moduleId) {
   // Hide tabs for specific modules
   const tabsContainer = document.querySelector('.tabs-container');
   if (tabsContainer) {
-    const hiddenTabsModules = ['aviso-privacidade', 'regras-seguranca', 'contatos-procon', 'codigo-defesa'];
+    const hiddenTabsModules = ['aviso-privacidade', 'regras-seguranca', 'contatos-procon', 'codigo-defesa', 'residuos-eletronicos', 'formas-pagamento'];
     tabsContainer.style.display = hiddenTabsModules.includes(moduleId) ? 'none' : '';
   }
 
@@ -1209,21 +1304,7 @@ function showInitialSearch() {
 /* ─────────────────────────────────────────
    CONTACT SCREEN
 ───────────────────────────────────────── */
-function renderContacts() {
-  const container = $('contact-cards');
-  if (!container) return;
-  container.innerHTML = DATA.contacts.map(c => `
-    <button class="contact-card" aria-label="${c.label}: ${c.value}">
-      <div class="contact-card-icon">${svgUse(c.icon)}</div>
-      <div class="contact-card-info">
-        <div class="contact-card-label">${c.label}</div>
-        <div class="contact-card-value">${c.value}</div>
-        <div class="contact-card-desc">${c.desc}</div>
-      </div>
-      ${svgUse('arrow-right', 'result-arrow')}
-    </button>
-  `).join('');
-}
+
 
 /* ─────────────────────────────────────────
    EVENT LISTENERS
@@ -1511,6 +1592,129 @@ function bindEvents() {
     });
   }
 
+  // ─── CONTATO – Busca por shopping ──────────────
+  const CONTACT_DATA = [
+    { shopping: "Shopping Ibirapuera", waDisplay: "(11) 99681-9589", waNumber: "5511996819589" },
+    { shopping: "Shopping Center Norte", waDisplay: "(11) 99711-4078", waNumber: "5511997114078" },
+    { shopping: "Shopping Barra", waDisplay: "(21) 97237-1443", waNumber: "5521972371443" },
+    { shopping: "Shopping Catuaí Londrina", waDisplay: "(43) 99182-8669", waNumber: "5543991828669" },
+    { shopping: "Bangu Shopping", waDisplay: "(21) 99760-1172", waNumber: "5521997601172" },
+    { shopping: "Shopping Eldorado", waDisplay: "(11) 93501-7899", waNumber: "5511935017899" },
+    { shopping: "Shopping Palladium", waDisplay: "(41) 99211-5122", waNumber: "5541992115122" },
+    { shopping: "Shopping Recife", waDisplay: "(81) 98184-7922", waNumber: "5581981847922" },
+    { shopping: "Shopping Aricanduva", waDisplay: "(11) 91411-7818", waNumber: "5511914117818" },
+    { shopping: "Shopping Parque Dom Pedro", waDisplay: "(19) 99762-2044", waNumber: "5519997622044" },
+    { shopping: "North Shopping Fortaleza", waDisplay: "(85) 98233-4729", waNumber: "5585982334729" },
+    { shopping: "Shopping Iguatemi Fortaleza", waDisplay: "(85) 98233-4503", waNumber: "5585982334503" },
+    { shopping: "Norte Shopping", waDisplay: "(21) 99890-4418", waNumber: "5521998904418" },
+    { shopping: "Shopping Iguatemi Porto Alegre", waDisplay: "(51) 99594-0470", waNumber: "5551995940470" },
+    { shopping: "Plaza Shopping", waDisplay: "(21) 99923-9438", waNumber: "5521999239438" },
+    { shopping: "Shopping Estação BH", waDisplay: "(31) 97106-0181", waNumber: "5531971060181" },
+    { shopping: "Shopping Parangaba", waDisplay: "(85) 98771-7557", waNumber: "5585987717557" },
+    { shopping: "Park Shopping Brasília", waDisplay: "(61) 99889-5457", waNumber: "5561998895457" },
+    { shopping: "Grand Plaza Shopping", waDisplay: "(11) 91874-5199", waNumber: "5511918745199" },
+    { shopping: "Maceió Shopping", waDisplay: "(82) 98822-1196", waNumber: "5582988221196" },
+    { shopping: "Shopping Pátio Maceió", waDisplay: "(82) 98821-6210", waNumber: "5582988216210" },
+    { shopping: "Shopping Da Ilha", waDisplay: "(98) 98822-2828", waNumber: "5598988222828" },
+    { shopping: "Boulevard Shopping Belem", waDisplay: "(91) 99280-2241", waNumber: "5591992802241" },
+    { shopping: "Litoral Plaza Shopping", waDisplay: "(13) 99767-1962", waNumber: "5513997671962" },
+    { shopping: "Shopping Vitoria", waDisplay: "(27) 99622-4752", waNumber: "5527996224752" },
+    { shopping: "Shopping Vila Velha", waDisplay: "(27) 99980-5881", waNumber: "5527999805881" },
+    { shopping: "Salvador Shopping", waDisplay: "(71) 99910-2473", waNumber: "5571999102473" },
+    { shopping: "Shopping Da Bahia", waDisplay: "(71) 99666-2306", waNumber: "5571996662306" },
+    { shopping: "Shopping Metrópoles", waDisplay: "(11) 99836-8215", waNumber: "5511998368215" },
+    { shopping: "Shopping Interlagos", waDisplay: "(11) 91733-0663", waNumber: "5511917330663" },
+    { shopping: "Shopping Guarulhos", waDisplay: "(11) 97418-7556", waNumber: "5511974187556" },
+    { shopping: "Shopping Tacaruna", waDisplay: "(81) 98353-8919", waNumber: "5581983538919" },
+    { shopping: "Madureira Shopping", waDisplay: "(21) 99758-8736", waNumber: "5521997588736" },
+    { shopping: "Carioca Shopping", waDisplay: "(21) 99837-4659", waNumber: "5521998374659" },
+    { shopping: "Shopping Midway Mall", waDisplay: "(84) 98673-7261", waNumber: "5584986737261" },
+    { shopping: "Boulevard Shopping Feira De Santana", waDisplay: "(75) 99716-4375", waNumber: "5575997164375" },
+    { shopping: "Novo Shopping Center Ribeirão Preto", waDisplay: "(16) 99994-6897", waNumber: "5516999946897" },
+    { shopping: "Shopping Jardins", waDisplay: "(79) 99612-8295", waNumber: "5579996128295" },
+    { shopping: "Center Shopping Uberlândia", waDisplay: "(34) 99706-3113", waNumber: "5534997063113" },
+    { shopping: "Maxi Shopping", waDisplay: "(11) 94134-0934", waNumber: "5511941340934" },
+    { shopping: "Shopping Tamboré", waDisplay: "(11) 94134-0837", waNumber: "5511941340837" },
+    { shopping: "Independência Shopping", waDisplay: "(32) 99842-2233", waNumber: "5532998422233" },
+    { shopping: "Mogi Shopping", waDisplay: "(11) 95699-9276", waNumber: "5511956999276" },
+    { shopping: "Shopping Rio Poty", waDisplay: "(86) 98161-6073", waNumber: "5586981616073" },
+    { shopping: "Manaira Shopping", waDisplay: "(83) 98115-3214", waNumber: "5583981153214" },
+    { shopping: "Partage Shopping", waDisplay: "(83) 98154-3634", waNumber: "5583981543634" },
+    { shopping: "Shopping Nova Iguaçu", waDisplay: "(21) 99809-2752", waNumber: "5521998092752" },
+    { shopping: "Shopping Grande Rio", waDisplay: "(21) 97258-4926", waNumber: "5521972584926" },
+    { shopping: "Manaura Shopping", waDisplay: "(92) 99401-8635", waNumber: "5592994018635" },
+    { shopping: "Sumaúma Park Shopping", waDisplay: "(92) 99537-8433", waNumber: "5592995378433" },
+    { shopping: "Montes Claros Shopping", waDisplay: "(38) 99754-4346", waNumber: "5538997544346" },
+    { shopping: "Shopping União Osasco", waDisplay: "(11) 92098-2530", waNumber: "5511920982530" }
+  ];
+  const inputContato = $('searchInputContato');
+  const clearBtnContato = $('contactSearchClearBtn');
+  const resultsListContato = $('contactResultsList');
+  const noResultsContato = $('contactNoResults');
+  const emptyStateContato = $('contactResultsEmpty');
+
+  function renderContactResults(query) {
+    const q = (query || '').toLowerCase().trim();
+    
+    if (!q) {
+      if (emptyStateContato) emptyStateContato.style.display = 'flex';
+      if (resultsListContato) resultsListContato.style.display = 'none';
+      if (noResultsContato) noResultsContato.style.display = 'none';
+      return;
+    }
+    
+    if (emptyStateContato) emptyStateContato.style.display = 'none';
+    
+    const matches = CONTACT_DATA.filter(d => 
+      d.shopping.toLowerCase().includes(q)
+    );
+    
+    if (!matches.length) {
+      if (resultsListContato) resultsListContato.style.display = 'none';
+      if (noResultsContato) noResultsContato.style.display = 'flex';
+      return;
+    }
+    
+    if (noResultsContato) noResultsContato.style.display = 'none';
+    if (resultsListContato) resultsListContato.style.display = 'flex';
+    
+    resultsListContato.innerHTML = `
+      <p class="priv-result-count">${matches.length} resultado${matches.length > 1 ? 's' : ''} encontrado${matches.length > 1 ? 's' : ''}</p>
+      ${matches.map((d, i) => {
+        return `
+        <div class="priv-card" style="animation-delay:${i * 0.05}s">
+          <div class="priv-card-header" style="align-items: center;">
+            <div class="priv-card-names">
+              <div class="priv-card-shopping">${privHighlight(d.shopping, q)}</div>
+              <div class="priv-card-location" style="margin-top:4px; font-weight:600; color:var(--color-primary)">WhatsApp: ${d.waDisplay}</div>
+            </div>
+          </div>
+          <a href="https://wa.me/${d.waNumber}" target="_blank" rel="noopener" class="priv-card-link" style="background:#25D366; color:white; border-color:#25D366;">
+            <svg class="priv-card-link-ico" viewBox="0 0 24 24" style="stroke:white;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Falar no WhatsApp
+          </a>
+        </div>
+        `;
+      }).join('')}
+    `;
+  }
+
+  if (inputContato) {
+    inputContato.addEventListener('input', () => {
+      const q = inputContato.value;
+      if (clearBtnContato) clearBtnContato.style.display = q ? 'flex' : 'none';
+      renderContactResults(q);
+    });
+  }
+
+  if (clearBtnContato) {
+    clearBtnContato.addEventListener('click', () => {
+      inputContato.value = '';
+      clearBtnContato.style.display = 'none';
+      renderContactResults('');
+      inputContato.focus();
+    });
+  }
 
   // Keyboard: Escape closes drawer
   document.addEventListener('keydown', e => {
@@ -1533,7 +1737,6 @@ function init() {
   renderHomeGrid();
   populateStateSelects();
   populateFilterSelect();
-  renderContacts();
   showInitialSearch();
   bindEvents();
 }

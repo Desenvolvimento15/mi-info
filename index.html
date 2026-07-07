@@ -184,11 +184,10 @@
     <div id="desktop-warning">
       <div class="desktop-warning-content">
         <svg>
-          <use href="#icon-phone" />
+          <use href="#icon-alert" />
         </svg>
         <h2>Acesso Restrito</h2>
-        <p>Por favor, acesse através de um
-          celular</p>
+        <p>Por favor, acesse através de um celular</p>
       </div>
     </div>
 
@@ -849,17 +848,55 @@
             <p>Canais oficiais de atendimento e suporte ao cliente.</p>
           </div>
 
-          <div id="contact-cards" class="contact-cards">
-            <!-- Populated by JS -->
+          <!-- Barra de busca do Contato -->
+          <div class="priv-search-wrap" style="margin-bottom: 16px;">
+            <div class="priv-search-box" id="contactSearchBox">
+              <svg class="priv-search-ico" aria-hidden="true">
+                <use href="#icon-search" />
+              </svg>
+              <input type="search" id="searchInputContato" class="priv-search-input"
+                placeholder="Buscar shopping..." aria-label="Buscar shopping"
+                autocomplete="off">
+              <button class="priv-search-clear" id="contactSearchClearBtn" aria-label="Limpar busca" style="display:none">
+                <svg aria-hidden="true">
+                  <use href="#icon-close" />
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div class="content-card alert-card" style="margin-top:12px">
-            <svg class="alert-icon" aria-hidden="true">
-              <use href="#icon-alert" />
-            </svg>
-            <p>Em caso de emergência, acione o canal de atendimento da sua unidade local. Nosso compromisso é atendê-lo
-              com rapidez e respeito.</p>
+          <!-- Estado inicial vazio -->
+          <div id="contactResultsEmpty" class="priv-empty-state">
+            <div class="priv-empty-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ff6900" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </div>
+            <p class="priv-empty-title">Busque seu shopping</p>
+            <p class="priv-empty-sub">Digite o nome do shopping para encontrar o canal de atendimento no WhatsApp.</p>
           </div>
+
+          <!-- Resultados da Busca de Contato -->
+          <div id="contactResultsList" class="priv-results" aria-live="polite" style="display:none;">
+            <!-- Preenchido pelo JS -->
+          </div>
+
+          <!-- Sem resultados -->
+          <div id="contactNoResults" class="priv-empty-state" style="display:none;">
+            <div class="priv-empty-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="8" y1="8" x2="14" y2="14" />
+                <line x1="14" y1="8" x2="8" y2="14" />
+              </svg>
+            </div>
+            <p class="priv-empty-title">Nenhum resultado</p>
+            <p class="priv-empty-sub">Tente buscar por outro nome de shopping.</p>
+          </div>
+
+
         </div>
       </div>
 
