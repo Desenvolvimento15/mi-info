@@ -54,22 +54,98 @@ const DATA = {
           id: "contatos-procon",
           icon: "phone",
           title: "Contatos do procon",
-          description: "Telefones e canais de contato dos órgãos de defesa do consumidor.",
+          description: "Telefones e canais de contato dos órgãos de defesa do consumidor por estado e cidade.",
           general: {
             title: "Contatos Úteis do Procon",
             customHtml: `
-<div class="privacy-policy" style="text-align: center; padding: 40px 20px;">
-    <h1 style="text-align: center; margin-bottom: 20px;">Contatos do Procon</h1>
-    
-    <p style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: #333;">DISQUE 151 - Tel: (19) 3734-2000</p>
-    <p style="font-size: 1.1rem; margin-bottom: 30px;">
-        <a href="https://procon.campinas.sp.gov.br" target="_blank" style="color: #002D72; text-decoration: underline;">Site: procon.campinas.sp.gov.br</a>
-    </p>
-    
-    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; border: 1px solid #e5e7eb; display: inline-block; text-align: center; max-width: 400px;">
-        <p style="font-size: 1rem; color: #4b5563; line-height: 1.6; margin-bottom: 5px;">Este estabelecimento possui um exemplar<br>do Código de Defesa do Consumidor</p>
-        <p style="font-size: 0.9rem; color: #6b7280; font-weight: 700;">Lei 8.078, de 11 de setembro de 1990</p>
+<div class="privacy-policy" style="padding: 10px 0;">
+  <!-- Header + busca integrada (Padrão WhatsApp) -->
+  <div class="wa-page-header" style="margin-bottom: 20px;">
+    <div class="wa-title-row">
+      <div class="wa-icon-badge" style="background: #002D72; box-shadow: 0 4px 14px rgba(0, 45, 114, .3);" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+      </div>
+      <div>
+        <h1 class="wa-page-title" style="font-size: 1.3rem;">Contatos do Procon</h1>
+        <p class="wa-page-subtitle">Encontre o Procon do seu estado ou cidade</p>
+      </div>
     </div>
+
+    <!-- Filtros de busca -->
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="select-wrapper" style="width: 100%;">
+          <select id="proconStateSelect" class="custom-select" aria-label="Filtrar por estado" style="padding: 10px 12px; font-size: 0.85rem; border-radius: 10px; border: 1.5px solid var(--color-border); background-color: #fff; width: 100%;">
+            <option value="">Todos os Estados</option>
+          </select>
+          <svg class="select-arrow" style="width: 14px; height: 14px; right: 10px;">
+            <use href="#icon-arrow-right" />
+          </svg>
+        </div>
+        
+        <div class="select-wrapper" style="width: 100%;">
+          <select id="proconCitySelect" class="custom-select" aria-label="Filtrar por cidade" style="padding: 10px 12px; font-size: 0.85rem; border-radius: 10px; border: 1.5px solid var(--color-border); background-color: #fff; width: 100%;">
+            <option value="">Todas as Cidades</option>
+          </select>
+          <svg class="select-arrow" style="width: 14px; height: 14px; right: 10px;">
+            <use href="#icon-arrow-right" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="wa-search-box" id="proconSearchBox">
+        <svg class="wa-search-ico" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" id="searchInputProcon" class="wa-search-input" placeholder="Ou digite o estado ou cidade..." aria-label="Buscar Procon por estado ou cidade" autocomplete="off">
+        <button class="wa-search-clear" id="proconSearchClearBtn" aria-label="Limpar busca" style="display:none">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estado inicial vazio -->
+  <div id="proconResultsEmpty" class="wa-empty-state">
+    <div class="wa-empty-illustration" aria-hidden="true">
+      <svg viewBox="0 0 80 80" fill="none">
+        <circle cx="40" cy="40" r="36" stroke="#E5E7EB" stroke-width="2" stroke-dasharray="6 4"/>
+        <circle cx="40" cy="40" r="22" fill="#EFF6FF"/>
+        <path d="M48 42a2 2 0 01-2 2H34l-4 4V32a2 2 0 012-2h14a2 2 0 012 2z" fill="#002D72" opacity="0.85"/>
+      </svg>
+    </div>
+    <p class="wa-empty-hint">Selecione o estado/cidade ou busque acima para encontrar o Procon da sua região.</p>
+  </div>
+
+  <!-- Resultados da Busca de Procon -->
+  <div id="proconResultsList" class="priv-results" aria-live="polite" style="display:none;">
+    <!-- Preenchido pelo JS -->
+  </div>
+
+  <!-- Sem resultados -->
+  <div id="proconNoResults" class="wa-no-results" style="display:none;">
+    <div class="wa-no-results-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        <line x1="8" y1="8" x2="14" y2="14"/>
+      </svg>
+    </div>
+    <p class="wa-no-results-title">Nenhum Procon encontrado</p>
+    <p class="wa-no-results-sub">Tente selecionar outro estado ou cidade.</p>
+  </div>
+
+  <!-- CDC Card -->
+  <div style="background-color: #f8f9fa; padding: 16px; border-radius: 12px; margin-top: 24px; border: 1px solid #e5e7eb; text-align: center;">
+    <p style="font-size: 0.9rem; color: #4b5563; line-height: 1.5; margin-bottom: 4px;">Este estabelecimento possui um exemplar<br>do Código de Defesa do Consumidor</p>
+    <p style="font-size: 0.85rem; color: #6b7280; font-weight: 700; margin: 0;">Lei 8.078, de 11 de setembro de 1990</p>
+  </div>
 </div>
             `,
           },
@@ -1022,6 +1098,10 @@ function openContent(themeId, moduleId) {
   State.currentModuleId = moduleId;
 
   // Hero
+  const heroEl = $('content-hero');
+  if (heroEl) {
+    heroEl.style.display = (moduleId === 'contatos-procon') ? 'none' : '';
+  }
   const heroIcon = $('content-hero-icon');
   heroIcon.style.background = theme.color;
   heroIcon.innerHTML = svgUse(mod.icon);
@@ -1040,6 +1120,10 @@ function openContent(themeId, moduleId) {
 
   // General content
   renderGeneralContent(mod.general);
+
+  if (moduleId === 'contatos-procon') {
+    setupProconSearch();
+  }
 
   // Reset state selects
   const stateSelect = $('state-select');
@@ -1311,9 +1395,240 @@ function showInitialSearch() {
 }
 
 /* ─────────────────────────────────────────
-   CONTACT SCREEN
+   HELPER FUNCTIONS & PROCON SEARCH
 ───────────────────────────────────────── */
+function privHighlight(text, query) {
+  if (!query) return text;
+  const esc = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return text.replace(new RegExp(`(${esc})`, 'gi'),
+    '<mark class="priv-highlight">$1</mark>');
+}
 
+const PROCON_DATA = [
+  // SP
+  { uf: 'SP', estado: 'São Paulo', cidade: 'São Paulo', nome: 'Procon-SP (Sede Estadual)', fone: 'Disque 151 / (11) 3824-0446', url: 'https://www.procon.sp.gov.br', endereco: 'Atendimento presencial e online' },
+  { uf: 'SP', estado: 'São Paulo', cidade: 'Campinas', nome: 'Procon Campinas', fone: 'Disque 151 / (19) 3734-2000', url: 'https://procon.campinas.sp.gov.br', endereco: 'Av. Francisco Glicério, 1307 - Centro, Campinas - SP' },
+  { uf: 'SP', estado: 'São Paulo', cidade: 'Guarulhos', nome: 'Procon Guarulhos', fone: 'Disque 151 / (11) 2468-0008', url: 'https://www.guarulhos.sp.gov.br/procon', endereco: 'Rua Sete de Setembro, 164 - Centro, Guarulhos - SP' },
+  { uf: 'SP', estado: 'São Paulo', cidade: 'Santo André', nome: 'Procon Santo André', fone: 'Disque 151 / (11) 4433-7000', url: 'https://www.santoandre.sp.gov.br', endereco: 'Rua Arnaldo, 49 - Vila Bastos, Santo André - SP' },
+  { uf: 'SP', estado: 'São Paulo', cidade: 'São Bernardo do Campo', nome: 'Procon São Bernardo do Campo', fone: 'Disque 151 / (11) 4126-3700', url: 'https://www.saobernardo.sp.gov.br/procon', endereco: 'Rua Olavo Bilac, 15 - Centro, SBC - SP' },
+  { uf: 'SP', estado: 'São Paulo', cidade: 'Osasco', nome: 'Procon Osasco', fone: 'Disque 151 / (11) 3652-9250', url: 'https://www.osasco.sp.gov.br', endereco: 'Rua das Flores, 74 - Centro, Osasco - SP' },
+  { uf: 'SP', estado: 'São Paulo', cidade: 'Ribeirão Preto', nome: 'Procon Ribeirão Preto', fone: '0800 772 9198 / (16) 3605-3310', url: 'https://www.ribeiraopreto.sp.gov.br/procon', endereco: 'Rua Duque de Caxias, 1181 - Centro, Ribeirão Preto - SP' },
+  { uf: 'SP', estado: 'São Paulo', cidade: 'Jundiaí', nome: 'Procon Jundiaí', fone: 'Disque 151 / (11) 4521-7011', url: 'https://procon.jundiai.sp.gov.br', endereco: 'Rua Barão de Jundiaí, 1093 - Centro, Jundiaí - SP' },
+  { uf: 'SP', estado: 'São Paulo', cidade: 'Mogi das Cruzes', nome: 'Procon Mogi das Cruzes', fone: 'Disque 151 / (11) 4798-5090', url: 'https://www.mogidascruzes.sp.gov.br', endereco: 'Av. Cândido Xavier de Almeida Souza, 100 - Mogi das Cruzes - SP' },
+  { uf: 'SP', estado: 'São Paulo', cidade: 'Taubaté', nome: 'Procon Taubaté', fone: 'Disque 151 / (12) 3624-6610', url: 'https://www.taubate.sp.gov.br/procon', endereco: 'Praça Félix Guisard, 11 - Centro, Taubaté - SP' },
+  { uf: 'SP', estado: 'São Paulo', cidade: 'Santana de Parnaíba', nome: 'Procon Santana de Parnaíba', fone: 'Disque 151 / (11) 4622-7500', url: 'https://www.santanadeparnaiba.sp.gov.br', endereco: 'Rua Professor Eugênio Teani, 224 - Centro - SP' },
+  { uf: 'SP', estado: 'São Paulo', cidade: 'Praia Grande', nome: 'Procon Praia Grande', fone: 'Disque 151 / (13) 3496-2000', url: 'https://www.praiagrande.sp.gov.br', endereco: 'Rua Doutor Roberto Shoji, 885 - Boqueirão, Praia Grande - SP' },
+
+  // RJ
+  { uf: 'RJ', estado: 'Rio de Janeiro', cidade: 'Rio de Janeiro', nome: 'Procon-RJ (Estadual)', fone: 'Disque 151 / (21) 2212-7000', url: 'https://www.procon.rj.gov.br', endereco: 'Av. Rio Branco, 25 - Centro, Rio de Janeiro - RJ' },
+  { uf: 'RJ', estado: 'Rio de Janeiro', cidade: 'Niterói', nome: 'Procon Niterói', fone: 'Disque 151 / (21) 2719-2475', url: 'https://procon.niteroi.rj.gov.br', endereco: 'Rua Visconde de Sepetiba, 987 - Centro, Niterói - RJ' },
+  { uf: 'RJ', estado: 'Rio de Janeiro', cidade: 'Nova Iguaçu', nome: 'Procon Nova Iguaçu', fone: 'Disque 151 / (21) 2666-4910', url: 'https://www.novaiguacu.rj.gov.br', endereco: 'Rua das Quintas, 56 - Centro, Nova Iguaçu - RJ' },
+  { uf: 'RJ', estado: 'Rio de Janeiro', cidade: 'Duque de Caxias', nome: 'Procon Duque de Caxias', fone: 'Disque 151 / (21) 2672-2775', url: 'https://www.duquedecaxias.rj.gov.br', endereco: 'Alm. Tamandaré, 90 - Centro, Duque de Caxias - RJ' },
+
+  // MG
+  { uf: 'MG', estado: 'Minas Gerais', cidade: 'Belo Horizonte', nome: 'Procon-MG (Belo Horizonte)', fone: 'Disque 151 / (31) 3277-4400', url: 'https://www.procon.mg.gov.br', endereco: 'Rua da Bahia, 1148 - Centro, Belo Horizonte - MG' },
+  { uf: 'MG', estado: 'Minas Gerais', cidade: 'Uberlândia', nome: 'Procon Uberlândia', fone: 'Disque 151 / (34) 3232-6100', url: 'https://www.uberlandia.mg.gov.br/procon', endereco: 'Av. das Gameleiras, 247 - Planalto, Uberlândia - MG' },
+  { uf: 'MG', estado: 'Minas Gerais', cidade: 'Montes Claros', nome: 'Procon Montes Claros', fone: 'Disque 151 / (38) 3221-7075', url: 'https://www.montesclaros.mg.gov.br', endereco: 'Rua Dr. Veloso, 478 - Centro, Montes Claros - MG' },
+  { uf: 'MG', estado: 'Minas Gerais', cidade: 'Juiz de Fora', nome: 'Procon Juiz de Fora', fone: 'Disque 151 / (32) 3690-7610', url: 'https://www.pjf.mg.gov.br/procon', endereco: 'Av. Presidente Itamar Franco, 992 - Centro, Juiz de Fora - MG' },
+
+  // PR
+  { uf: 'PR', estado: 'Paraná', cidade: 'Curitiba', nome: 'Procon-PR (Curitiba)', fone: '(41) 3313-6565', url: 'https://www.procon.pr.gov.br', endereco: 'Rua Alameda Cabral, 184 - Centro, Curitiba - PR' },
+  { uf: 'PR', estado: 'Paraná', cidade: 'Londrina', nome: 'Procon Londrina', fone: 'Disque 151 / (43) 3372-4823', url: 'https://www.londrina.pr.gov.br/procon', endereco: 'Rua Mato Grosso, 299 - Centro, Londrina - PR' },
+
+  // SC
+  { uf: 'SC', estado: 'Santa Catarina', cidade: 'Florianópolis', nome: 'Procon-SC', fone: 'Disque 151 / (48) 3665-3000', url: 'https://www.procon.sc.gov.br', endereco: 'Rua Victor Meirelles, 53 - Centro, Florianópolis - SC' },
+
+  // RS
+  { uf: 'RS', estado: 'Rio Grande do Sul', cidade: 'Porto Alegre', nome: 'Procon Porto Alegre / RS', fone: 'Disque 151 / (51) 3289-1774', url: 'https://www.procon.rs.gov.br', endereco: 'Rua dos Andradas, 697 - Centro Histórico, Porto Alegre - RS' },
+
+  // BA
+  { uf: 'BA', estado: 'Bahia', cidade: 'Salvador', nome: 'Procon-BA (Salvador)', fone: '(71) 3116-0560', url: 'https://www.sjdh.ba.gov.br/procon', endereco: 'Rua Carlos Gomes, 740 - Centro, Salvador - BA' },
+  { uf: 'BA', estado: 'Bahia', cidade: 'Feira de Santana', nome: 'Procon Feira de Santana', fone: '(75) 3603-7740', url: 'https://www.feiradesantana.ba.gov.br', endereco: 'Av. Maria Quitéria, 1405 - Centro, Feira de Santana - BA' },
+
+  // CE
+  { uf: 'CE', estado: 'Ceará', cidade: 'Fortaleza', nome: 'Procon Fortaleza / CE', fone: 'Disque 151 / (85) 3105-1138', url: 'https://www.procon.ce.gov.br', endereco: 'Rua Major Facundo, 907 - Centro, Fortaleza - CE' },
+
+  // PE
+  { uf: 'PE', estado: 'Pernambuco', cidade: 'Recife', nome: 'Procon-PE', fone: '0800 282 1512 / (81) 3181-7000', url: 'https://www.procon.pe.gov.br', endereco: 'Rua Floriano Peixoto, 141 - São José, Recife - PE' },
+
+  // DF
+  { uf: 'DF', estado: 'Distrito Federal', cidade: 'Brasília', nome: 'Procon-DF', fone: 'Disque 151 / (61) 3212-1500', url: 'https://www.procon.df.gov.br', endereco: 'SCS Quadra 08 Bloco B60 - Asa Sul, Brasília - DF' },
+
+  // AL
+  { uf: 'AL', estado: 'Alagoas', cidade: 'Maceió', nome: 'Procon-AL', fone: 'Disque 151 / (82) 3315-1510', url: 'https://www.procon.al.gov.br', endereco: 'Rua do Livramento, 153 - Centro, Maceió - AL' },
+
+  // MA
+  { uf: 'MA', estado: 'Maranhão', cidade: 'São Luís', nome: 'Viva Procon-MA', fone: 'Disque 151 / (98) 3261-2000', url: 'https://www.procon.ma.gov.br', endereco: 'Av. Beira Mar, s/n - Centro, São Luís - MA' },
+
+  // PA
+  { uf: 'PA', estado: 'Pará', cidade: 'Belém', nome: 'Procon-PA', fone: 'Disque 151 / (91) 3073-2824', url: 'https://www.procon.pa.gov.br', endereco: 'Tv. Lomas Valentinas, 1150 - Pedreira, Belém - PA' },
+
+  // ES
+  { uf: 'ES', estado: 'Espírito Santo', cidade: 'Vitória', nome: 'Procon-ES', fone: 'Disque 151 / (27) 3382-6200', url: 'https://www.procon.es.gov.br', endereco: 'Av. Jerônimo Monteiro, 960 - Centro, Vitória - ES' },
+  { uf: 'ES', estado: 'Espírito Santo', cidade: 'Vila Velha', nome: 'Procon Vila Velha', fone: 'Disque 151 / (27) 3388-4100', url: 'https://www.vilavelha.es.gov.br', endereco: 'Praça Duque de Caxias, 0 - Centro, Vila Velha - ES' },
+
+  // SE
+  { uf: 'SE', estado: 'Sergipe', cidade: 'Aracaju', nome: 'Procon Sergipe / Aracaju', fone: '(79) 3179-7410', url: 'https://www.procon.se.gov.br', endereco: 'Praça Camerino, 86 - Centro, Aracaju - SE' },
+
+  // RN
+  { uf: 'RN', estado: 'Rio Grande do Norte', cidade: 'Natal', nome: 'Procon-RN', fone: '(84) 3232-6761', url: 'https://www.procon.rn.gov.br', endereco: 'Rua Princesa Isabel, 523 - Cidade Alta, Natal - RN' },
+
+  // PB
+  { uf: 'PB', estado: 'Paraíba', cidade: 'João Pessoa', nome: 'Procon-PB', fone: 'Disque 151 / (83) 3218-6950', url: 'https://www.procon.pb.gov.br', endereco: 'Parque Solon de Lucena, 300 - Centro, João Pessoa - PB' },
+  { uf: 'PB', estado: 'Paraíba', cidade: 'Campina Grande', nome: 'Procon Campina Grande', fone: 'Disque 151 / (83) 3342-9154', url: 'https://www.campinagrande.pb.gov.br', endereco: 'Rua Afonso Campos, 304 - Centro, Campina Grande - PB' },
+
+  // PI
+  { uf: 'PI', estado: 'Piauí', cidade: 'Teresina', nome: 'Procon-PI', fone: '(86) 3216-4550', url: 'https://www.mppi.mp.br/procon', endereco: 'Rua Lindolfo Monteiro, 911 - Fátima, Teresina - PI' },
+
+  // AM
+  { uf: 'AM', estado: 'Amazonas', cidade: 'Manaus', nome: 'Procon-AM', fone: '0800 092 1512 / (92) 3215-4000', url: 'https://www.procon.am.gov.br', endereco: 'Av. André Araújo, 1500 - Aleixo, Manaus - AM' }
+];
+
+function setupProconSearch() {
+  const stateSelect = $('proconStateSelect');
+  const citySelect = $('proconCitySelect');
+  const searchInput = $('searchInputProcon');
+  const clearBtn = $('proconSearchClearBtn');
+
+  if (!stateSelect || !citySelect || !searchInput) return;
+
+  // Popula Estados
+  const statesSet = new Map();
+  PROCON_DATA.forEach(item => {
+    if (!statesSet.has(item.uf)) {
+      statesSet.set(item.uf, item.estado);
+    }
+  });
+
+  const sortedStates = Array.from(statesSet.entries()).sort((a, b) => a[1].localeCompare(b[1]));
+  stateSelect.innerHTML = `<option value="">Todos os Estados</option>` +
+    sortedStates.map(([uf, name]) => `<option value="${uf}">${name} (${uf})</option>`).join('');
+
+  citySelect.innerHTML = `<option value="">Todas as Cidades</option>`;
+
+  function updateCityDropdown(uf) {
+    let filteredData = PROCON_DATA;
+    if (uf) {
+      filteredData = PROCON_DATA.filter(item => item.uf === uf);
+    }
+    const citiesSet = new Set(filteredData.map(item => item.cidade));
+    const sortedCities = Array.from(citiesSet).sort((a, b) => a.localeCompare(b));
+    
+    citySelect.innerHTML = `<option value="">Todas as Cidades</option>` +
+      sortedCities.map(c => `<option value="${c}">${c}</option>`).join('');
+  }
+
+  stateSelect.onchange = () => {
+    updateCityDropdown(stateSelect.value);
+    renderProconResults();
+  };
+
+  citySelect.onchange = () => {
+    renderProconResults();
+  };
+
+  searchInput.oninput = () => {
+    renderProconResults();
+  };
+
+  if (clearBtn) {
+    clearBtn.onclick = () => {
+      searchInput.value = '';
+      clearBtn.style.display = 'none';
+      renderProconResults();
+      searchInput.focus();
+    };
+  }
+
+  updateCityDropdown('');
+  renderProconResults();
+}
+
+function renderProconResults() {
+  const inputEl = $('searchInputProcon');
+  const stateSelect = $('proconStateSelect');
+  const citySelect = $('proconCitySelect');
+  const clearBtn = $('proconSearchClearBtn');
+  const resultsList = $('proconResultsList');
+  const emptyState = $('proconResultsEmpty');
+  const noResults = $('proconNoResults');
+
+  if (!resultsList) return;
+
+  const q = (inputEl ? inputEl.value : '').toLowerCase().trim();
+  const selectedState = stateSelect ? stateSelect.value : '';
+  const selectedCity = citySelect ? citySelect.value : '';
+
+  if (clearBtn) {
+    clearBtn.style.display = q ? 'flex' : 'none';
+  }
+
+  if (!q && !selectedState && !selectedCity) {
+    if (emptyState) emptyState.style.display = 'flex';
+    if (resultsList) resultsList.style.display = 'none';
+    if (noResults) noResults.style.display = 'none';
+    return;
+  }
+
+  if (emptyState) emptyState.style.display = 'none';
+
+  const matches = PROCON_DATA.filter(d => {
+    const matchState = !selectedState || d.uf === selectedState;
+    const matchCity = !selectedCity || d.cidade.toLowerCase() === selectedCity.toLowerCase();
+    const matchQuery = !q || (
+      d.cidade.toLowerCase().includes(q) ||
+      d.estado.toLowerCase().includes(q) ||
+      d.uf.toLowerCase().includes(q) ||
+      d.nome.toLowerCase().includes(q)
+    );
+
+    return matchState && matchCity && matchQuery;
+  });
+
+  if (!matches.length) {
+    if (resultsList) resultsList.style.display = 'none';
+    if (noResults) noResults.style.display = 'flex';
+    return;
+  }
+
+  if (noResults) noResults.style.display = 'none';
+  if (resultsList) resultsList.style.display = 'flex';
+
+  resultsList.innerHTML = `
+    <p class="priv-result-count">${matches.length} resultado${matches.length > 1 ? 's' : ''} encontrado${matches.length > 1 ? 's' : ''}</p>
+    ${matches.map((d, i) => {
+      const telClean = d.fone.replace(/[^0-9]/g, '');
+      return `
+      <div class="priv-card" style="animation-delay:${i * 0.05}s">
+        <div class="priv-card-header" style="align-items: flex-start;">
+          <span class="priv-card-badge priv-badge-uf" style="background:#eff6ff; color:#1e40af; border-color:#bfdbfe;">${d.uf}</span>
+          <div class="priv-card-names">
+            <div class="priv-card-shopping" style="font-size:1rem; color:#002D72;">${privHighlight(d.nome, q)}</div>
+            <div class="priv-card-location" style="margin-top:2px; font-weight:600;">${privHighlight(d.cidade, q)} · ${privHighlight(d.estado, q)}</div>
+            <div style="font-size:0.85rem; color:#374151; margin-top:6px; font-weight:600;">
+              📞 ${d.fone}
+            </div>
+            ${d.endereco ? `<div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">📍 ${d.endereco}</div>` : ''}
+          </div>
+        </div>
+        <div style="display:flex; gap:8px; padding:0 14px 12px;">
+          ${d.url ? `
+          <a href="${d.url}" target="_blank" rel="noopener" class="priv-card-link" style="flex:1; margin:0; background:linear-gradient(135deg, #002D72 0%, #001f52 100%);">
+            <svg class="priv-card-link-ico" viewBox="0 0 24 24" style="stroke:white;"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Site Oficial
+          </a>
+          ` : ''}
+          ${telClean.length >= 8 ? `
+          <a href="tel:${telClean}" class="priv-card-link" style="background:#f3f4f6; color:#1f2937; border:1px solid #d1d5db; margin:0; padding:10px 12px;">
+            📞 Ligar
+          </a>
+          ` : ''}
+        </div>
+      </div>
+      `;
+    }).join('')}
+  `;
+}
 
 /* ─────────────────────────────────────────
    EVENT LISTENERS
@@ -1600,6 +1915,8 @@ function bindEvents() {
       privSearchInput.focus();
     });
   }
+
+
 
   // ─── CONTATO – Busca por shopping ──────────────
   const CONTACT_DATA = [
